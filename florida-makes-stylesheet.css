@@ -1,0 +1,215 @@
+/****** CSS Site Load ******/
+
+/*** accordions/expandable text ***/
+.accordion-heading button {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff0000; /* link colour */
+    background: #fff;
+    padding: 15px 10px;
+    margin: 0;
+    border: none;
+    border-top: 1px solid #f4f4f4;
+    cursor: pointer;
+    transition: .3s;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.accordion-heading button:hover,
+.accordion-heading button:focus {
+    color: #333; /* link hover colour */
+    transition: .3s;
+}
+.accordion-heading button::before {
+    font-family: FloridaMakes; /* change to appropriate kit/unicode */
+    content: '\f016';
+    color: #333; /* change  icon colour */
+    margin-right: 10px;
+}
+.open .accordion-heading button::before {
+    font-family: FloridaMakes; /* change to appropriate kit/unicode */
+    content: '\f015';
+    color: #ff0000; /* change  icon colour */
+}
+.accordion-text {
+    display: none;
+}
+.accordion-wrap .ContentItemHtml, .accordion-wrap .ContentItemHtml:hover {
+    transition: none !important;
+}
+.accordion-wrap {
+    margin-bottom: 15px;
+}
+
+/*** bulleted link lists ***/
+.link-list ul {
+    padding-left: 0;
+    margin-top: 25px;
+}
+.link-list ul li {
+    padding: 20px 10px;
+    border-top: 1px solid #E6E7EA;
+    list-style-type: none;
+}
+.link-list ul li:last-child {
+    border-bottom: 1px solid #E6E7EA;
+}
+.link-list ul li a {
+    font-family: proxima-nova, sans-serif; /* change font/styles */
+    font-weight: 700;
+    text-transform: none;
+    color: #ff0000; /* change colour */
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-left: 40px;
+    position: relative;
+    display: block;
+}
+.link-list ul li a::before {
+    font-family: FloridaMakes; /* change to appropriate kit/unicode */
+    content: '\f017'; /* chain link icon */
+    color: #333; /* change static icon colour */
+    position: absolute;
+    left: 10px;
+}
+.link-list ul li a[target*="blank"]::before {
+    content: '\f019'; /* new window icon */ 
+}
+.link-list ul li a:hover::before,
+.link-list ul li a:focus::before {
+    color: #333; /* change hover icon colour */
+}
+.link-list ul li a:hover,
+.link-list ul li a:focus {
+    color: #333; /* change text hover colour */
+}
+
+/*** interior highlight tile ***/
+.highlight-tile {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.04), 0 0 20px 0 rgba(0,0,0,0.06);
+}
+.highlight-tile {
+    padding: 20px 30px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.highlight-tile h2,
+.highlight-tile h3 {
+    margin-top: 4px;
+}
+
+/***  interior grey tile ***/
+.grey-tile {
+    background: #FAFAFA;
+    border-radius: 3px;
+}
+.grey-tile {
+    padding: 20px 30px 15px 30px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.grey-tile h2,
+.grey-tile h3 {
+    margin-top: 0px;
+}
+ 
+/*** default line style ***/
+hr {
+    border: none;
+    height: 1px;
+    color: #f4f4f4;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*** default image caption ***/
+figure.image {
+    padding: 15px;
+    background-color: rgb(250, 250, 250);
+    margin: 5px 0px;
+}
+/* figure.image img { 
+width: 100%; /* unhide to make full size of layout section */
+} */ 
+figcaption {
+    display: block;
+    padding-top: 10px;
+    font-family: inherit;
+    color: #545454;
+    font-size: 14px;
+}
+
+/*** default table style ***/
+table th {
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: inherit;
+}
+table tr:nth-child(2n) {
+    border-bottom: 2px solid #ededed;
+    background: #FaFaFa;
+}
+table tr td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/*** plain table style ***/
+.plain-table tr td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    border-color: #EDEDED;
+}
+.plain-table th {
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: inherit;
+    background-color: #FaFaFa;
+    border: 1px solid #f5f5f5;
+}
+.plain-table tr:nth-child(2n) {
+    border-bottom: 1px solid #EDEDED;
+    background: #FFF;
+}
+
+/*** stick-to-top responsive content ***/
+.stick-to-top {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+    .stick-to-top {
+        flex-direction: column-reverse;
+    }
+}
+
+/*** equal height tile row ***/
+.tile-grow {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.tile-grow div[class*="section"] > div {
+    height: 100%;
+    margin: 0;
+}
+
+/*** fix non-responsive images ***/
+img {
+    max-width: 100%;
+}
+
+/****** END PRELOAD ******/
