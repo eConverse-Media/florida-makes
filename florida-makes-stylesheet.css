@@ -340,6 +340,61 @@ h4, .h4 {
     color: #F4B223;
 }
 
+/****** buttons ******/
+
+.make-buttons em {
+    display: inline-block;
+    margin: -5px;
+}
+.make-buttons em a {
+    display: inline-block;
+    margin: 5px;
+}
+.make-buttons em a,
+.btn {
+    border-radius: 16px 2px;
+    padding: 12px 15px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.make-buttons.small em a,
+.btn.btn-sm {
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.btn.btn-xs {
+    padding: 2px 5px;
+}
+.make-buttons em a,
+.btn-primary,
+.ideation-home .btn-success,
+.community-radio .btn-group .btn-primary.dropdown-toggle,
+.open .dropdown-toggle.btn-primary,
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.post-message-contributed-content .validate-contribution .btn-group .dropdown-toggle.btn-default,
+.new-ideas .ideation-widget > div > div:last-child a,
+.blogs-list .HLLandingControl div[id*="BottomLink"] a,
+.btn-success,
+.btn-info,
+.HL-contact-suggestions .btn-primary,
+.btn-group>.btn-success+.dropdown-toggle,
+.btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active,
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active,
+.alert-warning .btn,
+.alert-warning .btn-group > .btn.dropdown-toggle:first-child {
+    background: linear-gradient(321.69deg, rgba(189, 56, 19, 0.95) 0%, rgba(234, 81, 43, 0.95) 100%), linear-gradient(0deg, #F4B223, #F4B223), linear-gradient(321.69deg, #D89914 0%, #FFC64D 100%);
+    color: #fff;
+}
+
 /************ responsive ************/
 
 @media (max-width: 768px) {
