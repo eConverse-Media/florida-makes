@@ -302,6 +302,44 @@ img {
 
 /************ basics ************/
 
+/****** fonts ******/
+
+body,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Open Sans', sans-serif;
+    color: #8E8E8E;
+    font-size: 16px;
+    line-height: 26px;
+}
+h1, .h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+h2, .h2 {
+    color: #000;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.01em;
+}
+h3, .h3,
+.HLLandingControl h3 a {
+    color: #222;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+}
+h4, .h4 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #F4B223;
+}
+
 /************ responsive ************/
 
 @media (max-width: 768px) {
