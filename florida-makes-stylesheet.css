@@ -597,6 +597,53 @@ td.ProfilePic > a > img {
     text-decoration: none;
 }
 
+/****** main nav ******/
+#NAV {
+    background: #0B1A1D;
+    border: none;
+}
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.disabled>a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #fff;
+    padding: 20px 15px;
+}
+.navbar-default .navbar-nav>.dropdown>a .caret {
+    border-top: none;
+    border-bottom: none;
+    width: auto;
+    height: auto;
+}
+.navbar-default .navbar-nav>.dropdown>a .caret::before {
+    font-family: FloridaMakes;
+    content: '\f01d';
+    color: #F4B223;
+}
+
+/* removing extraneous padding on desktop */
+@media (min-width: 992px) {
+    #NAV .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #NAV .col-md-12,
+    .navbar-collapse {
+        padding: 0;
+    }
+    .navbar-default {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
 /************ responsive ************/
 
 @media (max-width: 768px) {
