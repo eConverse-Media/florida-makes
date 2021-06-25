@@ -13,7 +13,14 @@ function handleHeader() {
     $('.search-bar-top .form-control').attr('placeholder', 'Keyword Search...');
 }
 
+function handleHomepagePermissions() {
+
+    // handle newsletter
+    $('.col-md-6:empty').closest('.newsletter-wrapper').hide();
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
+    handleHomepagePermissions();
 });
