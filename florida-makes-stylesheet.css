@@ -349,6 +349,8 @@ h4, .h4 {
 .make-buttons em a {
     display: inline-block;
     margin: 5px;
+    font-style: normal;
+    text-decoration: none;
 }
 .make-buttons em a,
 .btn {
@@ -644,16 +646,77 @@ td.ProfilePic > a > img {
     }
 }
 
+/************ newsletter ************/
+.newsletter-wrapper {
+    background: linear-gradient(272.14deg, #06161A 30.99%, #353535 96.08%);
+    position: relative;
+    mix-blend-mode: multiply;
+    overflow: hidden;
+}
+.newsletter-wrapper::before {
+    content: '';
+    width: 145px;
+    height: 245px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: linear-gradient(2.06deg, #292A2A 2.07%, rgba(196, 196, 196, 0) 54.61%);
+    opacity: 0.1;
+    transform: matrix(-0.78, 0.63, 0.63, 0.78, 0, 0);
+}
+.newsletter-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 140px;
+    top: -30px;
+    right: -100px;
+    background: linear-gradient(4.16deg, #29292A 8.15%, rgba(196, 196, 196, 0) 97.07%);
+    opacity: 0.1;
+    transform: rotate(-140.83deg);
+}
+.newsletter-wrapper > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.newsletter {
+    padding: 40px 0 50px 0;
+    display: flex;
+    align-items: center;
+}
+.newsletter .make-buttons {
+    text-align: right;
+}
+.newsletter h2 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 8px;
+}
+.newsletter h2 strong {
+    color: #f4b735;
+}
+.newsletter p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+}
+
 /************ footer ************/
 #MPFooterLink {
     display: none;
 }
 #MPOuterFooter {
     background: linear-gradient(0deg, #FBFBFB, #FBFBFB), #FBFBFB;
-    padding: 50px 15px 0 15px;
+    padding: 50px 0 0 0;
 }
 #MPOuterMost.full #FOOTER {
     max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+#FOOTER > .row > .col-md-12 {
     padding-left: 0;
     padding-right: 0;
 }
@@ -748,6 +811,13 @@ td.ProfilePic > a > img {
 /************ responsive ************/
 
 @media (max-width: 991px) {
+    .newsletter {
+        display: block;
+    }
+    .newsletter .make-buttons {
+        margin-top: 30px;
+        text-align: left;
+    }
     .footer-top-row,
     .footer-bottom-row {
         flex-wrap: wrap;
