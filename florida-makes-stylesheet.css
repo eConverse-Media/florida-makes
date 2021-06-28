@@ -800,6 +800,137 @@ td.ProfilePic > a > img,
     }
 }
 
+/************ What we do ************/
+.services {
+    padding: 70px 0;
+}
+@media (min-width: 992px) {
+    .services {
+        display: flex;
+        align-items: center;
+    }
+}
+.services > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.service {
+    padding: 8px;
+    flex-basis: 50%;
+}
+.services.row-wide > .col-md-8 {
+    margin: -8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.service a {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #222;
+    display: block;
+    padding: 25px 70px 25px 20px;
+    background: #fff;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+    border-radius: 16px 100px 100px 0px;
+    text-decoration: none;
+    position: relative;
+}
+.service a::after {
+    font-family: FloridaMakes;
+    font-size: 32px;
+    font-weight: 400;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.service a::after,
+.service a:hover::after,
+.service a:focus::after {
+    transition: .3s;
+}
+.service.red a::after {
+    background: rgba(223,75,36,0.1);
+    color: #DF4B24;
+}
+.service.red a:hover::after,
+.service.red a:focus::after {
+    background: #DF4B24;
+    color: #fff;
+}
+.service.blue a::after {
+    background: rgba(4,129,153,0.1);
+    color: #048199;
+}
+.service.blue a:hover::after,
+.service.blue a:focus::after {
+    background: #048199;
+    color: #fff;
+}
+.service.yellow a::after {
+    background: rgba(246,178,32,0.1);
+    color: #F6B220;
+}
+.service.yellow a:hover::after,
+.service.yellow a:focus::after {
+    background: #F6B220;
+    color: #fff;
+}
+.service.green a::after {
+    background: rgba(120,178,64,0.1);
+    color: #78B240;
+}
+.service.green a:hover::after,
+.service.green a:focus::after {
+    background: #78B240;
+    color: #fff;
+}
+.service.grey a::after {
+    background: rgba(142,142,142,0.1);
+    color: #8E8E8E;
+}
+.service.grey a:hover::after,
+.service.grey a:focus::after {
+    background: #8E8E8E;
+    color: #fff;
+}
+.service.assessment a::after {
+    content: '\f024';
+}
+.service.improvement a::after {
+    content: '\f025';
+}
+.service.executive-services a::after {
+    content: '';
+}
+.service.supply-chain a::after {
+    content: '\f026';
+}
+.service.tech-acceleration a::after {
+    content: '\f027';
+}
+.service.training a::after {
+    content: '\f028';
+}
+.service.cybersecurity a::after {
+    content: '\f029';
+}
+.service.compliance a::after {
+    content: '';
+}
+.service.market-development a::after {
+    content: '\f02a';
+}
+.service.disaster-resources a::after {
+    content: '\f02b';
+}
+
 /************ manufacts ************/
 
 .manufacts {
@@ -1401,6 +1532,9 @@ td.ProfilePic > a > img,
 }
 
 @media (max-width: 991px) {
+    .services.row-wide > .col-md-8 {
+        margin-top: 12px;
+    }
     .manufacts-img {
         margin-bottom: 30px;
     }
@@ -1482,6 +1616,11 @@ td.ProfilePic > a > img,
         content: 'Posted:';
         margin-right: 3px;
         font-family: inherit;
+    }
+}
+@media (max-width: 650px) {
+    .service {
+        flex-basis: 100%;
     }
 }
 @media (max-width: 450px) {
