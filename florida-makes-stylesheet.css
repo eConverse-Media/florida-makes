@@ -343,6 +343,7 @@ h4, .h4 {
     color: #F4B223;
 }
 h5, .h5 {
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
@@ -420,6 +421,85 @@ input:focus {
     background: linear-gradient(321.69deg, rgba(189, 56, 19, 0.95) 0%, rgba(234, 81, 43, 0.95) 100%), linear-gradient(0deg, #F4B223, #F4B223), linear-gradient(321.69deg, #D89914 0%, #FFC64D 100%);
     color: #fff;
     border: none;
+    transition: none;
+}
+.make-buttons em a:hover,
+.make-buttons em a:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.ideation-home .btn-success:hover,
+.ideation-home .btn-success:focus,
+.community-radio .btn-group .btn-primary.dropdown-toggle:hover,
+.community-radio .btn-group .btn-primary.dropdown-toggle:focus,
+.open .dropdown-toggle.btn-primary:hover,
+.open .dropdown-toggle.btn-primary:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:focus, 
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:focus,
+.post-message-contributed-content .validate-contribution .btn-group .dropdown-toggle.btn-default:hover,
+.post-message-contributed-content .validate-contribution .btn-group .dropdown-toggle.btn-default:focus,
+.new-ideas .ideation-widget > div > div:last-child a:hover,
+.new-ideas .ideation-widget > div > div:last-child a:focus,
+.blogs-list .HLLandingControl div[id*="BottomLink"] a:hover,
+.blogs-list .HLLandingControl div[id*="BottomLink"] a:focus,
+.btn-success:hover,
+.btn-success:active,
+.btn-info:hover,
+.btn-info:active,
+.HL-contact-suggestions .btn-primary:hover,
+.HL-contact-suggestions .btn-primary:active,
+.btn-group>.btn-success+.dropdown-toggle:hover,
+.btn-group>.btn-success+.dropdown-toggle:focus,
+.btn-success:focus,
+.btn-success.active, 
+.open .dropdown-toggle.btn-success,
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus,
+.alert-warning .btn:hover,
+.alert-warning .btn:focus,
+.alert-warning .btn:active,
+.alert-warning .btn-group > .btn.dropdown-toggle:first-child:focus,
+.alert-warning .btn-group > .btn.dropdown-toggle:first-child:hover,
+.alert-warning .btn-group > .btn.dropdown-toggle:first-child:active,
+.HLLandingControl .btn-default:hover,
+.HLLandingControl .btn-default:focus {
+    border: none;
+    color: #fff;
+    background: #DE4A23;
+    transition: none;
+}
+
+/****** links ******/
+
+.make-link em {
+    display: inline-block;
+    margin: -5px;
+}
+.make-link em a {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #fff;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+.make-link em a:hover,
+.make-link em a:focus {
+    border-bottom-color: #F6B220;
+    color: #fff;
+}
+.make-link em a::after {
+    font-family: FloridaMakes;
+    content: '\f01e';
+    color: #F6B220;
+    margin-left: 8px;
+    font-size: 10px;
 }
 
 /****** round profile images ******/
@@ -553,6 +633,7 @@ td.ProfilePic > a > img,
     text-transform: uppercase;
     text-decoration: none;
     margin-top: 5px;
+    opacity: 0.9;
 }
 #MPAuxNav ul.level1 li a {
     font-weight: 600;
@@ -561,9 +642,18 @@ td.ProfilePic > a > img,
     font-size: 13px;
     line-height: 26px;
     color: #fff;
+    opacity: 0.9;
     margin-top: 0;
     padding: 0;
     margin-right: 15px;
+}
+.floridamakes-network:hover,
+.floridamakes-network:focus,
+#MPAuxNav ul.level1 li a:hover,
+#MPAuxNav ul.level1 li a:focus {
+    color: #fff;
+    opacity: 1;
+    text-decoration: underline;
 }
 #Welcome_LoginLink {
     background: transparent;
@@ -597,7 +687,10 @@ td.ProfilePic > a > img,
     display: none;
 }
 .search-and-social {
-    width: 250px;
+    width: 280px;
+}
+.search-bar-top {
+    width: 260px;
 }
 .search-bar-top .SearchInputs {
     border-radius: 0;
@@ -641,10 +734,14 @@ td.ProfilePic > a > img,
 .header-social a {
     margin-left: 15px;
     display: inline-block;
-    font-size: 15px;
-    line-height: 17px;
+    font-size: 20px;
+    line-height: 23px;
     color: #8E8E8E;
     text-decoration: none;
+}
+.header-social a:hover,
+.header-social a:focus {
+    color: #111821;
 }
 
 /****** main nav ******/
@@ -664,7 +761,16 @@ td.ProfilePic > a > img,
     font-size: 15px;
     line-height: 20px;
     color: #fff;
+    opacity: 0.9;
     padding: 20px 15px;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.disabled>a:hover, .navbar-default .navbar-nav>.disabled>a:focus,
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #fff;
+    background: transparent;
+    opacity: 1;
 }
 .navbar-default .navbar-nav>.dropdown>a .caret {
     border-top: none;
@@ -694,6 +800,106 @@ td.ProfilePic > a > img,
     }
 }
 
+/************ manufacts ************/
+
+.manufacts {
+    background: linear-gradient(272.14deg, #06161A 30.99%, #353535 96.08%);
+    mix-blend-mode: multiply;
+    padding: 55px 0;
+}
+.manufacts > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+@media (min-width: 992px) {
+    .manufacts .row-wide {
+        display: flex;
+        align-items: center;
+    }
+    .manufacts .row-wide > .col-md-6:first-child {
+        padding-right: 50px;
+    }
+}
+.manufacts-img {
+    height: 385px;
+    display: flex;
+    position: relative;
+}
+.manufacts-img::before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -10px;
+    bottom: -10px;
+    content: '';
+    background: linear-gradient(27.31deg, rgba(246, 178, 32, 0) 77.98%, #F6B220 97.27%);
+    transform: rotate(180deg);
+    z-index: -1;
+}
+.manufacts-img .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    padding: 40px 30px;
+    background: linear-gradient(179.69deg, rgba(0, 0, 0, 0) 35.08%, rgba(11, 19, 21, 0.8) 72.12%, rgba(20, 33, 36, 0.96) 99.73%);
+    display: flex;
+}
+.manufacts-img h3 {
+    margin-top: auto;
+    margin-bottom: 0;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    line-height: 38px;
+}
+.manufacts-img h3 strong {
+    color: #F4B734;
+    font-weight: 700;
+}
+.manufacts h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.manufacts h4 + h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.manufacts h2 {
+    color: #fff;
+}
+.manufact-wrapper {
+    display: flex;
+    margin-top: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.manufact {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(33.3333333% - 20px);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+}
+.manufact::before {
+    font-family: FloridaMakes;
+    color: #F4B734;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 15px;
+    display: block;
+}
+.manufact.product::before {
+    content: '\f022';
+}
+.manufact.money::before {
+    content: '\f023';
+}
+
 /************ testimonials ************/
 
 .testimonials {
@@ -708,15 +914,15 @@ td.ProfilePic > a > img,
         padding-right: 35px;
     }
 }
-.testimonials > .col-md-4 h4 {
+.text-block h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
-.testimonials > .col-md-4 h2 {
+.text-block h2 {
     margin-top: 10px;
     margin-bottom: 15px;
 }
-.testimonials > .col-md-4 em a {
+.text-block em a {
     margin-top: 45px;
 }
 .testimonial {
@@ -761,6 +967,10 @@ td.ProfilePic > a > img,
     z-index: 10;
     background: transparent;
     border: none;
+}
+.testimonial-slider .slick-arrow:hover,
+.testimonial-slider .slick-arrow:focus {
+    color: #111821;
 }
 .testimonial-slider .next-arrow {
     right: 0;
@@ -1079,6 +1289,10 @@ td.ProfilePic > a > img,
     margin-right: 8px;
     text-decoration: none;
 }
+.footer-social a:hover,
+.footer-social a:focus {
+    color: #111821;
+}
 .footer-top-row h2 {
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 0;
@@ -1093,6 +1307,11 @@ td.ProfilePic > a > img,
 .footer-links a {
     color: #8e8e8e;
     text-decoration: none;
+}
+.footer-links a:hover,
+.footer-links a:focus {
+    text-decoration: underline;
+    color: #111821;
 }
 .col-md-3:last-child .footer-links {
     text-align: right;
@@ -1125,6 +1344,9 @@ td.ProfilePic > a > img,
 /************ responsive ************/
 
 @media (max-width: 991px) {
+    .manufacts-img {
+        margin-bottom: 30px;
+    }
     .testimonials > .col-md-8 {
         margin-top: 30px;
     }
@@ -1156,6 +1378,12 @@ td.ProfilePic > a > img,
 }
 
 @media (max-width: 768px) {
+    .manufact-wrapper {
+        display: block;
+    }
+    .manufact:not(:last-child) {
+        margin-bottom: 20px;
+    }
     .footer-top-row.row-wide > .col-md-3 {
         width: 100%;
     }

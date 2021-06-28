@@ -15,8 +15,11 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle manufacts
+    $('.col-md-6:empty').closest('.manufacts').hide();
+
     // handle testimonials
-    $('.col-md-4:empty').closest('.testimonials').hide();
+    $('.testimonials > .col-md-4:empty').closest('.bg-grey').hide();
 
     // handle newsletter
     $('.col-md-6:empty').closest('.newsletter-wrapper').hide();
@@ -37,6 +40,10 @@ function handleAllContentList() {
     $('.latest-news .HLLandingControl ul li').each(function () {
         handleAjaxCall(this);
     });
+}
+
+function handleManufacts() {
+    $('.manufact').wrapAll('<div class="manufact-wrapper" />');
 }
 
 function handleTestimonials() {
@@ -78,5 +85,6 @@ $(function () {
     handleHeader();
     handleHomepagePermissions();
     handleAllContentList();
+    handleManufacts();
     handleTestimonials();
 });
