@@ -138,9 +138,7 @@ figure.image {
     background-color: rgb(250, 250, 250);
     margin: 5px 0px;
 }
-/* figure.image img { 
-width: 100%; /* unhide to make full size of layout section */
-} */ 
+
 figcaption {
     display: block;
     padding-top: 10px;
@@ -330,6 +328,11 @@ h3, .h3,
     font-weight: 600;
     font-size: 18px;
     line-height: 26px;
+    text-decoration: none;
+}
+.HLLandingControl h3 a:hover,
+.HLLandingControl h3 a:focus {
+    text-decoration: underline;
 }
 h4, .h4 {
     font-weight: 600;
@@ -338,6 +341,27 @@ h4, .h4 {
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #F4B223;
+}
+h5, .h5 {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8e8e8e;
+}
+
+/*** transitions ***/
+a,
+a:hover,
+a:focus,
+button,
+button:hover,
+button:focus,
+input,
+input:hover,
+input:focus {
+    transition: .3s;
 }
 
 /****** buttons ******/
@@ -411,7 +435,8 @@ a[oldtitle="User Name Image"],
 .member-dashboard-img a,
 .dashboard-col-3 ul li .col-sm-2 a,
 .HLEngagement .Picture a,
-td.ProfilePic > a {
+td.ProfilePic > a,
+.testimonial .HtmlContent > strong {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -454,6 +479,10 @@ a[id*="Welcome_Details_ProfileLink"] {
     width: 60px;
     height: 60px;
 }
+.testimonial .HtmlContent > strong {
+    width: 80px;
+    height: 80px;
+}
 
 .imgButton img,
 a[id*="ProfileImage"] img,
@@ -467,7 +496,8 @@ a[oldtitle="User Name Image"] img,
 .member-dashboard-img img,
 .dashboard-col-3 ul li .col-sm-2 a img,
 .HLEngagement .Picture a img,
-td.ProfilePic > a > img {
+td.ProfilePic > a > img,
+.testimonial .HtmlContent > strong > img {
     position: relative;
     max-height: 100% !important;
     width: auto;
@@ -475,6 +505,24 @@ td.ProfilePic > a > img {
 
 .member-directory .member-picture {
     text-align: center;
+}
+
+/****** margins between sections ******/
+
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+.margin-top-60 {
+    margin-top: 60px;
+}
+
+/****** backgrounds ******/
+.bg-grey {
+    background: #fbfbfb;
+}
+.bg-grey.row-full > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /************ header ************/
@@ -646,6 +694,272 @@ td.ProfilePic > a > img {
     }
 }
 
+/************ testimonials ************/
+
+.testimonials {
+    padding: 60px 0 80px 0;
+}
+@media (min-width: 992px) {
+    .testimonials {
+        display: flex;
+        align-items: center;
+    }
+    .bg-grey .testimonials.row > .col-md-4 {
+        padding-right: 35px;
+    }
+}
+.testimonials > .col-md-4 h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.testimonials > .col-md-4 h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.testimonials > .col-md-4 em a {
+    margin-top: 45px;
+}
+.testimonial {
+    padding: 0 15px;
+}
+.testimonial > a {
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 16px 0px 16px 2px;
+    padding: 50px 40px;
+    text-decoration: none;
+    color: #9a9a9a;
+    display: block;
+}
+.testimonial > a:hover,
+.testimonial > a:focus {
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+.testimonial h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.testimonial h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+/****** slider ******/
+
+.testimonial-slider .slick-list {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.testimonial-slider .slick-arrow {
+    position: absolute;
+    bottom: -50px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #8e8e8e;
+    z-index: 10;
+    background: transparent;
+    border: none;
+}
+.testimonial-slider .next-arrow {
+    right: 0;
+}
+.testimonial-slider .prev-arrow {
+    right: 40px;
+}
+
+/************ landing controls ************/
+@media (min-width: 992px) {
+    .row-7-5 > .col-md-6:first-child {
+        width: 58%;
+    }
+    .row-7-5 > .col-md-6:last-child {
+        width: 42%;
+        padding-left: 55px;
+    }
+}
+
+/****** removing extra padding ******/
+
+.ContentUserControl .HLLandingControl,
+.HLLandingControl .Content,
+.HLLandingControl ul {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/****** removing ACL labels ******/
+
+.HLLandingControl ul li .title-row .col-sm-2.col-md-2 {
+    width: 45px; /*adjust based on image width*/
+    margin-right: 20px;
+    float: left;
+    padding: 0;
+}
+.HLLandingControl ul li .title-row .col-md-10.col-sm-10,
+.HLLandingControl ul li .title-row .col-md-7.col-sm-7 {
+    float: left;
+    width: calc(100% - 65px); /* image width + image margin above */
+    padding: 0;
+}
+.HLLandingControl.SearchResults ul li .title-row .col-md-3.pull-right {
+    display: none;
+}
+.HLLandingControl.SearchResults ul li .title-row .col-md-9 {
+    width: 100%;
+}
+
+/****** buttons ******/
+.HLLandingControl div[id*="More"] .col-md-12,
+.HLLandingControl div[id*="More"].col-md-12 {
+    padding: 0;
+}
+.HLLandingControl div[id*="More"] a {
+    padding: 0 0 4px 0;
+    margin-top: 20px;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #222;
+    border-bottom: 2px solid transparent;
+}
+.HLLandingControl div[id*="More"] a:hover,
+.HLLandingControl div[id*="More"] a:focus {
+    border-bottom-color: #F6B220;
+}
+.HLLandingControl div[id*="More"] a::after {
+    margin-left: 8px;
+    color: #F6B220;
+    font-size: 10px;
+    font-family: FloridaMakes;
+    content: '\f01e';
+}
+
+/************ latest news ************/
+
+.latest-news .HLLandingControl h2,
+.upcoming-events .HLLandingControl h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.latest-news ul li {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #f3f3f3;
+    margin: 0;
+}
+
+.latest-news ul li .img-container {
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    width: 175px;
+    height: 140px;
+    margin-right: 30px;
+}
+.latest-news ul li .text-container {
+    width: calc(100% - 205px);
+}
+.latest-news .HLLandingControl ul li h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.latest-news .HLLandingControl ul li .ByLine {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #8e8e8e;
+}
+
+/************ upcoming events ************/
+
+.upcoming-events ul li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f3f5;
+    margin: 0;
+}
+.upcoming-events ul li .col-md-2 {
+    width: 80px;
+    margin-right: 20px;
+    float: left;
+}
+.upcoming-events ul li .col-md-2 .margin-bottom-medium {
+    margin-bottom: 0;
+}
+.upcoming-events ul li .col-md-10 {
+    width: calc(100% - 100px);
+    float: left;
+}
+.upcoming-events ul li .date-block {
+    width: 80px;
+    height: 80px;
+    background: #F6B220;
+    border-radius: 16px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upcoming-events ul li .date-block .calendar-day {
+    display: none;
+}
+.upcoming-events ul li .date-block .calendary-number {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #fff;
+}
+.upcoming-events ul li .date-block .calendar-month {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.upcoming-events ul li .col-md-10 .col-md-12 {
+    padding-top: 30px !important;
+}
+.upcoming-events ul li .col-md-10 h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #8e8e8e;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.upcoming-events ul li .col-md-10 p.break-word {
+    display: none;
+}
+.upcoming-events ul li .col-md-10 .timeAgoFormat {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8e8e8e;
+}
+.upcoming-events ul li .col-md-10 .timeAgoFormat::before {
+    color: #F6B220;
+    margin-right: 2px;
+    font-family: FloridaMakes;
+    content: '\f01f';
+}
+
 /************ newsletter ************/
 .newsletter-wrapper {
     background: linear-gradient(272.14deg, #06161A 30.99%, #353535 96.08%);
@@ -811,6 +1125,9 @@ td.ProfilePic > a > img {
 /************ responsive ************/
 
 @media (max-width: 991px) {
+    .testimonials > .col-md-8 {
+        margin-top: 30px;
+    }
     .newsletter {
         display: block;
     }

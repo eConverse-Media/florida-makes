@@ -15,12 +15,68 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle testimonials
+    $('.col-md-4:empty').closest('.testimonials').hide();
+
     // handle newsletter
     $('.col-md-6:empty').closest('.newsletter-wrapper').hide();
+}
+
+function handleAllContentList() {
+    // remove comma
+    $('.HLLandingControl.SearchResults ul li').each(function() {
+        var byline = $(this).find('.ByLine');
+        var byLineLink = $(byline).find('a[id*="Name"]');
+        if (byLineLink.length === 0) {
+            var trimmedByline = $(byline).text().trim().slice(2, $(byline).text().trim().length);
+            $(byline).text(trimmedByline);
+        }        
+    });
+
+    // bring in image
+    $('.latest-news .HLLandingControl ul li').each(function () {
+        handleAjaxCall(this);
+    });
+}
+
+function handleTestimonials() {
+    $('.testimonial').wrapAll('<div class="testimonial-slider slick-dotted" />');
+    $('.testimonial-slider').slick({
+        arrows: true,
+        dots: false,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fm fm-chevron-left" /></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fm fm-chevron-right" /></button>',
+        responsive: [
+            {
+                breakpoint: 650,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    $('.testimonial').each(function() {
+        var self = $(this),
+            a = $(self).find('a'),
+            href = $(a).attr('href'),
+            target = $(a).attr('target');
+
+        if (target == "_blank") {
+            $(self).wrapInner('<a href="' + href + '" target=_"blank" />');
+        } else {
+            $(self).wrapInner('<a href="' + href + '" />');
+        }
+
+        $(a).hide();
+    });
 }
 
 $(function () {
     handleTopTextLinks();
     handleHeader();
     handleHomepagePermissions();
+    handleAllContentList();
+    handleTestimonials();
 });
