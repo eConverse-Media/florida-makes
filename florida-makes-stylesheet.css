@@ -837,6 +837,19 @@ td.ProfilePic > a > img,
     transform: rotate(180deg);
     z-index: -1;
 }
+.manufacts-img::after {
+    content: '';
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
+    display: block;
+    width: 145px;
+    height: 65px;
+    background-size: auto;
+    background-position: center;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    z-index: -1;
+}
 .manufacts-img .HtmlContent {
     flex-grow: 0;
     flex-shrink: 0;
@@ -1038,10 +1051,14 @@ td.ProfilePic > a > img,
     text-transform: uppercase;
     color: #222;
     border-bottom: 2px solid transparent;
+    transition: .3s;
 }
 .HLLandingControl div[id*="More"] a:hover,
 .HLLandingControl div[id*="More"] a:focus {
-    border-bottom-color: #F6B220;
+    border-bottom: 2px solid #F6B220;
+    background: transparent;
+    transition: .3s;
+    color: #222;
 }
 .HLLandingControl div[id*="More"] a::after {
     margin-left: 8px;
@@ -1058,6 +1075,7 @@ td.ProfilePic > a > img,
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 15px;
+    padding-left: 0;
     border-bottom: 1px solid #f3f3f3;
 }
 .latest-news ul li {
@@ -1077,6 +1095,11 @@ td.ProfilePic > a > img,
 }
 .latest-news ul li .text-container {
     width: calc(100% - 205px);
+    padding-top: 35px;
+    position: relative;
+}
+.latest-news ul li .text-container .col-md-12 {
+    position: static;
 }
 .latest-news .HLLandingControl ul li h3 {
     margin-top: 0;
@@ -1088,6 +1111,33 @@ td.ProfilePic > a > img,
     line-height: 22px;
     text-transform: uppercase;
     color: #8e8e8e;
+}
+.latest-news ul li .text-container .content-tags {
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+.latest-news ul li .text-container .content-tags > .text-muted,
+.latest-news ul li .text-container .content-tags .label-search-tag .fa-user {
+    display: none;
+}
+.latest-news ul li .text-container .content-tags .label-search-tag {
+    background: transparent;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8e8e8e;
+    border: none;
+    margin: 0;
+}
+.latest-news ul li .text-container .content-tags .label-search-tag:hover,
+.latest-news ul li .text-container .content-tags .label-search-tag:focus {
+    color: #111821;
+    text-decoration: underline;
 }
 
 /************ upcoming events ************/
@@ -1343,6 +1393,13 @@ td.ProfilePic > a > img,
 
 /************ responsive ************/
 
+@media (max-width: 992px) {
+    .row-wide div[class*="section"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 @media (max-width: 991px) {
     .manufacts-img {
         margin-bottom: 30px;
@@ -1428,6 +1485,13 @@ td.ProfilePic > a > img,
     }
 }
 @media (max-width: 450px) {
+    .latest-news ul li {
+        display: block;
+    }
+    .latest-news ul li .text-container {
+        width: 100%;
+        margin-top: 20px;
+    }
     .footer-logos .HtmlContent {
         display: block;
     }
