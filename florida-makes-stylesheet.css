@@ -1046,7 +1046,7 @@ td.ProfilePic > a > img,
     content: '\f025';
 }
 .service.executive-services a::after {
-    content: '';
+    content: '\f031';
 }
 .service.supply-chain a::after {
     content: '\f026';
@@ -1061,7 +1061,7 @@ td.ProfilePic > a > img,
     content: '\f029';
 }
 .service.compliance a::after {
-    content: '';
+    content: '\f030';
 }
 .service.market-development a::after {
     content: '\f02a';
