@@ -800,6 +800,145 @@ td.ProfilePic > a > img,
     }
 }
 
+/************ our mission ************/
+
+.mission {
+    background: linear-gradient(126.74deg, #06161A -16.17%, #353535 100.38%);
+    mix-blend-mode: multiply;
+    padding: 70px 0 35px 0;
+}
+.mission > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.mission-text {
+    text-align: center;
+    width: 770px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.mission-text h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.mission-text p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+}
+.mission-tiles {
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.mission-tiles > .col-md-3 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 25%;
+    padding: 10px;
+    display: flex;
+}
+.mission-tile {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.mission-tile .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #2E3336;
+    box-shadow: 0px 2px 4px -2px rgba(24, 39, 75, 0.12), 0px 4px 4px -2px rgba(24, 39, 75, 0.08);
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+}
+.mission-tile .HtmlContent::after {
+    height: 4px;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0px 0px 4px 4px;
+}
+.mission-tile.red .HtmlContent::after {
+    background: linear-gradient(90deg, #2E3336 0%, #DE4A23 50.52%, #2E3336 100%), #DF4B24;
+}
+.mission-tile.yellow .HtmlContent::after {
+    background: linear-gradient(90deg, #2E3336 0%, #F4B734 50.52%, #2E3336 100%), #F4B223;
+}
+.mission-tile.green .HtmlContent::after {
+    background: linear-gradient(90deg, #2E3336 0%, #78B240 50.52%, #2E3336 100%), #78B240;
+}
+.mission-tile.blue .HtmlContent::after {
+    background: linear-gradient(90deg, #2E3336 0%, #048199 50.52%, #2E3336 100%), #048199;
+}
+.mission-tile .HtmlContent::before {
+    font-family: FloridaMakes;
+    font-size: 80px;
+    line-height: 1;
+    display: block;
+    font-weight: 400;
+}
+.mission-tile.red .HtmlContent::before {
+    color: #DE4A23
+}
+.mission-tile.yellow .HtmlContent::before {
+    color: #F4B734;
+}
+.mission-tile.green .HtmlContent::before {
+    color: #78B240;
+}
+.mission-tile.blue .HtmlContent::before {
+    color: #048199;
+}
+.mission-tile.investments .HtmlContent::before {
+    content: '\f02c';
+}
+.mission-tile.jobs .HtmlContent::before {
+    content: '\f02d';
+}
+.mission-tile.sales .HtmlContent::before {
+    content: '\f02e';
+}
+.mission-tile.savings .HtmlContent::before {
+    content: '\f02f';
+}
+.mission-tile h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+.mission-statistic-info {
+    text-align: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 26px;
+    color: #8e8e8e;
+    padding: 0 15px;
+}
+.mission-statistic-info p {
+    margin-bottom: 0;
+}
+
 /************ What we do ************/
 .services {
     padding: 70px 0;
@@ -1532,6 +1671,12 @@ td.ProfilePic > a > img,
 }
 
 @media (max-width: 991px) {
+    .mission-tiles {
+        flex-wrap: wrap;
+    }
+    .mission-tiles > .col-md-3 {
+        flex-basis: 50%;
+    }
     .services.row-wide > .col-md-8 {
         margin-top: 12px;
     }
@@ -1624,6 +1769,9 @@ td.ProfilePic > a > img,
     }
 }
 @media (max-width: 450px) {
+    .mission-tiles > .col-md-3 {
+        flex-basis: 100%;
+    }
     .latest-news ul li {
         display: block;
     }

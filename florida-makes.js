@@ -15,9 +15,6 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
-    // handle services
-    $('.services .col-md-4:empty').closest('.bg-grey').hide();
-
     // handle manufacts
     $('.col-md-6:empty').closest('.manufacts').hide();
 
