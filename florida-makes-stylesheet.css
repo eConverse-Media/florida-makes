@@ -800,10 +800,26 @@ td.ProfilePic > a > img,
     }
 }
 
+/************ collaborate with us ************/
+
+.collaborate {
+    padding: 60px 0;
+}
+.collaborate > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.collaborate > .col-md-12 > .row-wide {
+    display: flex;
+    align-items: center;
+}
+
 /************ our mission ************/
 
 .mission {
-    background: linear-gradient(126.74deg, #06161A -16.17%, #353535 100.38%);
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/mission-bg.png');
+    background-size: cover;
+    background-position: center;
     mix-blend-mode: multiply;
     padding: 70px 0 35px 0;
 }
@@ -1073,7 +1089,9 @@ td.ProfilePic > a > img,
 /************ manufacts ************/
 
 .manufacts {
-    background: linear-gradient(272.14deg, #06161A 30.99%, #353535 96.08%);
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/manufacts-bg.png');
+    background-size: cover;
+    background-position: center;
     mix-blend-mode: multiply;
     padding: 55px 0;
 }
@@ -1492,32 +1510,12 @@ td.ProfilePic > a > img,
 
 /************ newsletter ************/
 .newsletter-wrapper {
-    background: linear-gradient(272.14deg, #06161A 30.99%, #353535 96.08%);
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/subscribe-bg.png');
+    background-size: cover;
+    background-position: center;
     position: relative;
     mix-blend-mode: multiply;
     overflow: hidden;
-}
-.newsletter-wrapper::before {
-    content: '';
-    width: 145px;
-    height: 245px;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    background: linear-gradient(2.06deg, #292A2A 2.07%, rgba(196, 196, 196, 0) 54.61%);
-    opacity: 0.1;
-    transform: matrix(-0.78, 0.63, 0.63, 0.78, 0, 0);
-}
-.newsletter-wrapper::after {
-    content: '';
-    position: absolute;
-    width: 170px;
-    height: 140px;
-    top: -30px;
-    right: -100px;
-    background: linear-gradient(4.16deg, #29292A 8.15%, rgba(196, 196, 196, 0) 97.07%);
-    opacity: 0.1;
-    transform: rotate(-140.83deg);
 }
 .newsletter-wrapper > .col-md-12 {
     padding-left: 0;

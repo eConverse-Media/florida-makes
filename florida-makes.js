@@ -15,6 +15,9 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle mission
+    $('.mission-tiles > .col-md-3:empty').closest('.mission').hide();
+
     // handle manufacts
     $('.col-md-6:empty').closest('.manufacts').hide();
 
