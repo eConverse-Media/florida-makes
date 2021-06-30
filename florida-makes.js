@@ -15,11 +15,11 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle collaborate with us
+    $('.collaborate .row-wide > .col-md-6:empty').closest('.collaborate').hide();
+
     // handle mission
     $('.mission-tiles > .col-md-3:empty').closest('.mission').hide();
-
-    // handle manufacts
-    $('.col-md-6:empty').closest('.manufacts').hide();
 
     // handle testimonials
     $('.testimonials > .col-md-4:empty').closest('.bg-grey').hide();
@@ -42,6 +42,24 @@ function handleAllContentList() {
     // bring in image
     $('.latest-news .HLLandingControl ul li').each(function () {
         handleAjaxCall(this);
+    });
+}
+
+function handleCollaborateSection() {
+    $('.collaborate-link').each(function () {
+        var self = $(this),
+        link = $(self).find('a'),
+        href = $(link).attr('href'),
+        target = $(link).attr('target');
+
+        if (target == "_blank") {
+            $(self).find('.HtmlContent').wrapInner('<a href="' + href + '" target="_blank" />');
+        } else {
+            $(self).find('.HtmlContent').wrapInner('<a href="' + href + '" />');
+        }
+
+        $(link).wrapInner('<h5 />');
+        $(link).contents().unwrap();
     });
 }
 
@@ -88,6 +106,7 @@ $(function () {
     handleHeader();
     handleHomepagePermissions();
     handleAllContentList();
+    handleCollaborateSection();
     handleManufacts();
     handleTestimonials();
 });

@@ -313,13 +313,13 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1 {
     font-weight: 700;
     font-size: 36px;
-    line-height: 42px;
+    line-height: 1.16666667;
 }
 h2, .h2 {
     color: #000;
     font-weight: 700;
     font-size: 32px;
-    line-height: 38px;
+    line-height: 1.1875;
     letter-spacing: -0.01em;
 }
 h3, .h3,
@@ -516,7 +516,8 @@ a[oldtitle="User Name Image"],
 .dashboard-col-3 ul li .col-sm-2 a,
 .HLEngagement .Picture a,
 td.ProfilePic > a,
-.testimonial .HtmlContent > strong {
+.testimonial .HtmlContent > strong,
+.collaborate-link .HtmlContent > a > strong {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -563,6 +564,10 @@ a[id*="Welcome_Details_ProfileLink"] {
     width: 80px;
     height: 80px;
 }
+.collaborate-link .HtmlContent > a > strong {
+    height: 85px;
+    width: 85px;
+}
 
 .imgButton img,
 a[id*="ProfileImage"] img,
@@ -577,7 +582,8 @@ a[oldtitle="User Name Image"] img,
 .dashboard-col-3 ul li .col-sm-2 a img,
 .HLEngagement .Picture a img,
 td.ProfilePic > a > img,
-.testimonial .HtmlContent > strong > img {
+.testimonial .HtmlContent > strong > img,
+.collaborate-link .HtmlContent > a > strong img {
     position: relative;
     max-height: 100% !important;
     width: auto;
@@ -800,6 +806,25 @@ td.ProfilePic > a > img,
     }
 }
 
+/************ hero ************/
+
+.hero .HtmlContent {
+    background: rgba(0,0,0,0.6);
+    mix-blend-mode: normal;
+    padding: 140px 45% 150px calc(50% - 585px);
+}
+.hero h4,
+.hero h1 {
+    color: #fff;
+    margin-top: 0;
+}
+.hero h4 {
+    margin-bottom: 8px;
+}
+.hero h1 {
+    margin-bottom: 30px;
+}
+
 /************ collaborate with us ************/
 
 .collaborate {
@@ -809,9 +834,57 @@ td.ProfilePic > a > img,
     padding-left: 0;
     padding-right: 0;
 }
-.collaborate > .col-md-12 > .row-wide {
-    display: flex;
-    align-items: center;
+@media (min-width: 992px) {
+    .collaborate > .col-md-12 > .row-wide {
+        display: flex;
+        align-items: center;
+    }
+    .collaborate > .col-md-12 > .row-wide > .col-md-6:first-child {
+        padding-right: 100px;
+    }
+}
+
+.collaborate-link a {
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 16px 100px 100px 0px;
+    padding: 25px 125px 25px 25px;
+    margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 26px;
+    position: relative;
+    min-height: 85px;
+}
+.collaborate-link a:hover,
+.collaborate-link a:focus {
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+    border-color: transparent;
+}
+.collaborate-link:last-child a {
+    margin-bottom: 0;
+}
+.collaborate-link a h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #222;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+.collaborate-link a p:last-child {
+    margin-bottom: 0;
+}
+.collaborate-link .HtmlContent > a > strong {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /************ our mission ************/
@@ -1661,6 +1734,11 @@ td.ProfilePic > a > img,
 
 /************ responsive ************/
 
+@media (max-width: 1200px) {
+    .hero .HtmlContent {
+        padding-left: 15px;
+    }
+}
 @media (max-width: 992px) {
     .row-wide div[class*="section"] {
         padding-left: 15px;
@@ -1669,6 +1747,12 @@ td.ProfilePic > a > img,
 }
 
 @media (max-width: 991px) {
+    .hero .HtmlContent {
+        padding-right: 15px;
+    }
+    .collaborate > .col-md-12 > .row-wide > .col-md-6:first-child {
+        padding-bottom: 30px;
+    }
     .mission-tiles {
         flex-wrap: wrap;
     }
@@ -1762,11 +1846,19 @@ td.ProfilePic > a > img,
     }
 }
 @media (max-width: 650px) {
+    .hero .HtmlContent {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
     .service {
         flex-basis: 100%;
     }
 }
 @media (max-width: 450px) {
+    h1, .h1,
+    h2, .h2 {
+        font-size: 26px;
+    }
     .mission-tiles > .col-md-3 {
         flex-basis: 100%;
     }
