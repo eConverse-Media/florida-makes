@@ -15,6 +15,12 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle events
+    $('.events-row .row-wide > .col-md-12:empty').closest('.events-row').hide();
+
+    // handle featured program
+    $('.program-row .row-wide > .col-md-6:empty').closest('.program-row').hide();
+
     // handle collaborate with us
     $('.collaborate .row-wide > .col-md-6:empty').closest('.collaborate').hide();
 
