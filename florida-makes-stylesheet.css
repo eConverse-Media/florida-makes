@@ -1191,12 +1191,16 @@ td.ProfilePic > a > img,
 }
 @media (min-width: 992px) {
     .manufacts .row-wide,
-    .program-row .row-wide {
+    .program-row .row-wide,
+    .featured-story {
         display: flex;
         align-items: center;
     }
     .manufacts .row-wide > .col-md-6:first-child {
         padding-right: 50px;
+    }
+    .featured-story > .col-md-6:first-child {
+        padding-right: 45px;
     }
     .program-row .row-wide > .col-md-6:last-child {
         padding-left: 50px;
@@ -1207,6 +1211,7 @@ td.ProfilePic > a > img,
     height: 385px;
     display: flex;
     position: relative;
+    border-radius: 2px;
 }
 .manufacts-img::before,
 .program-img::before {
@@ -1783,6 +1788,39 @@ td.ProfilePic > a > img,
     line-height: 22px;
 }
 
+/************ featured story + latest news ************/
+
+.news-row {
+    padding: 60px 0;
+}
+.featured-story {
+    padding-bottom: 30px;
+    position: relative;
+}
+.featured-story::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.story-img img {
+    border-radius: 4px;
+}
+.featured-story h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.featured-story h3 {
+    margin-top: 8px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
 /************ footer ************/
 #MPFooterLink {
     display: none;
@@ -1928,7 +1966,8 @@ td.ProfilePic > a > img,
         margin-top: 12px;
     }
     .manufacts-img,
-    .program-text {
+    .program-text,
+    .story-img {
         margin-bottom: 30px;
     }
     .testimonials > .col-md-8 {
