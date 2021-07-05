@@ -335,6 +335,7 @@ h3, .h3,
     text-decoration: underline;
 }
 h4, .h4 {
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 23px;
@@ -485,13 +486,21 @@ input:focus {
     font-size: 14px;
     line-height: 19px;
     text-transform: uppercase;
-    color: #fff;
+    color: #222;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
 }
 .make-link em a:hover,
 .make-link em a:focus {
     border-bottom-color: #F6B220;
+    color: #222;
+}
+.manufacts .make-link em a,
+.manufacts .make-link em a:hover,
+.manufacts .make-link em a:focus,
+.program-row .make-link em a,
+.program-row .make-link em a:hover,
+.program-row .make-link em a:focus {
     color: #fff;
 }
 .make-link em a::after {
@@ -1159,7 +1168,7 @@ td.ProfilePic > a > img,
     content: '\f02b';
 }
 
-/************ manufacts ************/
+/************ manufacts and featured program ************/
 
 .manufacts {
     background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/manufacts-bg.png');
@@ -1168,37 +1177,61 @@ td.ProfilePic > a > img,
     mix-blend-mode: multiply;
     padding: 55px 0;
 }
-.manufacts > .col-md-12 {
+.program-row {
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/Apprenticeship.png');
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: multiply;
+    padding: 60px 0 50px 0;
+}
+.manufacts > .col-md-12,
+.program-row > .col-md-12 {
     padding-left: 0;
     padding-right: 0;
 }
 @media (min-width: 992px) {
-    .manufacts .row-wide {
+    .manufacts .row-wide,
+    .program-row .row-wide {
         display: flex;
         align-items: center;
     }
     .manufacts .row-wide > .col-md-6:first-child {
         padding-right: 50px;
     }
+    .program-row .row-wide > .col-md-6:last-child {
+        padding-left: 50px;
+    }
 }
-.manufacts-img {
+.manufacts-img,
+.program-img {
     height: 385px;
     display: flex;
     position: relative;
 }
-.manufacts-img::before {
+.manufacts-img::before,
+.program-img::before {
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
-    left: -10px;
     bottom: -10px;
     content: '';
     background: linear-gradient(27.31deg, rgba(246, 178, 32, 0) 77.98%, #F6B220 97.27%);
-    transform: rotate(180deg);
     z-index: -1;
 }
-.manufacts-img::after {
+.program-img::before {
+    width: 385px;
+    height: 550px;
+    right: 70px;
+    bottom: -93px;
+    transform: rotate(90deg);
+}
+.manufacts-img::before {
+    left: -10px;
+    transform: rotate(180deg);
+}
+.manufacts-img::after,
+.program-img::after {
     content: '';
     background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
     display: block;
@@ -1211,7 +1244,8 @@ td.ProfilePic > a > img,
     top: -20px;
     z-index: -1;
 }
-.manufacts-img .HtmlContent {
+.manufacts-img .HtmlContent,
+.program-img .HtmlContent {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 100%;
@@ -1219,7 +1253,8 @@ td.ProfilePic > a > img,
     background: linear-gradient(179.69deg, rgba(0, 0, 0, 0) 35.08%, rgba(11, 19, 21, 0.8) 72.12%, rgba(20, 33, 36, 0.96) 99.73%);
     display: flex;
 }
-.manufacts-img h3 {
+.manufacts-img h3,
+.program-img h3 {
     margin-top: auto;
     margin-bottom: 0;
     color: #fff;
@@ -1227,20 +1262,31 @@ td.ProfilePic > a > img,
     font-size: 28px;
     line-height: 38px;
 }
-.manufacts-img h3 strong {
+.manufacts-img h3 strong,
+.program-img h3 strong {
     color: #F4B734;
     font-weight: 700;
 }
-.manufacts h4 {
+.manufacts h4,
+.program-text h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
-.manufacts h4 + h2 {
+.manufacts h4 + h2,
+.program-text h4 + h2 {
     margin-top: 10px;
     margin-bottom: 0;
 }
-.manufacts h2 {
+.manufacts h2,
+.program-text h2 {
     color: #fff;
+}
+.program-text p {
+    color: #fff;
+    margin-top: 15px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .manufact-wrapper {
     display: flex;
@@ -1272,6 +1318,145 @@ td.ProfilePic > a > img,
 }
 .manufact.money::before {
     content: '\f023';
+}
+
+/************ upcoming events ************/
+
+.events-row {
+    background: linear-gradient(180deg, rgba(238, 238, 238, 0) 11.07%, #F9F9F9 100%);
+    padding: 60px 0 100px 0;
+}
+.events-row > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.events-row .row-wide > .col-md-12 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.events-heading {
+    position: relative;
+}
+.events-heading em {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.upcoming-events-list ul.slick-slider {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.upcoming-events-list ul li {
+    padding: 15px;
+    border: none;
+    margin: 0;
+}
+.upcoming-events-list ul li a {
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.upcoming-events-list ul li a .title-row {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.upcoming-events-list ul li a .title-row .col-md-3,
+.upcoming-events-list ul li a .title-row .col-md-9 {
+    padding: 0;
+    width: 100%;
+}
+.upcoming-events-list .HLLandingControl.HLEventList .title-row .col-md-3 {
+    background-size: cover;
+    background-position: center;
+    height: 205px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.upcoming-events-list .HLLandingControl.HLEventList ul li:nth-child(odd) .title-row .col-md-3.no-image {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/event-image-1.png');
+}
+.upcoming-events-list .HLLandingControl.HLEventList ul li:nth-child(even) .title-row .col-md-3.no-image {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/event-image-2.png');
+}
+.upcoming-events-list .HLLandingControl.HLEventList .title-row .col-md-3 img {
+    display: none;
+}
+.upcoming-events-list ul li a .title-row .col-md-9  {
+    background: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 55px 20px 0 20px !important;
+    border: 1px solid #f3f3f3;
+}
+.upcoming-events-list ul li a .title-row h3 {
+    margin-bottom: 20px;
+    height: 52px;
+    overflow: hidden;
+}
+.upcoming-events-list ul li a .title-row h4 {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    color: #8E8E8E;
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.upcoming-events-list ul li a:hover .title-row .col-md-9,
+.upcoming-events-list ul li a:focus .title-row .col-md-9 {
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+.upcoming-events-list ul li a:hover .title-row h3,
+.upcoming-events-list ul li a:focus .title-row h3 {
+    text-decoration: underline;
+}
+.upcoming-events-list ul li a .timeAgoFormat {
+    padding: 20px 0 25px 0;
+    border-top: 1px solid #f3f3f3;
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 20px;
+}
+.upcoming-events-list ul li a .timeAgoFormat::before {
+    font-family: FloridaMakes;
+    color: #F6B220;
+    margin-right: 2px;
+    content: '\f01f';
+}
+
+/****** slider arrows ******/
+.upcoming-events-list .slick-arrow,
+.testimonial-slider .slick-arrow {
+    position: absolute;
+    bottom: -30px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #8e8e8e;
+    z-index: 10;
+    background: transparent;
+    border: none;
+}
+.testimonial-slider .slick-arrow {
+    bottom: -50px;
+}
+.upcoming-events-list .slick-arrow:hover,
+.upcoming-events-list .slick-arrow:focus,
+.testimonial-slider .slick-arrow:hover,
+.testimonial-slider .slick-arrow:focus {
+    color: #111821;
+}
+.upcoming-events-list .next-arrow {
+    right: 15px;
+}
+.testimonial-slider .next-arrow {
+    right: 0;
+}
+.upcoming-events-list .prev-arrow {
+    right: 55px;
+}
+.testimonial-slider .prev-arrow {
+    right: 40px;
 }
 
 /************ testimonials ************/
@@ -1331,26 +1516,6 @@ td.ProfilePic > a > img,
 .testimonial-slider .slick-list {
     margin-left: -15px;
     margin-right: -15px;
-}
-.testimonial-slider .slick-arrow {
-    position: absolute;
-    bottom: -50px;
-    font-size: 16px;
-    line-height: 18px;
-    color: #8e8e8e;
-    z-index: 10;
-    background: transparent;
-    border: none;
-}
-.testimonial-slider .slick-arrow:hover,
-.testimonial-slider .slick-arrow:focus {
-    color: #111821;
-}
-.testimonial-slider .next-arrow {
-    right: 0;
-}
-.testimonial-slider .prev-arrow {
-    right: 40px;
 }
 
 /************ landing controls ************/
@@ -1762,7 +1927,8 @@ td.ProfilePic > a > img,
     .services.row-wide > .col-md-8 {
         margin-top: 12px;
     }
-    .manufacts-img {
+    .manufacts-img,
+    .program-text {
         margin-bottom: 30px;
     }
     .testimonials > .col-md-8 {
@@ -1801,6 +1967,10 @@ td.ProfilePic > a > img,
     }
     .manufact:not(:last-child) {
         margin-bottom: 20px;
+    }
+    .events-row {
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .footer-top-row.row-wide > .col-md-3 {
         width: 100%;
@@ -1852,6 +2022,11 @@ td.ProfilePic > a > img,
     }
     .service {
         flex-basis: 100%;
+    }
+    .events-heading em {
+        position: relative;
+        bottom: auto;
+        right: auto;
     }
 }
 @media (max-width: 450px) {

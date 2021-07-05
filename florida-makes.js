@@ -101,6 +101,58 @@ function handleTestimonials() {
     });
 }
 
+function handleEvents() {
+    $('.upcoming-events-list ul').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fm fm-chevron-left" /></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fm fm-chevron-right" /></button>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 651,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.upcoming-events-list ul li').each(function () {
+
+        // handle link
+        var self = $(this),
+            h3 = $(self).find('h3'),
+            link = $(h3).find('a').attr('href'),
+            target = $(h3).find('a').attr('target');
+
+        if (target == "_blank") {
+            $(self).wrapInner('<a href="' + link + '" target="_blank" />');
+        } else {
+            $(self).wrapInner('<a href="' + link + '" />');
+        }
+
+        $(h3).find('a').contents().unwrap();
+
+        // handle image
+        var headingContainer = $(h3).parent();
+
+        if ($(headingContainer).hasClass('col-md-9')) {
+            handleBgImage($(self).find('.title-row > .col-md-3'), $(self).find('.title-row > .col-md-3'));
+        } else {
+            $(headingContainer).addClass('col-md-9').removeClass('col-md-12');
+            $(self).find('.title-row').append('<div class="col-md-3 no-image" />');
+        }
+    });
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
@@ -109,4 +161,5 @@ $(function () {
     handleCollaborateSection();
     handleManufacts();
     handleTestimonials();
+    handleEvents();
 });
