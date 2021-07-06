@@ -159,6 +159,31 @@ function handleEvents() {
     });
 }
 
+function handleIndustryNews() {
+    $('.industry-news .HLLandingControl ul').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fm fm-chevron-left" /></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fm fm-chevron-right" /></button>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 651,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
@@ -168,4 +193,5 @@ $(function () {
     handleManufacts();
     handleTestimonials();
     handleEvents();
+    handleIndustryNews();
 });

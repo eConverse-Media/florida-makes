@@ -1432,7 +1432,8 @@ td.ProfilePic > a > img,
 
 /****** slider arrows ******/
 .upcoming-events-list .slick-arrow,
-.testimonial-slider .slick-arrow {
+.testimonial-slider .slick-arrow,
+.industry-news .slick-arrow {
     position: absolute;
     bottom: -30px;
     font-size: 16px;
@@ -1445,19 +1446,26 @@ td.ProfilePic > a > img,
 .testimonial-slider .slick-arrow {
     bottom: -50px;
 }
+.industry-news .slick-arrow {
+    bottom: 0;
+}
 .upcoming-events-list .slick-arrow:hover,
 .upcoming-events-list .slick-arrow:focus,
 .testimonial-slider .slick-arrow:hover,
-.testimonial-slider .slick-arrow:focus {
+.testimonial-slider .slick-arrow:focus,
+.industry-news .slick-arrow:hover,
+.industry-news .slick-arrow:focus {
     color: #111821;
 }
-.upcoming-events-list .next-arrow {
+.upcoming-events-list .next-arrow,
+.industry-news .next-arrow {
     right: 15px;
 }
 .testimonial-slider .next-arrow {
     right: 0;
 }
-.upcoming-events-list .prev-arrow {
+.upcoming-events-list .prev-arrow,
+.industry-news .prev-arrow {
     right: 55px;
 }
 .testimonial-slider .prev-arrow {
@@ -1819,6 +1827,25 @@ td.ProfilePic > a > img,
     font-size: 28px;
     line-height: 38px;
     font-weight: 700;
+}
+
+/****** industry news slider ******/
+.industry-news ul {
+    margin-top: 15px;
+}
+.industry-news ul li {
+    padding: 15px;
+    border-bottom: 0;
+    margin: 0;
+}
+.industry-news ul li h3 {
+    margin-bottom: 10px;
+}
+.industry-news ul li .ByLine {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8e8e8e;
+    text-transform: uppercase;
 }
 
 /************ footer ************/
