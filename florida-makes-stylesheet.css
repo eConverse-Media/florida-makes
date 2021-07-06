@@ -521,7 +521,7 @@ a[id*="Welcome_Details_ProfileLink"],
 .list-group-item-image,
 a[title="User Name Image"],
 a[oldtitle="User Name Image"],
-.member-dashboard-img a,
+.member-dashboard-img a[id*="ImageControl_lnkDisplay"],
 .dashboard-col-3 ul li .col-sm-2 a,
 .HLEngagement .Picture a,
 td.ProfilePic > a,
@@ -560,6 +560,10 @@ td.ProfilePic > a,
     width: 140px;
     height: 140px;
     background: #f9f9f9;
+}
+.member-dashboard .member-dashboard-img a[id*="ImageControl_lnkDisplay"] {
+    width: 100px;
+    height: 100px;
 }
 .HLEngagement .Picture a {
     width: 50px;
@@ -813,6 +817,291 @@ td.ProfilePic > a > img,
         margin-left: -15px;
         margin-right: -15px;
     }
+}
+
+/************ member dashboard ************/
+.member-dashboard {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/dashboard-img.png');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    mix-blend-mode: multiply;
+}
+.member-dashboard > .col-md-12 {
+    padding: 0;
+}
+
+@media (min-width: 1200px) {
+    .member-dashboard .row-wide > .col-md-4:first-child {
+        width: calc(100% - 765px);
+        padding-right: 50px;
+    }
+    .member-dashboard .row-wide > .col-md-4:nth-child(2) {
+        width: 310px;
+    }
+    .member-dashboard .row-wide > .col-md-4:last-child {
+        width: 455px;
+    }
+}
+@media (min-width: 992px) {
+    .member-dashboard .row-wide {
+        display: flex;
+    }
+    .member-dashboard .row-wide > .col-md-4:last-child {
+        padding-left: 0;
+        display: flex;
+    }
+}
+
+/* left column */
+
+.member-dashboard .user-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.member-dashboard-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    position: relative;
+}
+.member-dashboard-img .row {
+    margin: 0;
+}
+.member-dashboard-img .col-md-12 {
+    padding: 0;
+}
+.member-dashboard-img a[id*="ImageControl_lnkDisplay"] {
+    filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.05)), drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.05));
+}
+.member-dashboard-img .row.margin-top-small {
+    display: none;
+}
+.member-dashboard-img .email-content a {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background: #DF4B24;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+.member-dashboard .greeting {
+    width: calc(100% - 100px);
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+}
+.member-dashboard .greeting span {
+    display: block;
+}
+.member-dashboard .greeting a {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+}
+.progress-text {
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    display: block;
+}
+.progress {
+    margin-bottom: 30px;
+    height: 22px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    border: 2px solid #fff;
+}
+.progress-bar-info {
+    background: linear-gradient(321.69deg, #BD3813 0%, #EA512B 100%);
+    border-radius: 2px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+}
+.dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dashboard-link {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+.dashboard-link a {
+    margin-bottom: 12px;
+    display: inline-block;
+    color: #fff;
+    opacity: 0.8;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+}
+.dashboard-link a:hover,
+.dashboard-link a:focus {
+    opacity: 1;
+}
+.dashboard-link a::before {
+    width: 18px;
+    margin-right: 15px;
+    font-size: 18px;
+    line-height: 1;
+    font-family: FloridaMakes;
+}
+.dashboard-link.user a::before {
+    content: '\f032';
+}
+.dashboard-link.contacts a::before {
+    content: '\f036';
+}
+.dashboard-link.gear a::before {
+    content: '\f033';
+}
+.dashboard-link.contributions a::before {
+    content: '\f037';
+}
+.dashboard-link.networks a::before {
+    content: '\f035';
+}
+.dashboard-link.communities a::before {
+    content: '\f034';
+}
+
+/* middle column */
+
+.member-dashboard .add-community {
+    position: relative;
+}
+.member-dashboard .add-community a {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.member-dashboard .add-community a::before {
+    font-family: FloridaMakes;
+    color: #F6B220;
+    font-size: 14px;
+    line-height: 1;
+    content: '\f038';
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) {
+    background: #242A2D;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
+    border-radius: 16px 0 0 2px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 20px 10px;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) h4 {
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list h3 {
+    margin-top: 10px;
+    margin-bottom: -26px;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list h3 a {
+    padding: 10px;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    display: block;
+    border-radius: 2px;
+    opacity: 0.8;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list h3 a:hover,
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list h3 a:focus {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), #242A2D;
+    text-decoration: none;
+    opacity: 1;
+}
+.member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list h3 a::after {
+    float: right;
+    font-family: FloridaMakes;
+    content: '\f034';
+}
+
+/* right-hand column */
+
+.dashboard-img {
+    border-radius: 0px 2px 16px 0px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12), 0px 10px 32px -4px rgba(24, 39, 75, 0.1);
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.member-dashboard .row-wide > .col-md-4:last-child::before {
+    content: '';
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
+    display: block;
+    width: 145px;
+    height: 65px;
+    background-size: auto;
+    background-position: center;
+    position: absolute;
+    right: -5px;
+    top: -20px;
+    z-index: -1;
+}
+.dashboard-img .HtmlContent {
+    background: linear-gradient(179.69deg, rgba(0, 0, 0, 0) 35.08%, rgba(11, 19, 21, 0.8) 72.12%, rgba(20, 33, 36, 0.96) 99.73%);
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 22px;
+}
+.dashboard-img .HtmlContent h3 {
+    margin-top: auto;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.dashboard-img .HtmlContent p:last-child {
+    margin-bottom: 0;
 }
 
 /************ hero ************/
@@ -1651,16 +1940,23 @@ td.ProfilePic > a > img,
     text-transform: uppercase;
     color: #8e8e8e;
 }
-.latest-news ul li .text-container .content-tags {
+.latest-news ul li .text-container .content-tags,
+.industry-news ul li .content-tags {
     position: absolute;
     top: 0;
     left: -3px;
 }
+.industry-news ul li .content-tags {
+    top: -30px;
+}
 .latest-news ul li .text-container .content-tags > .text-muted,
-.latest-news ul li .text-container .content-tags .label-search-tag .fa-user {
+.latest-news ul li .text-container .content-tags .label-search-tag .fa-user,
+.industry-news ul li .content-tags > .text-muted,
+.industry-news ul li .content-tags .label-search-tag .fa-user {
     display: none;
 }
-.latest-news ul li .text-container .content-tags .label-search-tag {
+.latest-news ul li .text-container .content-tags .label-search-tag,
+.industry-news ul li .content-tags .label-search-tag {
     background: transparent;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
@@ -1674,7 +1970,9 @@ td.ProfilePic > a > img,
     margin: 0;
 }
 .latest-news ul li .text-container .content-tags .label-search-tag:hover,
-.latest-news ul li .text-container .content-tags .label-search-tag:focus {
+.latest-news ul li .text-container .content-tags .label-search-tag:focus,
+.industry-news ul li .content-tags .label-search-tag:hover,
+.industry-news ul li .content-tags .label-search-tag:focus {
     color: #111821;
     text-decoration: underline;
 }
@@ -1834,7 +2132,7 @@ td.ProfilePic > a > img,
     margin-top: 15px;
 }
 .industry-news ul li {
-    padding: 15px;
+    padding: 35px 15px 15px 15px;
     border-bottom: 0;
     margin: 0;
 }
@@ -1977,6 +2275,10 @@ td.ProfilePic > a > img,
 }
 
 @media (max-width: 991px) {
+    .member-dashboard .row-wide > .col-md-4:nth-child(2) {
+        width: calc(100% - 30px);
+        margin: 20px auto;
+    }
     .hero .HtmlContent {
         padding-right: 15px;
     }
@@ -2112,5 +2414,10 @@ td.ProfilePic > a > img,
     }
     .footer-logos .HtmlContent {
         display: block;
+    }
+}
+@media (max-width: 375px) {
+    .dashboard-link {
+        flex-basis: 100%;
     }
 }
