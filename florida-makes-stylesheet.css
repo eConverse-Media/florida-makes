@@ -881,19 +881,25 @@ td.ProfilePic > a > img,
 .member-dashboard-img .email-content a {
     position: absolute;
     top: 0;
-    right: 8px;
+    right: 0;
     color: #fff;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 20px;
-    height: 20px;
-    width: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 34px;
+    height: 34px;
+    width: 34px;
     text-align: center;
     border-radius: 50%;
-    background: #DF4B24;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     text-decoration: none;
+    background: linear-gradient(321.69deg, #BD3813 0%, #EA512B 100%);
+    transition: none;
+}
+.member-dashboard-img .email-content a:hover,
+.member-dashboard-img .email-content a:focus {
+    background: #DF4B24;
+    transition: none;
 }
 .member-dashboard .greeting {
     width: calc(100% - 100px);
@@ -996,10 +1002,16 @@ td.ProfilePic > a > img,
 }
 .member-dashboard .add-community a::before {
     font-family: FloridaMakes;
-    color: #F6B220;
     font-size: 14px;
     line-height: 1;
     content: '\f038';
+    color: #8e8e8e;
+    transition: .3s;
+}
+.member-dashboard .add-community a:hover::before,
+.member-dashboard .add-community a:focus::before {
+    color: #F6B220;
+    transition: .3s;
 }
 .member-dashboard .row-wide > .col-md-4:nth-child(2) {
     background: #242A2D;
@@ -1705,17 +1717,22 @@ td.ProfilePic > a > img,
 .upcoming-events-list ul li a:focus .title-row h3 {
     text-decoration: underline;
 }
-.upcoming-events-list ul li a .timeAgoFormat {
+.upcoming-events-list ul li a .time-and-date {
     padding: 20px 0 25px 0;
     border-top: 1px solid #f3f3f3;
     color: #8e8e8e;
     font-size: 14px;
     line-height: 20px;
+    display: flex;
+    justify-content: space-between;
 }
-.upcoming-events-list ul li a .timeAgoFormat::before {
+.upcoming-events-list ul li a .timeAgoFormat::before,
+.upcoming-events-list ul li a div[id*="LocationPanel"]::before {
     font-family: FloridaMakes;
     color: #F6B220;
     margin-right: 2px;
+}
+.upcoming-events-list ul li a .timeAgoFormat::before {
     content: '\f01f';
 }
 
@@ -2258,6 +2275,62 @@ td.ProfilePic > a > img,
 .footer-bottom-row a:hover,
 .footer-bottom-row a:focus {
     text-decoration: none;
+}
+
+/************ interior pages ************/
+
+.page-heading {
+    position: relative;
+    margin-bottom: 50px;
+}
+.page-heading::after {
+    content: '';
+    background: linear-gradient(242.26deg, #F6B220 16.31%, rgba(246, 178, 32, 0) 33.24%);
+    mix-blend-mode: normal;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    width: 50%;
+    height: 100%;
+}
+
+#PageTitleH1 {
+    width: 50%;
+    margin: 0 !important;
+    padding: 50px 50px 50px calc(50% - 600px);
+    background: linear-gradient(0deg, #242A2D, #242A2D);
+    mix-blend-mode: normal;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    position: relative;
+}
+#PageTitleH1::before {
+    content: '';
+    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
+    display: block;
+    width: 125px;
+    height: 32px;
+    background-size: auto;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 55px;
+    z-index: -1;
+}
+#BreadCrumb {
+    margin-top: 8px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+}
+.breadcrumb li:last-child {
+    font-weight: 700;
+    color: #F6B220;
 }
 
 /************ responsive ************/

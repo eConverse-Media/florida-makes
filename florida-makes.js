@@ -15,6 +15,9 @@ function handleHeader() {
 
 function handleHomepagePermissions() {
 
+    // handle dashboard
+    $('.member-dashboard .col-md-4:empty').closest('.member-dashboard').hide();
+
     // handle events
     $('.events-row .row-wide > .col-md-12:empty').closest('.events-row').hide();
 
@@ -156,6 +159,13 @@ function handleEvents() {
             $(headingContainer).addClass('col-md-9').removeClass('col-md-12');
             $(self).find('.title-row').append('<div class="col-md-3 no-image" />');
         }
+
+        // handle date and location
+        var timeAgo = $(self).find('.timeAgoFormat'),
+            location = $(self).find('div[id*="LocationPanel"]');
+
+        $(timeAgo).wrap('<div class="time-and-date" />');
+        $(location).insertAfter(timeAgo);
     });
 }
 
@@ -184,6 +194,15 @@ function handleIndustryNews() {
     });
 }
 
+function handleInteriorPageTitles() {
+    var headingImage = !!($('.header-bg').html()) ? $('.header-bg') : $('.default-header-bg');
+
+    $('#PageTitleH1').wrap('<div class="page-heading" />');
+
+    handleBgImage($(headingImage), $('.page-heading'));
+    $('#BreadCrumb').appendTo('#PageTitleH1');
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
@@ -194,4 +213,5 @@ $(function () {
     handleTestimonials();
     handleEvents();
     handleIndustryNews();
+    handleInteriorPageTitles();
 });
