@@ -785,6 +785,7 @@ td.ProfilePic > a > img,
     color: #fff;
     opacity: 0.9;
     padding: 20px 15px;
+    background: transparent;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
@@ -2289,12 +2290,18 @@ td.ProfilePic > a > img,
     background-repeat: no-repeat;
     background-position: right center;
 }
-.page-heading::after {
+.page-heading::before {
     content: '';
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/yellow_highlight.png');
     mix-blend-mode: normal;
     width: 50%;
     height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    z-index: 0;
+    background-size: auto 100%;
+    background-position: right bottom;
 }
 
 #PageTitleH1 {
@@ -2304,7 +2311,7 @@ td.ProfilePic > a > img,
     background: linear-gradient(0deg, #242A2D, #242A2D);
     mix-blend-mode: normal;
     color: #fff;
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0% 100%);
     position: relative;
 }
 #PageTitleH1::before {
@@ -2316,7 +2323,7 @@ td.ProfilePic > a > img,
     background-size: auto;
     background-position: center;
     position: absolute;
-    left: 0;
+    left: -15px;
     top: 55px;
     z-index: -1;
 }
@@ -2337,6 +2344,10 @@ td.ProfilePic > a > img,
     font-weight: 700;
     color: #F6B220;
 }
+.breadcrumb>li+li:before {
+    color: #fff;
+    content: '\007c';
+}
 
 /****** services page ******/
 .services-tile a {
@@ -2344,6 +2355,8 @@ td.ProfilePic > a > img,
     margin-bottom: 45px;
     background: #fff;
     border-radius: 4px;
+    text-decoration: none;
+    color: #8e8e8e;
 }
 .services-tile .img-container {
     height: 185px;
@@ -2366,6 +2379,132 @@ td.ProfilePic > a > img,
 .services-tile .text-container img {
     display: none;
 }
+.services-tile .text-container {
+    background: #fff;
+    padding: 25px 20px 15px 20px;
+    border: 1px solid #F3F3F3;
+    border-radius: 0px 0px 4px 4px;
+    position: relative;
+    transition: .3s;
+}
+.services-tile a:hover .text-container,
+.services-tile a:focus .text-container {
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+.services-tile h3 {
+    margin-top: 0;
+}
+
+/*** icons ***/
+.services-tile a .text-container::before {
+    font-family: FloridaMakes;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    line-height: 44px;
+    text-align: center;
+    font-size: 28px;
+    position: absolute;
+    top: -35px;
+    left: 20px;
+    transition: .3s;
+}
+/* colors */
+.services-tile.red a .text-container::before {
+    color: #DF4B24;
+    background: #FCEDEA;
+}
+.services-tile.red a:hover .text-container::before,
+.services-tile.red a:focus .text-container::before {
+    background: #df4b24;
+    color: #fff;
+}
+.services-tile.yellow a .text-container::before {
+    color: #F6B220;
+    background: #FFF8E9;
+}
+.services-tile.yellow a:hover .text-container::before,
+.services-tile.yellow a:focus .text-container::before {
+    background: #F6B220;
+    color: #fff;
+}
+.services-tile.green a .text-container::before {
+    color: #78B240;
+    background: #F2F8EC;
+}
+.services-tile.green a:hover .text-container::before,
+.services-tile.green a:focus .text-container::before {
+    background: #78B240;
+    color: #fff;
+}
+.services-tile.blue a .text-container::before {
+    color: #048199;
+    background: #E2EFF1;
+}
+.services-tile.blue a:hover .text-container::before,
+.services-tile.blue a:focus .text-container::before {
+    background: #048199;
+    color: #fff;
+}
+.services-tile.grey a .text-container::before {
+    color: #8E8E8E;
+    background: #F0F0F0;
+}
+.services-tile.grey a:hover .text-container::before,
+.services-tile.grey a:focus .text-container::before {
+    background: #8E8E8E;
+    color: #fff;
+}
+/* icons */
+.services-tile.assessments a .text-container::before {
+    content: '\f024';
+}
+.services-tile.executive-services a .text-container::before {
+    content: '\f031';
+}
+.services-tile.innovation a .text-container::before {
+    content: '\f027';
+}
+.services-tile.cyber a .text-container::before {
+    content: '\f029';
+}
+.services-tile.market a .text-container::before {
+    content: '\f02a';
+}
+.services-tile.continuous-improvement a .text-container::before {
+    content: '\f025';
+}
+.services-tile.supply-chain a .text-container::before {
+    content: '\f026';
+}
+.services-tile.training a .text-container::before {
+    content: '\f028';
+}
+.services-tile.compliance a .text-container::before {
+    content: '\f030';
+}
+.services-tile.disaster a .text-container::before {
+    content: '\f02b';
+}
+
+/*** testimonials ***/
+.testimonial-wrapper {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/services_images/Testimonials.png');
+    background-size: cover;
+    background-position: center;
+    margin-top: 15px;
+}
+.testimonial-wrapper > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.testimonial-wrapper .text-block h2 {
+    color: #fff;
+}
+.testimonial-wrapper .testimonial-slider .slick-arrow {
+    color: #fff;
+}
 
 /************ responsive ************/
 
@@ -2375,7 +2514,8 @@ td.ProfilePic > a > img,
     }
 }
 @media (max-width: 992px) {
-    .row-wide div[class*="section"] {
+    .row-wide div[class*="section"],
+    .interior .row-wide div[class*="section"] {
         padding-left: 15px;
         padding-right: 15px;
     }
