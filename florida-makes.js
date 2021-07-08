@@ -1,3 +1,17 @@
+function handleLink(self) {
+    var a = $(self).find('a'),
+        href = $(a).attr('href'),
+        target = $(a).attr('target');
+
+    if (target == "_blank") {
+        $(self).wrapInner('<a href="' + href + '" target=_"blank" />');
+    } else {
+        $(self).wrapInner('<a href="' + href + '" />');
+    }
+
+    $(a).hide();
+}
+
 function handleTopTextLinks() {
     var container = $('#MPheader > div.row:first-child > .col-md-12'),
         link = $('#MPAuxNav ul.level1 li:first-child a');
@@ -95,18 +109,9 @@ function handleTestimonials() {
         ]
     });
     $('.testimonial').each(function() {
-        var self = $(this),
-            a = $(self).find('a'),
-            href = $(a).attr('href'),
-            target = $(a).attr('target');
+        var self = $(this);
 
-        if (target == "_blank") {
-            $(self).wrapInner('<a href="' + href + '" target=_"blank" />');
-        } else {
-            $(self).wrapInner('<a href="' + href + '" />');
-        }
-
-        $(a).hide();
+        handleLink(self);
     });
 }
 
@@ -203,6 +208,18 @@ function handleInteriorPageTitles() {
     $('#BreadCrumb').appendTo('#PageTitleH1');
 }
 
+function handleServicesTiles() {
+    $('.services-tile').each(function () {
+        var self = $(this);
+
+        handleLink(self);
+
+        $(self).find('.HtmlContent').wrapInner('<div class="text-container" />');
+        $(self).find('.HtmlContent').prepend('<div class="img-container" />');
+        handleBgImage($(self), $(self).find('.img-container'));
+    });
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
@@ -214,4 +231,5 @@ $(function () {
     handleEvents();
     handleIndustryNews();
     handleInteriorPageTitles();
+    handleServicesTiles();
 });

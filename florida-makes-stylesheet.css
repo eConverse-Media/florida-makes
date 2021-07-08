@@ -608,6 +608,9 @@ td.ProfilePic > a > img,
 
 /****** margins between sections ******/
 
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
 .margin-bottom-50 {
     margin-bottom: 50px;
 }
@@ -2282,12 +2285,14 @@ td.ProfilePic > a > img,
 .page-heading {
     position: relative;
     margin-bottom: 50px;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 .page-heading::after {
     content: '';
-    background: linear-gradient(242.26deg, #F6B220 16.31%, rgba(246, 178, 32, 0) 33.24%);
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/yellow_highlight.png');
     mix-blend-mode: normal;
-    transform: matrix(1, 0, 0, -1, 0, 0);
     width: 50%;
     height: 100%;
 }
@@ -2331,6 +2336,35 @@ td.ProfilePic > a > img,
 .breadcrumb li:last-child {
     font-weight: 700;
     color: #F6B220;
+}
+
+/****** services page ******/
+.services-tile a {
+    display: block;
+    margin-bottom: 45px;
+    background: #fff;
+    border-radius: 4px;
+}
+.services-tile .img-container {
+    height: 185px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.services-tile .img-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 152.69%);
+}
+.services-tile .text-container img {
+    display: none;
 }
 
 /************ responsive ************/
