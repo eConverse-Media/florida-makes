@@ -200,12 +200,19 @@ function handleIndustryNews() {
 }
 
 function handleInteriorPageTitles() {
-    var headingImage = !!($('.header-bg').html()) ? $('.header-bg') : $('.default-header-bg');
 
-    $('#PageTitleH1').wrap('<div class="page-heading" />');
+    if ($('#MainCopy_ContentWrapper').hasClass('hero-h1')) {
+        $('#MPOuter').addClass('hero-h1');
+        $('#MainCopy_ContentWrapper').removeClass('hero-h1');
+    } else {
+        var headingImage = !!($('.header-bg').html()) ? $('.header-bg') : $('.default-header-bg');
+    
+        $('#PageTitleH1').wrap('<div class="page-heading" />');
+    
+        handleBgImage($(headingImage), $('.page-heading'));
+        $('#BreadCrumb').appendTo('#PageTitleH1');
+    }
 
-    handleBgImage($(headingImage), $('.page-heading'));
-    $('#BreadCrumb').appendTo('#PageTitleH1');
 }
 
 function handleServicesTiles() {

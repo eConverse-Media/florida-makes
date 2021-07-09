@@ -1125,7 +1125,11 @@ td.ProfilePic > a > img,
 .hero .HtmlContent {
     background: rgba(0,0,0,0.6);
     mix-blend-mode: normal;
-    padding: 140px 45% 150px calc(50% - 585px);
+    padding: 140px calc(50% - 150px) 150px calc(50% - 585px);
+}
+.hero-h1 .hero .HtmlContent {
+    padding-top: 125px;
+    padding-bottom: 125px;
 }
 .hero h4,
 .hero h1 {
@@ -1136,7 +1140,15 @@ td.ProfilePic > a > img,
     margin-bottom: 8px;
 }
 .hero h1 {
-    margin-bottom: 30px;
+    margin-bottom: 0;
+}
+.hero p {
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+.hero em a {
+    margin-top: 30px;
 }
 
 /************ collaborate with us ************/
@@ -2348,6 +2360,22 @@ td.ProfilePic > a > img,
     color: #fff;
     content: '\007c';
 }
+.breadcrumb li a {
+    color: #fff;
+    text-decoration: none;
+}
+.breadcrumb li a:hover,
+.breadcrumb li a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/****** hero h1 ******/
+
+.hero-h1 #PageTitleH1,
+.hero-h1 #BreadCrumb {
+    display: none;
+}
 
 /****** services page ******/
 .services-tile a {
@@ -2506,6 +2534,49 @@ td.ProfilePic > a > img,
     color: #fff;
 }
 
+/****** Who We Are page ******/
+
+.team-tile {
+    background: #fff;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+}
+.team-tile .HtmlContent > strong:first-child {
+    border-radius: 50%;
+    display: flex;
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.team-tile .HtmlContent > strong:first-child img {
+    width: 100%;
+    height: auto;
+}
+.team-tile h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.team-tile h5 {
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 10px;
+}
+.team-tile a {
+    font-size: 0;
+    line-height: 0;
+    margin: 10px;
+}
+.team-tile a i {
+    color: #242A2D;
+    font-size: 16px;
+    line-height: 18px;
+}
+
 /************ responsive ************/
 
 @media (max-width: 1200px) {
@@ -2631,7 +2702,8 @@ td.ProfilePic > a > img,
     }
 }
 @media (max-width: 650px) {
-    .hero .HtmlContent {
+    .hero .HtmlContent,
+    .hero-h1 .hero .HtmlContent {
         padding-top: 50px;
         padding-bottom: 50px;
     }
