@@ -200,9 +200,29 @@ table tr td {
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.tile-grow div[class*="section"] > div {
-    height: 100%;
-    margin: 0;
+.tile-grow div[class*="section"] {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+}
+.tile-grow div[class*="section"] > div,
+.tile-grow div[class*="section"] .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.tile-grow div[class*="section"] .HtmlContent em {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(100% + 30px);
+    display: flex;
+}
+.tile-grow div[class*="section"] .HtmlContent em a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
 
 /*** fix non-responsive images ***/
@@ -617,6 +637,9 @@ td.ProfilePic > a > img,
 .margin-top-60 {
     margin-top: 60px;
 }
+.margin-top-30 {
+    margin-top: 30px;
+}
 
 /****** backgrounds ******/
 .bg-grey {
@@ -817,10 +840,38 @@ td.ProfilePic > a > img,
     .navbar-collapse {
         padding: 0;
     }
+}
+@media (min-width: 1230px) {
     .navbar-default {
         margin-left: -15px;
         margin-right: -15px;
     }
+}
+
+/* dropdowns */
+.navbar-nav>li>.dropdown-menu {
+	background: #FFFFFF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05), 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 2px 2px;
+    border: none;
+    border-bottom: 2px solid #F6B220;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.navbar-nav .dropdown-menu>li>a {
+    color: #222;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 12px 15px;
+}
+.navbar-nav .dropdown-menu>.active>a,
+.navbar-nav .dropdown-menu>.active>a:hover,
+.navbar-nav .dropdown-menu>.active>a:focus,
+.navbar-nav .dropdown-menu>li>a:hover,
+.navbar-nav .dropdown-menu>li>a:focus {
+	background: #F6B220;
+	color: #fff;
 }
 
 /************ member dashboard ************/
@@ -2186,6 +2237,7 @@ td.ProfilePic > a > img,
 #MPOuterFooter {
     background: linear-gradient(0deg, #FBFBFB, #FBFBFB), #FBFBFB;
     padding: 50px 0 0 0;
+    border-top: 2px solid #f3f3f3;
 }
 #MPOuterMost.full #FOOTER {
     max-width: 100%;
@@ -2295,38 +2347,24 @@ td.ProfilePic > a > img,
 
 /************ interior pages ************/
 
+.negative-margin.row-wide {
+    max-width: 1230px;
+}
+.interior #MainCopy_ContentWrapper {
+    background: #fbfbfb;
+    padding: 0 0 60px 0;
+}
+.page-heading ~ #MainCopy_ContentWrapper {
+    padding-top: 60px;
+}
+
 .page-heading {
     position: relative;
-    margin-bottom: 50px;
     background-size: 60% auto;
     background-repeat: no-repeat;
     background-position: right center;
 }
 .page-heading::before {
-    content: '';
-    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/yellow_highlight.png');
-    mix-blend-mode: normal;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    z-index: 0;
-    background-size: auto 100%;
-    background-position: right bottom;
-}
-
-#PageTitleH1 {
-    width: 50%;
-    margin: 0 !important;
-    padding: 50px 50px 50px calc(50% - 600px);
-    background: linear-gradient(0deg, #242A2D, #242A2D);
-    mix-blend-mode: normal;
-    color: #fff;
-    clip-path: polygon(0 0, 100% 0, 82% 100%, 0% 100%);
-    position: relative;
-}
-#PageTitleH1::before {
     content: '';
     background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
     display: block;
@@ -2337,7 +2375,44 @@ td.ProfilePic > a > img,
     position: absolute;
     left: -15px;
     top: 55px;
-    z-index: -1;
+    z-index: 1;
+}
+
+#PageTitleH1 {
+    width: calc(50% - 120px);
+    margin: 0 !important;
+    padding: 50px 50px 50px calc(50% - 600px);
+    background: #242A2D;
+    mix-blend-mode: normal;
+    color: #fff;
+    position: relative;
+}
+#PageTitleH1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -120px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 188px 120px 0 0;
+    border-color: #242a2d transparent transparent transparent;
+
+}
+#PageTitleH1::before {
+    content: '';
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/yellow_highlight.png');
+    mix-blend-mode: normal;
+    width: 122%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    z-index: 0;
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 #BreadCrumb {
     margin-top: 8px;
@@ -2375,6 +2450,58 @@ td.ProfilePic > a > img,
 .hero-h1 #PageTitleH1,
 .hero-h1 #BreadCrumb {
     display: none;
+}
+
+/****** callout CTA ******/
+
+.callout-CTA {
+    width: 370px;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: 16px 0;
+    padding: 35px 25px;
+}
+.callout-CTA h3 {
+    margin-top: 0;
+    color: #65646A;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.callout-CTA h3 strong {
+    color: #222;
+    display: block;
+}
+.callout-CTA h3 + p {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #F3F3F3;
+}
+.callout-CTA h6 {
+    color: #222;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 25px;
+}
+.callout-CTA h6 + p a {
+    text-decoration: none;
+    color: #8E8E8E;
+}
+.callout-CTA h6 + p::before {
+    float: left;
+    margin-right: 12px;
+    color: #F6B220;
+    font-size: 15px;
+    font-family: FloridaMakes;
+}
+.callout-CTA h6:first-of-type + p::before {
+    content: '\f041';
+}
+.callout-CTA h6:last-of-type + p::before {
+    content: '\f03a';
+}
+.callout-CTA p {
+    margin-bottom: 0;
 }
 
 /****** services page ******/
@@ -2536,11 +2663,50 @@ td.ProfilePic > a > img,
 
 /****** Who We Are page ******/
 
+.cta-button em {
+    display: block;
+    margin: -15px;
+}
+.cta-button em a {
+    display: block;
+    text-align: center;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    background: #242A2D;
+    margin: 15px;
+    padding: 30px;
+}
+.cta-button em a:hover,
+.cta-button em a:focus {
+    background: #1D2225;
+}
+.cta-button em a::before {
+    color: #F6B220;
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 400;
+    font-family: FloridaMakes;
+}
+.cta-button.board-officers em a::before {
+    content: '\f03e';
+}
+.cta-button.leadership-btn em a::before {
+    content: '\f03f';
+}
+.cta-button.ba-staff em a::before {
+    content: '\f040';
+}
+
 .team-tile {
     background: #fff;
     border-radius: 4px;
     padding: 30px;
     text-align: center;
+    margin-top: 30px;
 }
 .team-tile .HtmlContent > strong:first-child {
     border-radius: 50%;
@@ -2551,6 +2717,7 @@ td.ProfilePic > a > img,
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 .team-tile .HtmlContent > strong:first-child img {
     width: 100%;
@@ -2576,10 +2743,63 @@ td.ProfilePic > a > img,
     font-size: 16px;
     line-height: 18px;
 }
+.team-tile a:hover i,
+.team-tile a:focus i {
+    color: #F7B321;
+}
+
+/****** client successes page ******/
+
+.success-stories {
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.success-stories::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+    display: block;
+}
+.success-stories-text h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.success-stories-text p:last-of-type {
+    margin-bottom: 30px;
+}
 
 /************ responsive ************/
 
+@media (max-width: 1230px) {
+    #MPheader > div.row:first-child,
+    #MPheader > div.row:nth-child(2),
+    #PageTitleH1 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #PageTitleH1 {
+        width: 100%;
+    }
+    #MPOuterMost.full #PageTitleH1 {
+        max-width: 100%;
+    }
+    #PageTitleH1::before,
+    #PageTitleH1::after {
+        display: none;
+    }
+}
+
 @media (max-width: 1200px) {
+    #BreadCrumb.BreadCrumb {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .hero .HtmlContent {
         padding-left: 15px;
     }
@@ -2645,6 +2865,71 @@ td.ProfilePic > a > img,
     .col-md-3:last-child .footer-links {
         text-align: left;
     }
+    .cta-button em a {
+        margin-bottom: 30px;
+        width: 750px;
+        max-width: calc(100% - 30px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* nav */
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+        margin-right: 15px;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-nav {
+        float: none !important;
+        margin: 7.5px 0;
+        max-height: calc(100vh - 90px);
+    }
+    .navbar-nav > li {
+        float: none;
+        max-height: calc(100% - 150vh);
+    }
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
+    .navbar-collapse.in {
+        overflow-y: scroll;
+    }
+    .collapsing {
+        overflow: hidden !important;
+    }
+    .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+    .navbar-nav .dropdown-menu>li>a {
+        color: #fff;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2699,6 +2984,11 @@ td.ProfilePic > a > img,
         content: 'Posted:';
         margin-right: 3px;
         font-family: inherit;
+    }
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #fff;
     }
 }
 @media (max-width: 650px) {
