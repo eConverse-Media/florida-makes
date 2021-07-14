@@ -2360,11 +2360,43 @@ td.ProfilePic > a > img,
 
 .page-heading {
     position: relative;
-    background-size: 60% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: right center;
+    background-color: #242A2D;
 }
 .page-heading::before {
+    content: '';
+    mix-blend-mode: normal;
+    width: 733px;
+    min-width: calc(50% + 8px);
+    height: 100%;
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/gradient.png');
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-position: right bottom;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+#PageTitleH1 {
+    width: 725px;
+    min-width: 50%;
+    margin: 0 !important;
+    padding: 0 50px 0 calc(50% - 600px);
+    background: linear-gradient(0deg, #242A2D, #242A2D);
+    mix-blend-mode: normal;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 125px) 100%, 0% 100%);
+    position: relative;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#PageTitleH1::before {
     content: '';
     background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/dots.png');
     display: block;
@@ -2373,47 +2405,15 @@ td.ProfilePic > a > img,
     background-size: auto;
     background-position: center;
     position: absolute;
-    left: -15px;
-    top: 55px;
-    z-index: 1;
-}
-
-#PageTitleH1 {
-    width: calc(50% - 120px);
-    margin: 0 !important;
-    padding: 50px 50px 50px calc(50% - 600px);
-    background: #242A2D;
-    mix-blend-mode: normal;
-    color: #fff;
-    position: relative;
-}
-#PageTitleH1::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -120px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 188px 120px 0 0;
-    border-color: #242a2d transparent transparent transparent;
-
-}
-#PageTitleH1::before {
-    content: '';
-    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/header_images/yellow_highlight.png');
-    mix-blend-mode: normal;
-    width: 122%;
-    height: 100%;
-    position: absolute;
     left: 0;
-    bottom: -10px;
-    z-index: 0;
-    background-size: 100% auto;
-    background-position: right bottom;
-    background-repeat: no-repeat;
+    top: 55px;
+    z-index: -1;
 }
+
+#MPOuterMost.full #BreadCrumb {
+    margin-left: 0;
+}
+
 #BreadCrumb {
     margin-top: 8px;
     padding: 0;
@@ -2785,12 +2785,13 @@ td.ProfilePic > a > img,
     }
     #PageTitleH1 {
         width: 100%;
+        clip-path: none;
     }
     #MPOuterMost.full #PageTitleH1 {
         max-width: 100%;
     }
-    #PageTitleH1::before,
-    #PageTitleH1::after {
+    #PageTitleH1::after,
+    .page-heading::before {
         display: none;
     }
 }
