@@ -2354,7 +2354,7 @@ td.ProfilePic > a > img,
     background: #fbfbfb;
     padding: 0 0 60px 0;
 }
-.page-heading ~ #MainCopy_ContentWrapper {
+.interior .page-heading ~ #MainCopy_ContentWrapper {
     padding-top: 60px;
 }
 
@@ -2776,6 +2776,16 @@ td.ProfilePic > a > img,
 
 /****** filtered blogs ******/
 
+.grid {
+    min-height: 150px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.grid div[id*="BlogContents"] {
+    margin-left: -15px;
+    margin-right: -15px;
+	margin-bottom: 60px;
+}
 .grid .blogs-block {
     width: calc(33.33333% - 30px);
     margin: 15px;
@@ -2783,6 +2793,13 @@ td.ProfilePic > a > img,
     border-radius: 4px;
     padding: 0;
     transition: .3s;
+}
+.grid .pagination,
+.grid div[id*="BlogContents"] > .row:first-child,
+.grid div[id*="BlogContents"] > .row-border-top:last-child,
+.grid div[id*="ThreadFollowIcon"],
+.grid .blogs-block .col-md-8.col-sm-8 + .col-md-4 {
+    display: none;
 }
 @keyframes imgcontainerloading {
 	0% {
@@ -2841,6 +2858,241 @@ td.ProfilePic > a > img,
 .grid .blogs-block .row.content-row {
     padding-left: 0;
     padding-right: 0;
+}
+.grid .blogs-block .col-md-8.col-sm-8 {
+    width: 100%;
+}
+.grid .blogs-block h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.grid .blogs-block h3 a,
+.grid .blogs-block:hover h3 a,
+.grid .blogs-block:focus h3 a {
+    color: #222;
+    text-decoration: none;
+}
+.grid .blogs-block .content-tags {
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 0;
+    padding-left: 0;
+    border-top: 1px solid #f3f3f3;
+    padding-top: 10px;
+}
+.grid .blogs-block .content-tags a.label-search-tag {
+    color: #8E8E8E;
+    background: transparent;
+    padding: 0;
+    margin: 0 8px 0 0;
+    font-size: 12px;
+    line-height: 20px;
+    border: none;
+}
+.grid .blogs-block .content-tags .fa-tags {
+    margin-right: 0;
+}
+.grid .blogs-block .content-tags .fa-tags::before {
+    font-weight: 400;
+    font-family: FloridaMakes;
+    content: '\f042';
+    color: #F6B220;
+    font-size: 14px;
+    line-height: 20px;
+}
+.grid .blogs-block .content-tags .flex-tag-container {
+    width: calc(100% - 30px);
+}
+
+/*** selector styling ***/
+.grid div.dropdown-group {
+    width: 100%;
+    float: none;
+    padding: 0px;
+    position: relative;
+	z-index: 2;
+	margin-bottom: 25px;
+}
+
+.dropdown-group > .HtmlContent {
+	display: flex;
+	align-items: center;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.dropdown-group > .HtmlContent > * {
+	margin: 5px 3px;
+}
+
+/*** search bar ***/
+#customSearch {
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 7px 14px;
+	color: #8E8E8E;
+	font-size: 15px;
+	line-height: 20px;
+	border: 1px solid #f3f3f3;
+    box-shadow: none;
+    background: #fff;
+    border-radius: 0;
+    width: 250px;
+}
+#customSearch::placeholder {
+	color: #8e8e8e;
+}
+
+/*** clear all button ***/
+.dropdown-group .HtmlContent .clear-all-button {
+	font-family: 'Source Sans Pro', sans-serif;
+	background: transparent;
+	border: none;
+	padding: 0;
+	font-size: 15px;
+	line-height: 22px;
+	color: #333333;
+	margin-left: auto;
+}
+.clear-all-button::before {
+	font-family: FloridaMakes;
+	margin-right: 8px;
+	content: '\f043';
+}
+
+/*** dropdown ***/
+
+div.filter-button-group {
+    position: relative;
+	width: 200px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	line-height: 20px;
+	color: #8e8e8e;
+    border: 1px solid #f3f3f3;
+    background: #fff;
+}
+
+div.filter-button-group .filter-content {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    top: 0;
+    /* z-index: 1; */
+    background: #fff;
+	font-size: 15px;
+	line-height: 22px;
+}
+
+div.filter-button-group .filter-content.open {
+    display: block;
+    border: 1px solid #f3f3f3;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+
+.filter-button-group ul.multiple-select {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    display: none;
+    position: absolute;
+	width: 100%;
+	top: 100%;
+}
+
+div.filter-button-group .filter-content.open ul.multiple-select {
+    display: block;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+    background: #fff;
+    z-index: 5;
+}
+
+.filter-button-group ul.multiple-select li.checkbox-filter {
+    padding: 4px 10px;
+}
+
+div.filter-button-group .filter-label:after {
+	content: '\f01d';
+	color: #F6B220;
+    float: right;
+	font-family: FloridaMakes;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+div.filter-button-group .filter-label {
+    padding: 7px 14px;
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    /* z-index: 11; */
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+/* Customize the label (the container) */
+.filter-content .container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.filter-content .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.filter-content .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f3f2f4;
+}
+
+/* On mouse-over, add a grey background color */
+.filter-content .container:hover input~.checkmark {
+    background-color: #e5e9eb;
+}
+
+/* When the checkbox is checked, add blue background */
+.filter-content .container input.active~.checkmark {
+    background-color: #F6B220;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.filter-content .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.filter-content .container input.active~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.filter-content .container .checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 7px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /************ responsive ************/
