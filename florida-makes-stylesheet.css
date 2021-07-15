@@ -2774,6 +2774,75 @@ td.ProfilePic > a > img,
     margin-bottom: 30px;
 }
 
+/****** filtered blogs ******/
+
+.grid .blogs-block {
+    width: calc(33.33333% - 30px);
+    margin: 15px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 0;
+    transition: .3s;
+}
+@keyframes imgcontainerloading {
+	0% {
+		background: #242A2D;
+	}
+	50% {
+		background: #0B1A1D;
+	}
+	100% {
+		background: #242A2D;
+	}
+}
+.grid .blogs-block .img-container {
+    background-size: cover;
+    background-position: center;
+	height: 200px;
+    position: relative;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
+}
+.grid .blogs-block .img-container::before {
+	content: '';
+	opacity: 0;
+	transition: .3s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	animation-name: imgcontainerloading;
+	animation-duration: 3s;
+}
+.grid .blogs-block .img-container.loading::before {
+	opacity: 1;
+	transition: .3s;
+}
+.grid .blogs-block .text-container {
+    padding: 25px 20px;
+    border: 1px solid #F3F3F3;
+    position: relative;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.grid .blogs-block:hover,
+.grid .blogs-block:focus {
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+    transition: .3s;
+}
+.grid .blogs-block .text-container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.grid .blogs-block .text-container .col-md-12,
+.grid .blogs-block .text-container .col-md-8,
+.grid .blogs-block .row.content-row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /************ responsive ************/
 
 @media (max-width: 1230px) {

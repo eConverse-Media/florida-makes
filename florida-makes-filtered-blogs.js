@@ -2,6 +2,13 @@ $(function () {
     
     $('div[id*="BlogContents"]').closest('.ContentUserControl').prepend('<div class="dropdown-group"><div class="HtmlContent"></div></div>');
 
+    // handle click
+    $('.blogs-block').click(function () {
+        var self = $(this),
+            link = $(self).find('h3 a').attr('href');
+
+        window.location = link;
+    });
 
     $('.blogs-block').each(function () {
         // handle images
@@ -9,7 +16,7 @@ $(function () {
             windowWidth = $(window).width();
         
         if (windowWidth > 991) {
-            handleAjaxCall(this);
+            handleAjaxCall(self);
         } else {
             $(self).wrapInner('<div class="text-container" />');
         }
@@ -278,8 +285,6 @@ function makinFilters() {
         categoryTagClassConversion = categoryTagClassConversion.replace(/\,/g, "");
         categoryTagClassConversion = categoryTagClassConversion.replace(/\&/g, '');
         categoryTagClassConversion = categoryTagClassConversion.replace(/\s+/g, '-').toLowerCase();
-
-        console.log('>>>>>>>>>>>>>>>>> ', categoryTypeClassConversion);
 
         if (!(categoryTypeClassConversion == 'news-blogs-events')) {
             if ($('.dropdown-group .HtmlContent > div.' + categoryTypeClassConversion + '.filter-button-group').length === 0) {
