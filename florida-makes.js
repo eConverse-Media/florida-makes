@@ -16,18 +16,26 @@ function handleTopTextLinks() {
     var container = $('#MPheader > div.row:first-child > .col-md-12'),
         link = $('#MPAuxNav ul.level1 li:first-child a');
 
-    $(link).prependTo(container);
     $(link).addClass('floridamakes-network');
+    $(link).clone().prependTo(container);
+    $('#MPAuxNav ul').before('<button class="ttl-button" type="button" onclick="toggleTTL();"></button>');
+}
+
+function toggleTTL() {
+    $('#MPAuxNav').toggleClass('open');
 }
 
 function handleHeader() {
     $('.mep-logo .HtmlContent').addClass('mep-logo').appendTo('#Logo > .col-md-12');
     $('.search-bar-top, .header-social').wrapAll('<div class="col-md-12 search-and-social" />');
     $('.search-and-social').appendTo('#Logo');
-    $('.search-bar-top .form-control').attr('placeholder', 'Keyword Search...');
+    $('.search-bar-top .form-control, #searchColumn .form-control').attr('placeholder', 'Keyword Search...');
 }
 
 function handleHomepagePermissions() {
+
+    // handle industry news
+    $('.featured-story > .col-md-6:empty').closest('.news-row').hide();
 
     // handle dashboard
     $('.member-dashboard .col-md-4:empty').closest('.member-dashboard').hide();

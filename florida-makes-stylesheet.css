@@ -701,6 +701,12 @@ td.ProfilePic > a > img,
     margin-top: 5px;
     opacity: 0.9;
 }
+@media (min-width: 992px) {
+    #MPAuxNav ul.level1 li:first-child a,
+    .ttl-button {
+        display: none;
+    }
+}
 #MPAuxNav ul.level1 li a {
     font-weight: 600;
     text-decoration: none;
@@ -729,6 +735,7 @@ td.ProfilePic > a > img,
     font-size: 13px;
     line-height: 26px;
     text-transform: none;
+    letter-spacing: normal;
 }
 #BtnShowProfile {
     display: none;
@@ -739,12 +746,12 @@ td.ProfilePic > a > img,
 #Logo .mep-logo {
     display: inline-block;
 }
-.DesktopLogoDiv {
+#DesktopLogoDiv {
     width: 275px;
 }
 #Logo {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: baseline;
 }
 
@@ -772,7 +779,8 @@ td.ProfilePic > a > img,
     color: #c8c8c8;
     height: 32px;
 }
-.search-bar-top .form-control::placeholder {
+.search-bar-top .form-control::placeholder,
+#searchColumn .form-control::placeholder {
     font-style: normal;
     color: #c8c8c8;
 }
@@ -784,7 +792,8 @@ td.ProfilePic > a > img,
     height: 32px;
     text-align: center;
 }
-.search-bar-top .glyphicon-search::before {
+.search-bar-top .glyphicon-search::before,
+#searchColumn .glyphicon-search::before {
     font-family: FloridaMakes;
     content: '\f01c';
     color: #8e8e8e;
@@ -1074,7 +1083,7 @@ td.ProfilePic > a > img,
     line-height: 0;
     position: absolute;
     right: 10px;
-    top: 5px;
+    top: 3px;
 }
 .member-dashboard .add-community a::before {
     font-family: FloridaMakes;
@@ -1103,6 +1112,9 @@ td.ProfilePic > a > img,
     border-bottom: 1px solid rgba(255, 255, 255, 0.02);
     margin-bottom: 0;
     padding-left: 10px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
 }
 .member-dashboard .row-wide > .col-md-4:nth-child(2) .community-list {
     border: none;
@@ -1238,7 +1250,7 @@ td.ProfilePic > a > img,
         align-items: center;
     }
     .collaborate > .col-md-12 > .row-wide > .col-md-6:first-child {
-        padding-right: 100px;
+        padding-right: 95px;
     }
 }
 
@@ -1713,6 +1725,9 @@ td.ProfilePic > a > img,
 .manufact.money::before {
     content: '\f023';
 }
+.manufact.employees::before {
+    content: '\f044';
+}
 
 /************ upcoming events ************/
 
@@ -2025,6 +2040,13 @@ td.ProfilePic > a > img,
     width: 175px;
     height: 140px;
     margin-right: 30px;
+    position: relative;
+}
+.latest-news ul li .img-container.no-ajax-image {
+    display: none;
+}
+.latest-news ul li .img-container.no-ajax-image + .text-container {
+    width: 100%;
 }
 .latest-news ul li .text-container {
     width: calc(100% - 205px);
@@ -2054,7 +2076,8 @@ td.ProfilePic > a > img,
 .industry-news ul li .content-tags {
     top: -30px;
 }
-.industry-news ul li .content-tags .flex-tag-container > .label-search-tag:not(:first-child) {
+.industry-news ul li .content-tags .flex-tag-container > .label-search-tag:not(:first-child),
+.latest-news ul li .content-tags .flex-tag-container > .label-search-tag:not(:first-child) {
     display: none;
 }
 .latest-news ul li .text-container .content-tags > .text-muted,
@@ -2751,6 +2774,15 @@ td.ProfilePic > a > img,
     margin-top: 20px;
     margin-bottom: 5px;
 }
+.team-tile h3 a {
+    font-size: 18px;
+    line-height: 26px;
+    color: #222;
+}
+.team-tile h3 a:hover,
+.team-tile h3 a:focus {
+    text-decoration: underline;
+}
 .team-tile h5 {
     margin-top: 0;
     padding-bottom: 15px;
@@ -2850,7 +2882,8 @@ td.ProfilePic > a > img,
     border-top-left-radius: 4px;
     overflow: hidden;
 }
-.grid .library-list .img-container::before {
+.grid .library-list .img-container::before,
+.latest-news ul li .img-container::before {
 	content: '';
 	opacity: 0;
 	transition: .3s;
@@ -2862,7 +2895,8 @@ td.ProfilePic > a > img,
 	animation-name: imgcontainerloading;
 	animation-duration: 3s;
 }
-.grid .library-list .img-container.loading::before {
+.grid .library-list .img-container.loading::before,
+.latest-news ul li .img-container.loading::before {
 	opacity: 1;
 	transition: .3s;
 }
@@ -3156,7 +3190,12 @@ div.filter-button-group .filter-label {
 
 @media (max-width: 1230px) {
     #MPheader > div.row:first-child,
-    #MPheader > div.row:nth-child(2),
+    #MPheader > div.row:nth-child(2) {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
     #PageTitleH1 {
         padding-left: 15px;
         padding-right: 15px;
@@ -3327,6 +3366,120 @@ div.filter-button-group .filter-label {
     }
     .navbar-nav .dropdown-menu>li>a {
         color: #fff;
+    }
+
+    /* header */
+    .header-social {
+        display: none;
+    }
+    #MPheader > .row:first-child > .col-md-12:first-child > .floridamakes-network {
+        display: none;
+    }
+    #MPheader > .row:first-child > .col-md-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #MPheader > div.row:nth-child(2) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .LogoImg.inline {
+        display: inline-block;
+    }
+    .SloganText.inline {
+        display: none;
+    }
+    #DesktopLogoDiv {
+        width: 145px;
+        margin-right: 10px;
+    }
+    .mep-logo {
+        width: 120px;
+    }
+    #Logo > .col-md-12 {
+        display: flex;
+        align-items: center;
+    }
+
+    /* top text links */
+    #MPheader > .row:first-child > .col-md-12:first-child > .pull-right:last-child {
+        float: none !important;
+    }
+    .ttl-button {
+        background: transparent;
+        color: #fff;
+        border: none;
+    }
+    .ttl-button::before {
+        font-family: FloridaMakes;
+        content: '\f045';
+    }
+    .ttl-button:hover,
+    .ttl-button:focus,
+    .open .ttl-button {
+        color: #F4B223;
+    }
+    #MPAuxNav ul.level1 {
+        display: none;
+        background: #0B1A1D;
+        position: absolute !important;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 10px 15px;
+    }
+    #MPAuxNav.open ul.level1 {
+        display: block;
+        z-index: 10;
+    }
+    .Welcome button.btn-default.btn.imgButton {
+        z-index: 20;
+    }
+    #MPAuxNav ul.level1 li {
+        float: none !important;
+        padding: 10px 0;
+    }
+    #MPAuxNav ul.level1 li:not(:last-child) {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    #MPAuxNav ul.level1 li a {
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    /* search */
+    #searchColumn {
+        display: block;
+        float: none !important;
+        max-width: 100%;
+    }
+    .search-bar-top {
+        display: none;
+    }
+    #searchColumn .form-control {
+        border-radius: 0;
+        background: #fff;
+        box-shadow: none;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 6px 10px;
+        border: none;
+    }
+    #searchColumn button[id*="SearchButton"] {
+        border: none;
+        background: #fff;
+        border-radius: 0;
+        padding: 0;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        line-height: 34px;
+        font-size: 22px;
+    }
+    #searchColumn .glyphicon-search {
+        top: 0;
+        width: auto;
+        vertical-align: unset !important;
     }
 }
 
