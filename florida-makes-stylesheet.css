@@ -2873,7 +2873,8 @@ td.ProfilePic > a > img,
 	}
 }
 .grid .library-list .img-container {
-    background-size: 90% auto;
+    background-size: contain;
+    border: 20px solid #fff;
     background-position: center;
     background-repeat: no-repeat;
 	height: 200px;

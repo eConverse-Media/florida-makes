@@ -47,7 +47,10 @@ $(function () {
                 var tag = $(tags[i])
                     .attr("data-tag")
                     .toLowerCase();
+                tag = tag.replace(/\+/g, '');
                 tag = tag.replace(/\s+/g, "-");
+                tag = tag.replace(/\(+/g, '');
+                tag = tag.replace(/\)+/g, '');
                 $(self).addClass(tag);
             }
         }
@@ -281,12 +284,18 @@ function makinFilters() {
         categoryTypeClassConversion = categoryTypeClassConversion.replace(/\\|\//g, "");
         categoryTypeClassConversion = categoryTypeClassConversion.replace(/\,/g, "");
         categoryTypeClassConversion = categoryTypeClassConversion.replace(/\&/g, '');
+        categoryTypeClassConversion = categoryTypeClassConversion.replace(/\(/g, '');
+        categoryTypeClassConversion = categoryTypeClassConversion.replace(/\)/g, '');
+        categoryTypeClassConversion = categoryTypeClassConversion.replace(/\+/g, '');
         categoryTypeClassConversion = categoryTypeClassConversion.replace(/\s+/g, '-').toLowerCase();
 
         var categoryTagClassConversion = category.tag;
         categoryTagClassConversion = categoryTagClassConversion.replace(/\\|\//g, "");
         categoryTagClassConversion = categoryTagClassConversion.replace(/\,/g, "");
         categoryTagClassConversion = categoryTagClassConversion.replace(/\&/g, '');
+        categoryTagClassConversion = categoryTagClassConversion.replace(/\(/g, '');
+        categoryTagClassConversion = categoryTagClassConversion.replace(/\)/g, '');
+        categoryTagClassConversion = categoryTagClassConversion.replace(/\+/g, '');
         categoryTagClassConversion = categoryTagClassConversion.replace(/\s+/g, '-').toLowerCase();
 
 
