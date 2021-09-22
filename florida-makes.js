@@ -71,7 +71,7 @@ function handleAllContentList() {
     });
 
     // bring in image
-    $('.latest-news .HLLandingControl ul li').each(function () {
+    $('.latest-news .HLLandingControl .Content ul li').each(function () {
         handleAjaxCall(this);
     });
 }
