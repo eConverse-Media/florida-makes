@@ -427,7 +427,7 @@ h1, .h1 {
     line-height: 1.16666667;
 }
 h2, .h2,
-.interior .blogs-block h3 {
+.interior .blogs-block [div*="TitleContainer"] h3 {
     color: #000;
     font-weight: 700;
     font-size: 32px;
@@ -2144,11 +2144,14 @@ td.ProfilePic > a > img,
     position: relative;
 }
 .latest-news .Content ul li .img-container.no-ajax-image {
-    display: none;
+    /* display: none; */
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/temp/tempx250.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-.latest-news .Content ul li .img-container.no-ajax-image + .text-container {
+/* .latest-news .Content ul li .img-container.no-ajax-image + .text-container {
     width: 100%;
-}
+} */
 .latest-news .Content ul li .text-container {
     width: calc(100% - 205px);
     padding-top: 35px;
@@ -2218,7 +2221,7 @@ td.ProfilePic > a > img,
     margin: 0;
 }
 .upcoming-events ul li .col-md-2,
-.past-events ul li .col-md-2 {
+.past-events .HLLandingControl ul li .title-row .col-sm-2.col-md-2 {
     width: 80px;
     margin-right: 20px;
     float: left;
@@ -2228,7 +2231,7 @@ td.ProfilePic > a > img,
     margin-bottom: 0;
 }
 .upcoming-events ul li .col-md-10,
-.past-events ul li .col-md-10 {
+.past-events .HLLandingControl ul li .title-row .col-md-10.col-sm-10 {
     width: calc(100% - 100px);
     float: left;
 }
@@ -2264,13 +2267,15 @@ td.ProfilePic > a > img,
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #fff;
+    padding: 0;
+    background: transparent;
 }
 .upcoming-events ul li .col-md-10 .col-md-12,
 .past-events ul li .col-md-10 .col-md-12 {
     padding-top: 30px !important;
 }
 .upcoming-events ul li .col-md-10 h4,
-.past-events ul li .col-md-10 h4 {
+.past-events ul li .col-md-10 div[id*="CalendarLocation"] {
     position: absolute;
     top: 0;
     left: 0;
@@ -2283,19 +2288,22 @@ td.ProfilePic > a > img,
     margin-top: 0;
     margin-bottom: 0;
 }
-.upcoming-events ul li .col-md-10 p.break-word,
-.past-events ul li .col-md-10 p.break-word {
+.upcoming-events ul li .col-md-10 p.break-word {
     display: none;
 }
 .upcoming-events ul li .col-md-10 .timeAgoFormat,
-.past-events ul li .col-md-10 .timeAgoFormat {
+.past-events ul li .col-md-10 div[id*="CalendarLocation"] p {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #8e8e8e;
 }
+.past-events ul li .col-md-10 div[id*="CalendarLocation"] p {
+    text-transform: none;
+    letter-spacing: 0;
+}
 .upcoming-events ul li .col-md-10 .timeAgoFormat::before,
-.past-events ul li .col-md-10 .timeAgoFormat::before {
+.past-events ul li .col-md-10 div[id*="CalendarLocation"] .glyphicon::before {
     color: #F6B220;
     margin-right: 2px;
     font-family: FloridaMakes;
@@ -3693,6 +3701,16 @@ div.filter-button-group .filter-label {
     }
     .grid .library-list {
         width: calc(100% - 30px);
+    }
+}
+@media (max-width: 550px) {
+    .upcoming-events ul li .col-md-10 h4, .past-events ul li .col-md-10 div[id*="CalendarLocation"] {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+    .upcoming-events ul li .col-md-10 .col-md-12, .past-events ul li .col-md-10 .col-md-12 {
+        padding-top: 0 !important;
     }
 }
 @media (max-width: 450px) {

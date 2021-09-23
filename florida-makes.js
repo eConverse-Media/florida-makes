@@ -235,6 +235,16 @@ function handleServicesTiles() {
     });
 }
 
+function handleACLEventDates() {
+    $('.past-events .HLLandingControl ul li').each(function () {
+        var self = $(this),
+            month = $(self).find('.date-block .calendar-month span').text();
+
+        month = month.substring(0, 3);
+        $(self).find('.date-block .calendar-month').text(month);
+    });
+}
+
 $(function () {
     handleTopTextLinks();
     handleHeader();
@@ -247,4 +257,5 @@ $(function () {
     handleIndustryNews();
     handleInteriorPageTitles();
     handleServicesTiles();
+    handleACLEventDates();
 });
