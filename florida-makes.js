@@ -59,6 +59,12 @@ function handleHomepagePermissions() {
     $('.col-md-6:empty').closest('.newsletter-wrapper').hide();
 }
 
+function handleVideo() {
+	$('.hero-video .HtmlContent video').attr('id', 'HeroVideo');
+	$('#HeroVideo').prop({ autoplay: true, loop: true });
+	$('#HeroVideo').removeAttr('controls height width');
+}
+
 function handleAllContentList() {
     // remove comma
     $('.HLLandingControl.SearchResults ul li').each(function() {
@@ -249,6 +255,7 @@ $(function () {
     handleTopTextLinks();
     handleHeader();
     handleHomepagePermissions();
+    handleVideo();
     handleAllContentList();
     handleCollaborateSection();
     handleManufacts();
