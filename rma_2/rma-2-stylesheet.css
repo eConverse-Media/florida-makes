@@ -542,6 +542,94 @@ input:focus {
     border-bottom-color: [SecondaryColor];
 }
 
+/************ footer ************/
+
+#MPFooterLink,
+#MPCopyright {
+    display: none
+}
+#MPOuterMost.full #FOOTER {
+    max-width: 100%;
+    padding: 0;
+}
+#FOOTER {
+    background-color: #302E2E;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+}
+.footer-top-row {
+    padding: 40px 0;
+}
+.footer-bottom-row {
+    background-color: #292727;
+    padding: 8px calc(50% - 600px);
+    font-size: 12px;
+}
+.footer-top-row h2 {
+    color: #fff;
+    text-transform: none;
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+}
+.footer-top-row > .col-md-4:last-child {
+    text-align: right;
+}
+.footer-top-row ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer-top-row p,
+.footer-top-row a {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+}
+.footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-links ul li {
+    flex-basis: 50%;
+}
+.footer-social ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.footer-social ul li {
+    margin-left: 6px;
+}
+.footer-social a {
+    display: inline-block;
+    background: #fff;
+    color: #8E8E8E;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    opacity: 1;
+    box-shadow: 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+}
+.footer-social a:hover,
+.footer-social a:focus {
+    color: #ED174F;
+}
+.footer-attribution {
+    text-align: right;
+}
+.footer-bottom-row a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
 /************ responsive ************/
 
 /****** larger screens ******/
@@ -574,6 +662,32 @@ input:focus {
     #HEADER {
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .row-wide div[class*="section"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer-top-row > .col-md-4,
+    .footer-top-row > .col-md-4:last-child,
+    .footer-attribution,
+    .footer-copyright {
+        text-align: center;
+    }
+    .footer-social ul {
+        justify-content: center;
+    }
+    .footer-social ul li {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .footer-links ul {
+        display: block;
     }
 }
 
