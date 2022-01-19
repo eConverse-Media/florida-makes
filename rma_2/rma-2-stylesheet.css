@@ -542,6 +542,53 @@ input:focus {
     border-bottom-color: [SecondaryColor];
 }
 
+/************ subscribe ************/
+
+.newsletter-subscribe {
+    padding: 50px calc(50% - 585px);
+    position: relative;
+    color: #fff;
+}
+.newsletter-subscribe::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #ED174F;
+    opacity: 0.8;
+}
+.newsletter-subscribe .HtmlContent {
+    position: relative;
+}
+
+@supports (background-blend-mode: multiply) {
+    .newsletter-subscribe {
+        background-color: #ED174F;
+        background-blend-mode: multiply;
+    }
+    .newsletter-subscribe::before {
+        display: none;
+    }
+}
+.newsletter-subscribe h2 {
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 32px;
+    line-height: 1.375;
+    font-family: 'Open Sans';
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.newsletter-subscribe em {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
 /************ footer ************/
 
 #MPFooterLink,
