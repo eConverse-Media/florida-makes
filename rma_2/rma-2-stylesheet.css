@@ -596,6 +596,21 @@ input:focus {
     border-bottom-color: [SecondaryColor];
 }
 
+/************ hero ************/
+
+.hero .HtmlContent {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 150px calc(50% - 585px);
+}
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
 /************ sponsors ************/
 
 .sponsors {
@@ -795,8 +810,10 @@ input:focus {
 }
 
 @media (max-width: 1200px) {
-    .newsletter-subscribe {
-        padding: 50px 15px;
+    .newsletter-subscribe,
+    .hero .HtmlContent {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -915,5 +932,15 @@ input:focus {
 @media (max-width: 650px) {
     .sponsor {
         flex-basis: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero .HtmlContent {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    h1, .h1 {
+        font-size: 24px;
     }
 }
