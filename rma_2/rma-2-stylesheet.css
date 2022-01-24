@@ -343,6 +343,7 @@ h2, .h2 {
 .small-h2 h2,
 .small-h2 .h2,
 .HLLandingControl .heading h2,
+.tile h2,
 h4, .h4 {
     font-family: 'Source Sans Pro', sans-serif;
     color: [SecondaryColor];
@@ -363,6 +364,24 @@ h3, .h3,
     font-weight: 600;
     font-size: 18px;
     line-height: 1.3;
+}
+.ContentUserControl .HLLandingControl h4 {
+    color: #8e8e8e;
+}
+.ContentUserControl .HLLandingControl h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    color: #8e8e8e;
+    text-transform: uppercase;
+}
+a {
+    color: [PrimaryColor];
+    text-decoration: underline;
+}
+a:hover,
+a:focus {
+    text-decoration: none;
 }
 
 /****** transitions ******/
@@ -408,6 +427,82 @@ input:focus {
 .make-buttons.outline em a {
     background: transparent;
     border-color: #fff;
+}
+
+/****** round profile pictures ******/
+
+.Welcome .imgButton.btn,
+a[id*="ProfileImage"]:not([id*="NameLink"]):not([id*="ManageDropDown"]),
+a[id*="UserImageDisplay"],
+a[id*="Contacts_PictureLink"],
+a[id*="lnkDisplay"],
+a[id*="Welcome_Details_ProfileLink"],
+.list-group-item-image,
+a[title="User Name Image"],
+a[oldtitle="User Name Image"],
+.member-dashboard-img a,
+.dashboard-col-3 ul li .col-sm-2 a,
+.HLEngagement .Picture a,
+td.ProfilePic > a {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #d8d9db;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+.Welcome .imgButton.btn {
+    background-color: #fff;
+}
+.list-group-item-nochild .list-group-item-image {
+    width: 20px;
+    height: 20px;
+}
+.Welcome button.btn-default.btn.imgButton {
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+    border: none;
+    margin-left: 10px;
+}
+.text-muted-h2 a[id*="ImageControl_lnkDisplay"] {
+    width: 140px;
+    height: 140px;
+    background: #f9f9f9;
+}
+.HLEngagement .Picture a {
+    width: 50px;
+    height: 50px;
+}
+a[id*="Welcome_Details_ProfileLink"] {
+    width: 60px;
+    height: 60px;
+}
+
+.imgButton img,
+a[id*="ProfileImage"] img,
+a[id*="UserImageDisplay"] img,
+a[id*="Contacts_PictureLink"] img,
+a[id*="lnkDisplay"] img,
+a[id*="Welcome_Details_ProfileLink"] img,
+.list-group-item-image img,
+a[title="User Name Image"] img,
+a[oldtitle="User Name Image"] img,
+.member-dashboard-img img,
+.dashboard-col-3 ul li .col-sm-2 a img,
+.HLEngagement .Picture a img,
+td.ProfilePic > a > img {
+    position: relative;
+    max-height: 100% !important;
+    width: auto;
+    margin: 0;
+}
+
+.member-directory .member-picture {
+    text-align: center;
 }
 
 /****** backgrounds / homepage components ******/
@@ -476,6 +571,11 @@ input:focus {
 }
 .margin-bottom-80 {
     margin-bottom: 80px;
+}
+@media (max-width: 991px) {
+    .margin-bottom-40-mob {
+        margin-bottom: 40px;
+    }
 }
 
 /************ header ************/
@@ -838,6 +938,32 @@ input:focus {
     text-transform: uppercase;
     color: #8e8e8e;
 }
+.byline-and-posted-in {
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+.byline-and-posted-in .ByLine,
+.byline-and-posted-in h5 {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.byline-and-posted-in .ByLine {
+    margin-right: 20px;
+}
+.HLLandingControl div[id*="BottomLink"] .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.HLLandingControl div[id*="BottomLink"] .col-md-12 a {
+    display: block;
+    text-align: center;
+    background: #F8F8F8;
+    border-radius: 2px;
+    padding: 10px 24px;
+    color: #333;
+    border: 1px solid #f8f8f8;
+}
 
 /************ latest news ************/
 
@@ -942,6 +1068,160 @@ input:focus {
 }
 .latest-news .slick-arrow.next-arrow::before {
     content: '\f021';
+}
+
+/************ tile ***********/
+
+.tile {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #F4F4F4;
+    border-radius: 2px;
+
+}
+.tile h2,
+.tile.ContentUserControl .HLLandingControl h2 {
+    color: #222;
+    margin-top: 0;
+    padding-left: 0;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+}
+
+/************ discussions ************/
+
+.discussions .HLLandingControl .Content ul li {
+    padding: 15px 0 15px 55px;
+    margin: 0;
+    border-top: 1px solid #F3F3F3;
+    border-bottom: none;
+    position: relative;
+}
+.discussions .HLLandingControl .Content ul li .title-row .col-md-2 {
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+.discussions .HLLandingControl .Content ul li .title-row .col-md-10 {
+    width: 100%;
+    padding: 0;
+}
+.discussions.ContentUserControl .HLLandingControl .ByLine,
+.discussions.ContentUserControl .HLLandingControl h5 {
+    color: rgba(37, 37, 39, 0.8);
+}
+.discussions p[id*="DiscussionList"] {
+    margin-bottom: 0;
+}
+
+/************ quick links ************/
+
+.quick-links-title {
+    border-bottom: 1px solid #EFEFEF;
+}
+.quick-links {
+    padding: 15px 0 0 0;
+    margin: -5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.quick-link {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    padding: 5px;
+}
+.quick-link .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.quick-link .HtmlContent a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #333;
+    text-decoration: none;
+    background: #F8F8F8;
+    border-radius: 2px;
+    border: 1px solid #f8f8f8;
+}
+.quick-link .HtmlContent a:hover,
+.quick-link .HtmlContent a:focus {
+    background: #fff;
+    border: 1px solid #F3F3F3;
+    box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
+}
+.quick-link .HtmlContent a::before {
+    font-family: FloridaMakes;
+    color: [PrimaryColor];
+    font-size: 30px;
+    line-height: 1;
+}
+.quick-link.file .HtmlContent a::before {
+    content: '\f049';
+}
+.quick-link.calendar .HtmlContent a::before {
+    content: '\f04a';
+}
+.quick-link.comments .HtmlContent a::before {
+    content: '\f04b';
+}
+.quick-link.lectern .HtmlContent a::before {
+    content: '\f04c';
+}
+.quick-link.handshake .HtmlContent a::before {
+    content: '\f04d';
+}
+.quick-link.question .HtmlContent a::before {
+    content: '\f04e';
+}
+.quick-link .HtmlContent a:hover::before,
+.quick-link .HtmlContent a:focus::before {
+    color: [SecondaryColor];
+}
+
+/************ ad space ************/
+
+.ad-space {
+    margin-top: 45px;
+}
+.ad-space .HtmlContent {
+    margin-left: auto;
+    margin-right: auto;
+}
+.ad-space .HtmlContent:empty {
+    border: 1px dashed #CBCBCB;
+    width: 336px;
+    height: 280px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #b1b1b1;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ad-space .HtmlContent:empty::before {
+    content: 'Ad Space';
+}
+.ad-space .HtmlContent:empty::after {
+    content: '336 x 280';
 }
 
 /************ sponsors ************/
@@ -1325,5 +1605,20 @@ input:focus {
     }
     .flex-title h2 {
         margin-bottom: 20px;
+    }
+    .discussions .HLLandingControl .Content ul li {
+        padding-left: 0;
+    }
+    .discussions .HLLandingControl .Content ul li .title-row .col-md-2 {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin-right: 15px;
+        float: left;
+    }
+    .discussions .HLLandingControl .Content ul li .title-row .col-md-10 {
+        width: calc(100% - 55px);
+        float: left;
+        padding: 0;
     }
 }
