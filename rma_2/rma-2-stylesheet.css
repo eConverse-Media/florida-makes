@@ -696,7 +696,7 @@ td.ProfilePic > a > img {
 .search-bar-top button[id*="SearchButton"],
 #searchColumn button[id*="SearchButton"] {
     border-radius: 2px;
-    background: #ED174F;
+    background: [PrimaryColor];
     padding: 0;
     text-align: center;
     font-size: 14px;
