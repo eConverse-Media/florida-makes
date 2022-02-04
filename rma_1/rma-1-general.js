@@ -42,6 +42,19 @@ function handleFlexImages() {
 
 }
 
+function handleEvents() {
+    $('.home .HLEventList ul li').each(function () {
+        var self = $(this);
+        
+        handleLink(self);
+
+        var h4 = $(self).find('h4'),
+            h3 = $(self).find('h3');
+
+        $(h4).insertBefore(h3);
+    });
+}
+
 function handleLatestNews() {
     $('.latest-news .HLLandingControl.SearchResults ul li').each(function() {
         var self = $(this);
@@ -86,14 +99,30 @@ function handleHomepagePermissions() {
     $('.who-we-are .col-md-4:empty').closest('.who-we-are').hide();
 }
 
+function handleFeaturedContent() {
+    $('.featured-content .HtmlContent > *:not(img)').wrapAll('<div class="text-container" />');
+}
+
+function handleAppending() {
+    $('.append-me').each(function () {
+        var self = $(this),
+            prev = $(self).prev();
+
+        $(self).appendTo(prev);
+    });
+}
+
 $(function () {
     handleSearch();
     handleServices();
     handleCards();
     handlePrograms();
     handleFlexImages();
+    handleEvents();
     handleLatestNews();
     handleQuickLinks();
     handleWidgets();
     handleHomepagePermissions();
+    handleFeaturedContent();
+    handleAppending();
 });
