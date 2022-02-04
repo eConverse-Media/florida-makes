@@ -965,6 +965,152 @@ td.ProfilePic > a > img {
     border: 1px solid #f8f8f8;
 }
 
+/************ events ************/
+
+.home .HLEventList .Content ul {
+    display: flex;
+    margin: 5px -15px -15px -15px;
+}
+.home .HLEventList .Content ul li {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 33.33333333333%;
+    padding: 15px;
+    margin: 0;
+    border: none;
+}
+.home .HLEventList .Content ul li a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+.home .HLEventList .Content ul li .col-md-2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    padding: 0;
+}
+.home .HLEventList .Content ul li .col-md-10 {
+    width: 100%;
+    padding: 0;
+}
+.home .HLEventList .Content ul li .title-row {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.home .HLEventList .Content ul li:first-child .title-row .col-md-3 {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/4138bad1-c0da-47b2-b4ce-8fd782849b85/UploadedImages/RMA_2/dev_images/unsplash_7XCUuqID4iI.png');
+}
+.home .HLEventList .Content ul li:nth-child(2) .title-row .col-md-3 {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/4138bad1-c0da-47b2-b4ce-8fd782849b85/UploadedImages/RMA_2/dev_images/unsplash_7XCUuqID4iI__1_.png');
+}
+.home .HLEventList .Content ul li:last-child .title-row .col-md-3 {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/4138bad1-c0da-47b2-b4ce-8fd782849b85/UploadedImages/RMA_2/dev_images/unsplash_7XCUuqID4iI__2_.png');
+}
+.home .HLEventList .Content ul li .title-row .col-md-3 {
+    background-size: cover;
+    background-position: center;
+    width: calc(100% - 2px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    height: 165px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.home .HLEventList .Content ul li .title-row .col-md-9 {
+    height: 170px;
+    background: #fff;
+    padding: 25px 20px !important;
+    border: 1px solid #F4F4F4;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 100%;
+    transition: .3s;
+    position: relative;
+}
+.home .HLEventList .Content ul li a:hover .title-row .col-md-9,
+.home .HLEventList .Content ul li a:focus .title-row .col-md-9 {
+    box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
+    transition: .3s;
+}
+.home .HLEventList .Content ul li .title-row .timeAgoFormat {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    border-top: 1px solid #f3f3f3;
+    padding-top: 20px;
+    color: #8e8e8e;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+.home .HLEventList .Content ul li .title-row .timeAgoFormat::before {
+    color: [SecondaryColor];
+    float: left;
+    margin-right: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: FloridaMakes;
+    content: '\f01f';
+}
+
+/****** toggle ******/
+
+.events-toggle .HtmlContent {
+    background: #fff;
+    padding: 3px;
+    border-radius: 2px;
+}
+.events-toggle button {
+    padding: 5px 15px;
+    border-radius: 2px;
+    color: #333333;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+}
+.events-toggle button.is-active {
+    color: #fff;
+    background-color: [PrimaryColor];
+}
+
+/****** date blocks ******/
+
+.home .HLEventList .Content ul li .date-block {
+    background: [SecondaryColor];
+    height: 60px;
+    width: 60px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.home .HLEventList .Content ul li .date-block .calendar-day {
+    display: none;
+}
+.home .HLEventList .Content ul li .date-block .calendary-number {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+}
+.home .HLEventList .Content ul li .date-block .calendar-month {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
 /************ latest news ************/
 
 /****** featured news ******/
@@ -1168,6 +1314,7 @@ td.ProfilePic > a > img {
     color: [PrimaryColor];
     font-size: 30px;
     line-height: 1;
+    font-weight: 400;
 }
 .quick-link.file .HtmlContent a::before {
     content: '\f049';
@@ -1473,8 +1620,15 @@ td.ProfilePic > a > img {
         display: block;
     }
     .sponsors,
-    .featured-programs {
+    .featured-programs,
+    .home .HLEventList .Content ul {
         flex-wrap: wrap;
+    }
+    .home .HLEventList .Content ul li {
+        flex-basis: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .sponsor,
     .featured-program {
@@ -1620,5 +1774,12 @@ td.ProfilePic > a > img {
         width: calc(100% - 55px);
         float: left;
         padding: 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .events-toggle button {
+        font-size: 14px;
+        padding: 5px 8px;
     }
 }

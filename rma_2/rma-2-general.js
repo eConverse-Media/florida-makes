@@ -103,6 +103,43 @@ function handleHomepagePermissions() {
     $('.who-we-are .col-md-4:empty').closest('.who-we-are').hide();
 }
 
+function showCommunityEvents() {
+    $('.community-events').show();
+    $('.all-events').hide();
+    $('.all-events-button').removeClass('is-active');
+    $('.community-events-button').addClass('is-active');
+}
+function showAllEvents() {
+    $('.all-events').show();
+    $('.community-events').hide();
+    $('.all-events-button').addClass('is-active');
+    $('.community-events-button').removeClass('is-active');
+}
+
+function handleEvents() {
+    showCommunityEvents();
+
+    $('.home .HLEventList .Content ul li').each(function () {
+        var self = $(this),
+            hasImg = !!($(self).find('.title-row > .col-md-3').html()),
+            month = $(self).find('.date-block .calendar-month span').text();
+
+        if (hasImg) {
+            var imgContainer = $(self).find('.title-row > .col-md-3');
+
+            handleBgImage(imgContainer, imgContainer);
+        } else {
+            $(self).find('.title-row > .col-md-12').removeClass('col-md-12').addClass('col-md-9');
+            $(self).find('.title-row').append('<div class="col-md-3" />');
+        }
+
+        month = month.substring(0, 3);
+        $(self).find('.date-block .calendar-month').text(month);
+
+        handleLink(self);
+    });
+}
+
 $(function () {
     handleSearch();
     handleServices();
@@ -114,4 +151,5 @@ $(function () {
     handleSponsors();
     handleWidgets();
     handleHomepagePermissions();
+    handleEvents();
 });
