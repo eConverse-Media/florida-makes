@@ -112,6 +112,25 @@ function handleAppending() {
     });
 }
 
+function handleFeaturedEvent() {
+    $('.featured-event .HLEventList ul li').each(function () {
+        var self = $(this),
+            description = $(self).find('.timeAgoFormat + p');
+
+        $(description).addClass('event-description');
+       
+        $(self).find('.event-description ~ p').remove();
+
+        var text = $(self).find('.event-description').text();
+
+        text = text.substring(0, 150);
+
+        $(self).find('.event-description').text(text);
+
+        $(self).find('.event-description').insertBefore($(self).find('.timeAgoFormat'));
+    });
+}
+
 $(function () {
     handleSearch();
     handleServices();
@@ -125,4 +144,5 @@ $(function () {
     handleHomepagePermissions();
     handleFeaturedContent();
     handleAppending();
+    handleFeaturedEvent();
 });

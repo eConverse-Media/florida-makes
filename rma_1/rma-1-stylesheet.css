@@ -1126,6 +1126,32 @@ td.ProfilePic > a > img {
     font-size: 14px;
 }
 
+/****** featured event ******/
+
+.home .featured-event .HLEventList ul li a {
+    padding: 0;
+}
+.home .featured-event .HLEventList ul li a .title-row {
+    flex-direction: column-reverse;
+}
+.home .featured-event .HLEventList ul li a .title-row .col-md-3,
+.home .featured-event .HLEventList ul li a .title-row .col-md-9 {
+    width: 100%;
+}
+.home .featured-event .HLEventList ul li a .title-row .col-md-3 img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.home .featured-event .HLEventList ul li a .title-row .col-md-9 {
+    padding: 30px !important;
+}
+.featured-event .event-description {
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 25px;
+}
+
 /************ latest news ************/
 
 /****** featured news ******/
@@ -1814,6 +1840,9 @@ td.ProfilePic > a > img {
     .featured-content .text-container {
         padding-right: 0;
         padding-bottom: 60px;
+    }
+    .featured-event {
+        margin-bottom: 10px;
     }
 }
 
