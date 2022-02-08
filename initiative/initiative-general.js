@@ -27,6 +27,9 @@ function handleCards() {
 
 function handlePrograms() {
     $('.featured-program').wrapAll('<div class="featured-programs" />');
+    $('.featured-program').each(function () {
+        handleLink(this);
+    });
 }
 
 function handleFlexImages() {
@@ -44,34 +47,21 @@ function handleFlexImages() {
 
 function handleLatestNews() {
     $('.latest-news .HLLandingControl.SearchResults ul li').each(function() {
-        var byline = $(this).find('.ByLine');
+        var self = $(this);
+
+        // get image
+        handleAjaxCall(self);
+
+        // wrap with link
+        handleLink(self);
+
+        // fix byline
+        var byline = $(self).find('.ByLine');
         var byLineLink = $(byline).find('a[id*="Name"]');
         if (byLineLink.length === 0) {
             var trimmedByline = $(byline).text().trim().slice(2, $(byline).text().trim().length);
             $(byline).text(trimmedByline);
         }
-    });
-    $('.latest-news .Content ul').slick({
-        dots: false,
-        arrows: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-arrow prev-arrow" />',
-        nextArrow: '<button type="button" class="slick-arrow next-arrow" />',
-        responsive: [
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 575,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
     });
 }
 
@@ -135,6 +125,10 @@ function handleEvents() {
 
         month = month.substring(0, 3);
         $(self).find('.date-block .calendar-month').text(month);
+
+        var eventType = $(self).find('.title-row > .col-md-9 > h4');
+
+        $(eventType).prependTo($(self).find('.title-row > .col-md-9'));
 
         handleLink(self);
     });
