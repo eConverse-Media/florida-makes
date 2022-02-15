@@ -3,25 +3,43 @@ function handleSearch() {
     $('.search-bar-top .form-control, #searchColumn .form-control').attr('placeholder', 'Keyword Search...');
 }
 
-function handleServices() {
-    $('.service-button').wrapAll('<div class="service-buttons" />');
+function handleClass(klass) {
+    klass = klass.toLowerCase();
+    klass = klass.replace(/\&/g, '');
+    klass = $.trim(klass);
+    klass = klass.replace(/\s+/g, '-');
+    return klass;
 }
 
-function handleCards() {
-    $('.card').wrapAll('<div class="cards" />');
-    $('.card').each(function () {
+function showService(klass) {
+    $('.service-card').hide();
+    $('.service-card' + klass).show();
+    $('.service-button').removeClass('is-active');
+    $('.service-button' + klass).addClass('is-active');
+}
+
+function handleServices() {
+    $('.service-button').wrapAll('<div class="service-buttons" />');
+    $('.service-card').hide();
+    $('.service-card').each(function () {
         var self = $(this),
-            link = $(self).find('a'),
-            href = $(link).attr('href'),
-            target = $(link).attr('target');
+            title = $(self).find('h2').text();
 
-        if (target == '_blank') {
-            $(self).wrapInner('<a href="' + href + '" target="_blank" rel="noopener" />');
-        } else {
-            $(self).wrapInner('<a href="' + href + '" />');
-        }
+        title = handleClass(title);
 
-        $(link).hide();
+        $(self).addClass(title);
+    });
+    $('.service-button').each(function () {
+        var self = $(this),
+            button = $(self).find('button'),
+            klass = $(button).text();
+
+        klass = handleClass(klass);
+
+        $(self).addClass(klass);
+
+        $(button).attr('type', 'button');
+        $(button).attr('onclick', 'showService(".' + klass + '");');
     });
 }
 
@@ -30,19 +48,6 @@ function handlePrograms() {
     $('.featured-program').each(function () {
         handleLink(this);
     });
-}
-
-function handleFlexImages() {
-    $('.featured-program, .featured-news').each(function () {
-        var self = $(this),
-            img = $(self).find('img'),
-            imgSrc = $(img).attr('src');
-    
-        $('<div class="img-container" />').prependTo(self);
-        $(self).find('.img-container').css('background-image', 'url("' + imgSrc + '")');
-        $(img).hide();
-    });
-
 }
 
 function handleLatestNews() {
@@ -65,15 +70,6 @@ function handleLatestNews() {
     });
 }
 
-function handleQuickLinks() {
-    $('.quick-link').wrapAll('<div class="quick-links" />');
-    $('.quick-links-title, .quick-links').wrapAll('<div class="tile" />');
-}
-
-function handleSponsors() {
-    $('.sponsor').wrapAll('<div class="sponsors" />');
-}
-
 function handleWidgets() {
     $('.HLLandingControl ul li').each(function () {
         var self = $(this),
@@ -91,6 +87,7 @@ function handleWidgets() {
 
 function handleHomepagePermissions() {
     $('.who-we-are .col-md-4:empty').closest('.who-we-are').hide();
+    $('.homepage-search .col-md-6:empty').closest('.homepage-search').hide();
 }
 
 function showCommunityEvents() {
@@ -134,16 +131,22 @@ function handleEvents() {
     });
 }
 
+function handleHomepageSearch() {
+    $('.homepage-search').each(function () {
+        var self = $(this);
+        handleBgImage($(self).find('.search-bg'), $(self));
+    });
+    $('.homepage-search .SearchInputs .form-control').attr('placeholder', 'Search for something here...');
+    $('.homepage-search button[id*="SearchButton"]').text('Search');
+}
+
 $(function () {
     handleSearch();
     handleServices();
-    handleCards();
     handlePrograms();
-    handleFlexImages();
     handleLatestNews();
-    handleQuickLinks();
-    handleSponsors();
     handleWidgets();
     handleHomepagePermissions();
     handleEvents();
+    handleHomepageSearch();
 });
