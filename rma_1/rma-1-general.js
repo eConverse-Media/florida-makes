@@ -97,6 +97,7 @@ function handleWidgets() {
 
 function handleHomepagePermissions() {
     $('.who-we-are .col-md-4:empty').closest('.who-we-are').hide();
+    $('.auth-widgets .col-md-4:empty').closest('.auth-widgets').hide();
 }
 
 function handleFeaturedContent() {
