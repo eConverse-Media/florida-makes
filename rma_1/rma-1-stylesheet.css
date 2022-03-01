@@ -211,9 +211,33 @@ table tr td {
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.tile-grow div[class*="section"] > div {
-    height: 100%;
-    margin: 0;
+
+.tile-grow div[class*="section"] {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+}
+
+.tile-grow div[class*="section"]>div,
+.tile-grow div[class*="section"] .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(100% + 30px);
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
 
 /*** fix non-responsive images ***/
@@ -376,6 +400,11 @@ h3, .h3,
     line-height: 17px;
     color: #8e8e8e;
     text-transform: uppercase;
+}
+.interior h6 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
 }
 a {
     color: [PrimaryColor];
@@ -756,6 +785,7 @@ td.ProfilePic > a > img {
 #NAV .navbar-default .navbar-nav>li>a,
 #NAV .navbar-default .navbar-nav>.active>a, 
 #NAV .navbar-default .navbar-nav>.disabled>a {
+    font-family: 'Source Sans Pro', sans-serif;
     color: #222222; 
     background-color: transparent;
     font-weight: 600;
@@ -787,6 +817,19 @@ td.ProfilePic > a > img {
     font-family: FloridaMakes;
     color: [SecondaryColor];
     content: '\f016';
+}
+
+/************ interior page titles ************/
+
+.page-heading {
+    background-size: cover;
+    background-position: center;
+}
+.page-heading #PageTitleH1 {
+    max-width: 100%;
+    background: linear-gradient(90deg, [PrimaryColor] 4.06%, rgba(43, 45, 66, 0) 56.32%), linear-gradient(90.15deg, #1F1F1F 4.2%, rgba(29, 29, 29, 0) 81.47%);
+    padding: 60px 50% 60px calc(50% - 585px);
+    color: #fff;
 }
 
 /************ hero ************/
@@ -1604,6 +1647,13 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 991px) {
+    .tile-grow div[class*="section"] {
+        flex-basis: 100%;
+    }
+
+    .tile-grow div[class*="section"] .HtmlContent em {
+        margin: 0;
+    }
     .hero .HtmlContent {
         padding-right: 15px;
         background: [PrimaryColor];
