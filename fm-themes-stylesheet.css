@@ -1,3 +1,9 @@
+.interior h6 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
 .content-full-width {
     padding: 5px 100px 20px 100px;
     text-align: center;
@@ -14,6 +20,9 @@
 }
 .interior [class*="col-md-"] {
     min-height: 0;
+}
+.no-pageTitle-padding {
+    padding-top: 0;
 }
 
 /************ cta buttons ************/
@@ -169,6 +178,7 @@
     border: 1px solid #F3F3F3;
     border-radius: 2px;
     padding: 35px 25px;
+    max-width: 100%;
 }
 .callout-CTA h3 {
     margin-top: 0;
@@ -234,6 +244,7 @@
     padding-right: 0;
 }
 
+.testimonial-wrapper .text-block,
 .testimonial-wrapper .text-block h2 {
     color: #fff;
 }
@@ -266,6 +277,8 @@
 
 .text-block em a {
     margin-top: 45px;
+    background-color: [SecondaryColor];
+    border-color: [SecondaryColor];
 }
 
 .testimonial {
@@ -333,4 +346,16 @@
 
 .testimonial-slider .prev-arrow {
     right: 40px;
+}
+
+@media (max-width: 991px) {
+    .testimonials>.col-md-8 {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 768px) { 
+    .content-full-width {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

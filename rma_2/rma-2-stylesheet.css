@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css");
+/* @import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css"); */
 
 
 /****** CSS Site Load ******/
@@ -141,9 +141,7 @@ figure.image {
     background-color: rgba(0,0,0,0);
     margin: 5px 0px;
 }
-/* figure.image img { 
-width: 100%; /* unhide to make full size of layout section */
-} */ 
+
 figcaption {
     display: block;
 }
@@ -214,9 +212,33 @@ table tr td {
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.tile-grow div[class*="section"] > div {
-    height: 100%;
-    margin: 0;
+
+.tile-grow div[class*="section"] {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+}
+
+.tile-grow div[class*="section"]>div,
+.tile-grow div[class*="section"] .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(100% + 30px);
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
 
 /*** fix non-responsive images ***/
@@ -764,6 +786,19 @@ td.ProfilePic > a > img {
     border-bottom-color: [SecondaryColor];
 }
 
+/************ interior page titles ************/
+
+.page-heading {
+    background-size: cover;
+    background-position: center;
+}
+.page-heading #PageTitleH1 {
+    max-width: 100%;
+    padding: 80px calc(50% - 585px);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
 /************ hero ************/
 
 .hero .HtmlContent {
@@ -836,7 +871,7 @@ td.ProfilePic > a > img {
 
 /************ who we are ************/
 
-.who-we-are {
+.home .who-we-are {
     margin-top: 70px;
     margin-bottom: 70px;
     display: flex;
@@ -1138,7 +1173,7 @@ td.ProfilePic > a > img {
     flex-shrink: 1;
     flex-basis: 60%;
 }
-.who-we-are .HtmlContent > em:last-child,
+.home .who-we-are .HtmlContent > em:last-child,
 .what-we-do .HtmlContent > em:last-child,
 .featured-news .HtmlContent > em:last-child {
     margin-top: 20px;
@@ -1606,6 +1641,13 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 991px) {
+    .tile-grow div[class*="section"] {
+        flex-basis: 100%;
+    }
+
+    .tile-grow div[class*="section"] .HtmlContent em {
+        margin: 0;
+    }
     .footer-top-row > .col-md-4,
     .footer-top-row > .col-md-4:last-child,
     .footer-attribution,
@@ -1620,7 +1662,7 @@ td.ProfilePic > a > img {
         margin-right: 3px;
     }
     .footer-links ul,
-    .who-we-are {
+    .home .who-we-are {
         display: block;
     }
     .sponsors,

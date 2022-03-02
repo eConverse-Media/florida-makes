@@ -211,9 +211,33 @@ table tr td {
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-.tile-grow div[class*="section"] > div {
-    height: 100%;
-    margin: 0;
+
+.tile-grow div[class*="section"] {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+}
+
+.tile-grow div[class*="section"]>div,
+.tile-grow div[class*="section"] .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(100% + 30px);
+    display: flex;
+}
+
+.tile-grow div[class*="section"] .HtmlContent em a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
 
 /*** fix non-responsive images ***/
@@ -731,6 +755,7 @@ td.ProfilePic > a > img {
 #NAV .navbar-default .navbar-nav>li>a,
 #NAV .navbar-default .navbar-nav>.active>a, 
 #NAV .navbar-default .navbar-nav>.disabled>a {
+    font-family: 'Source Sans Pro', sans-serif;
     color: #222222; 
     background-color: transparent;
     font-weight: 600;
@@ -759,6 +784,19 @@ td.ProfilePic > a > img {
 .navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret {
     border-top-color: [SecondaryColor];
     border-bottom-color: [SecondaryColor];
+}
+
+/************ interior page headers ***********/
+
+.page-heading {
+    background-size: cover;
+    background-position: center;
+}
+.page-heading #PageTitleH1 {
+    max-width: 100%;
+    color: #fff;
+    padding: 60px calc(50% - 585px);
+    background: linear-gradient(90deg, [PrimaryColor] 4.06%, rgba(77, 7, 55, 0.08) 83.4%);
 }
 
 /************ hero ************/
@@ -894,7 +932,7 @@ td.ProfilePic > a > img {
 
 /************ who we are ************/
 
-.who-we-are {
+.home .who-we-are {
     margin-top: 70px;
     margin-bottom: 70px;
     display: flex;
@@ -1470,19 +1508,29 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 1200px) {
+    .page-heading #PageTitleH1,
     .hero .HtmlContent {
         padding-left: 15px;
     }
 }
 
 @media (max-width: 992px) {
-    .row-wide div[class*="section"] {
+    .row-wide div[class*="section"],
+    .interior .row-wide div[class*="section"] {
         padding-left: 15px;
         padding-right: 15px;
     }
 }
 
 @media (max-width: 991px) {
+    .tile-grow div[class*="section"] {
+        flex-basis: 100%;
+    }
+
+    .tile-grow div[class*="section"] .HtmlContent em {
+        margin: 0;
+    }
+    .page-heading #PageTitleH1,
     .hero .HtmlContent {
         padding-right: 15px;
         background: [PrimaryColor];
@@ -1548,7 +1596,7 @@ td.ProfilePic > a > img {
     .homepage-search.auth .row-wide {
         display: block;
     }
-    .who-we-are {
+    .home .who-we-are {
         display: block;
     }
 }

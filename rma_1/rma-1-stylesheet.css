@@ -401,11 +401,6 @@ h3, .h3,
     color: #8e8e8e;
     text-transform: uppercase;
 }
-.interior h6 {
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 1px;
-}
 a {
     color: [PrimaryColor];
     text-decoration: underline;
@@ -1630,6 +1625,7 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 1200px) {
+    .page-heading #PageTitleH1,
     .hero .HtmlContent {
         padding-left: 15px;
     }
@@ -1640,7 +1636,8 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 992px) {
-    .row-wide div[class*="section"] {
+    .row-wide div[class*="section"],
+    .interior .row-wide div[class*="section"] {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -1654,6 +1651,7 @@ td.ProfilePic > a > img {
     .tile-grow div[class*="section"] .HtmlContent em {
         margin: 0;
     }
+    .page-heading #PageTitleH1,
     .hero .HtmlContent {
         padding-right: 15px;
         background: [PrimaryColor];
@@ -1797,6 +1795,9 @@ td.ProfilePic > a > img {
 @media (max-width: 450px) {
     .hero .HtmlContent {
         padding-top: 50px;
+    }
+    .interior .hero .HtmlContent {
+        padding-bottom: 50px;
     }
     h1, .h1,
     .large-h2 h2 {
