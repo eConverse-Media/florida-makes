@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css"); 
+
 /****** CSS Site Load ******/
 
 /*** accordions/expandable text ***/
@@ -1077,6 +1079,7 @@ td.ProfilePic > a > img {
 
 .home .featured-event .HLEventList ul li a {
     padding: 0;
+    color: #8e8e8e;
 }
 .home .featured-event .HLEventList ul li a .title-row {
     flex-direction: column-reverse;
@@ -1093,6 +1096,17 @@ td.ProfilePic > a > img {
 .home .featured-event .HLEventList ul li a .title-row .col-md-12 {
     padding: 30px !important;
 }
+.home .featured-event .HLEventList ul li a .title-row .col-md-12::before {
+    content: '';
+    height: 310px;
+    width: calc(100% + 60px);
+    display: block;
+    margin: -30px -30px 30px -30px;
+    border-radius: 2px 2px 0 0;
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/098e7a4e-fd24-4020-b01e-3abb3d7b3813/UploadedImages/RMA_1/unsplash_1-aA2Fadydc.png');
+    background-size: cover;
+    background-position: center;
+}
 .featured-event .event-description {
     color: #8e8e8e;
     font-size: 14px;
@@ -1102,30 +1116,30 @@ td.ProfilePic > a > img {
 
 /************ latest news ************/
 
-.latest-news {
+.home .latest-news {
     position: relative;
 }
-.latest-news .HLLandingControl .heading h2 {
+.home .latest-news .HLLandingControl .heading h2 {
     margin-top: 0;
     margin-bottom: 0;
 }
-.latest-news .HLLandingControl div[id*="MoreLink"] {
+.home .latest-news .HLLandingControl div[id*="MoreLink"] {
     position: absolute;
     top: -10px;
     right: 0;
 }
-.latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-9.col-sm-9,
-.latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-7.col-sm-7 {
+.home .latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-9.col-sm-9,
+.home .latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-7.col-sm-7 {
     width: 100%;
 }
-.latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-3.pull-right {
+.home .latest-news .HLLandingControl.SearchResults ul li .title-row .col-md-3.pull-right {
     display: none;
 }
-.latest-news .HLLandingControl .Content ul {
+.home .latest-news .HLLandingControl .Content ul {
     margin: 5px -15px -15px -15px;
     display: flex;
 }
-.latest-news .HLLandingControl .Content ul li {
+.home .latest-news .HLLandingControl .Content ul li {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 33.33333333333%;
@@ -1135,7 +1149,7 @@ td.ProfilePic > a > img {
     padding: 15px;
     position: relative;
 }
-.latest-news .HLLandingControl .Content ul li a {
+.home .latest-news .HLLandingControl .Content ul li a {
     display: block;
     flex-grow: 0;
     flex-shrink: 1;
@@ -1145,7 +1159,7 @@ td.ProfilePic > a > img {
     border-radius: 2px;
     text-decoration: none;
 }
-.latest-news .HLLandingControl .Content ul li a .img-container {
+.home .latest-news .HLLandingControl .Content ul li a .img-container {
     height: 170px;
     width: calc(100% - 2px);
     margin-left: auto;
@@ -1153,7 +1167,7 @@ td.ProfilePic > a > img {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
-.latest-news .HLLandingControl .Content ul li a .text-container {
+.home .latest-news .HLLandingControl .Content ul li a .text-container {
     flex-basis: calc(100% - 170px);
     background: #fff;
     border: 1px solid #F0F0F0;
@@ -1163,31 +1177,31 @@ td.ProfilePic > a > img {
     transition: .3s;
     display: flex;
 }
-.latest-news .HLLandingControl .Content ul li a .text-container .row.title-row,
-.latest-news .HLLandingControl .Content ul li a .text-container .row.title-row > .col-md-12, .latest-news .HLLandingControl .Content ul li a .text-container .row.title-row > .col-md-9 {
+.home .latest-news .HLLandingControl .Content ul li a .text-container .row.title-row,
+.home .latest-news .HLLandingControl .Content ul li a .text-container .row.title-row > .col-md-12, .home .latest-news .HLLandingControl .Content ul li a .text-container .row.title-row > .col-md-9 {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
 }
-.latest-news .HLLandingControl .Content ul li a:hover .text-container,
-.latest-news .HLLandingControl .Content ul li a:focus .text-container {
+.home .latest-news .HLLandingControl .Content ul li a:hover .text-container,
+.home .latest-news .HLLandingControl .Content ul li a:focus .text-container {
     box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1);
     transition: .3s;
 }
-.latest-news .HLLandingControl ul li h3 {
+.home .latest-news .HLLandingControl ul li h3 {
     margin-top: 35px;
 }
-.latest-news .HLLandingControl ul li .content-tags.flex-container {
+.home .latest-news .HLLandingControl ul li .content-tags.flex-container {
     position: absolute;
     top: 0;
     left: -8px;
 }
-.latest-news .HLLandingControl ul li .content-tags.flex-container .text-muted {
+.home .latest-news .HLLandingControl ul li .content-tags.flex-container .text-muted {
     display: none;
 }
-.latest-news .HLLandingControl ul li .content-tags.flex-container .flex-tag-container a {
+.home .latest-news .HLLandingControl ul li .content-tags.flex-container .flex-tag-container a {
     font-family: Source Sans Pro;
     font-weight: 600;
     font-size: 12px;
@@ -1202,7 +1216,7 @@ td.ProfilePic > a > img {
     border: none;
     margin-top: 0;
 }
-.latest-news .HLLandingControl .Content ul li .ByLine {
+.home .latest-news .HLLandingControl .Content ul li .ByLine {
     margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid #F3F3F3;
@@ -1673,10 +1687,10 @@ td.ProfilePic > a > img {
     .who-we-are {
         display: block;
     }
-    .latest-news .HLLandingControl .Content ul {
+    .home .latest-news .HLLandingControl .Content ul {
         flex-wrap: wrap;
     }
-    .latest-news .HLLandingControl .Content ul li {
+    .home .latest-news .HLLandingControl .Content ul li {
         flex-basis: 100%;
         max-width: 600px;
         margin-left: auto;
@@ -1784,7 +1798,7 @@ td.ProfilePic > a > img {
     .service-button:nth-child(even) {
         padding-left: 0;
     }
-    .latest-news .HLLandingControl div[id*="MoreLink"] {
+    .home .latest-news .HLLandingControl div[id*="MoreLink"] {
         position: relative;
         top: auto;
         right: auto;

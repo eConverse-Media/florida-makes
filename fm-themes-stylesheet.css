@@ -18,6 +18,9 @@
 .interior .page-heading~#MainCopy_ContentWrapper {
     padding-top: 60px;
 }
+.interior #MainCopy_ContentWrapper:not(.no-footer-padding) {
+    padding-bottom: 60px;
+}
 .interior [class*="col-md-"] {
     min-height: 0;
 }
@@ -358,4 +361,264 @@
         padding-left: 30px;
         padding-right: 30px;
     }
+}
+
+/************ interior page news & events ************/
+
+.interior-news .HLLandingControl h2,
+.upcoming-events .HLLandingControl h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-left: 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.interior-news .Content ul li {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #f3f3f3;
+    margin: 0;
+}
+
+.interior-news .Content ul li .img-container {
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    width: 175px;
+    height: 140px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.interior-news .Content ul li .img-container.no-ajax-image {
+    /* display: none; */
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/61ce150a-fea4-4735-bbb6-b30a52e237b2/UploadedImages/images/temp/tempx250.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* .interior-news .Content ul li .img-container.no-ajax-image + .text-container {
+    width: 100%;
+} */
+
+.interior-news .Content ul li .text-container {
+    width: calc(100% - 205px);
+    padding-top: 35px;
+    position: relative;
+}
+
+.interior-news .Content ul li .text-container .col-md-12 {
+    position: static;
+}
+
+.interior-news .HLLandingControl ul li h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.interior-news .HLLandingControl ul li .ByLine {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #8e8e8e;
+}
+
+.interior-news .Content ul li .text-container .content-tags {
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+
+.interior-news .Content ul li .content-tags .flex-tag-container>.label-search-tag:not(:first-child) {
+    display: none;
+}
+
+.interior-news .Content ul li .text-container .content-tags>.text-muted,
+.interior-news .Content ul li .text-container .content-tags .label-search-tag .fa-user {
+    display: none;
+}
+
+.interior-news .Content ul li .text-container .content-tags .label-search-tag {
+    background: transparent;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8e8e8e;
+    border: none;
+    margin: 0;
+}
+
+.interior-news .Content ul li .text-container .content-tags .label-search-tag:hover,
+.interior-news .Content ul li .text-container .content-tags .label-search-tag:focus {
+    color: #111821;
+    text-decoration: underline;
+}
+
+/*** MCS edits ***/
+
+/* accordions/expandable text */
+.accordion-heading button {
+    font-size: 15px;
+    text-decoration: none;
+    color: #222222;    /* link colour */
+    background: #f8f8f8;
+    padding: 8px 10px 2px 5px;
+    margin: 0;
+    border: none;
+    border-top: 1px solid #E6E7EA;
+    cursor: pointer;
+    transition: .3s;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.accordion-heading button:hover,
+.accordion-heading button:focus {
+    color: #2e6da4;    /* link hover colour */
+    transition: .3s;
+}
+.accordion-heading button::before { 
+    font-family: FloridaMakes;    /* change to appropriate kit/unicode */
+    content: '\f016';
+    color: #333;    /* change  icon colour */
+    margin-right: 8px;
+}
+.open .accordion-heading button::before {
+    font-family: FloridaMakes;    /* change to appropriate kit/unicode */
+    content: '\f015';
+    color: #333;    /* change  icon colour */
+}
+.accordion-text {
+    display: none;
+    margin-top: 10px;
+    margin-left: 13px;
+}
+.accordion-wrap .ContentItemHtml,
+.accordion-wrap .ContentItemHtml:hover {
+    transition: none !important;
+}
+.accordion-wrap {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* bulleted link lists */
+.link-list ul {
+    padding-left: 0;
+    margin-top: 20px;
+}
+.link-list ul li {
+    padding: 12px 7px;
+    border-top: 1px solid #E6E7EA;
+    list-style-type: none;
+}
+.link-list ul li:last-child {
+    border-bottom: 0px;
+}
+.link-list ul li a {
+    font-weight: 500;
+    text-transform: none;
+    color: #222;
+    font-size: 15px;
+    line-height: 17px;
+    text-decoration: none;
+    padding-left: 20px;
+    position: relative;
+    display: block;
+}
+.link-list ul li a::before {
+    font-family: FloridaMakes;
+    content: '\f017';
+    color: #333;
+    position: absolute;
+    left: -3px;
+}
+.link-list ul li a[target*="blank"]::before {
+    content: '\f019';    /* new window icon */
+}
+.link-list ul li a:hover::before,
+.link-list ul li a:focus::before {
+    color: #333;    /* change hover icon colour */
+}
+.link-list ul li a:hover,
+.link-list ul li a:focus {
+    color: #333;    /* change text hover colour */
+    text-decoration: underline;
+}
+
+
+/* default line style */
+hr {
+    border: none;
+    height: 1px;
+    color: #E6E7EA;
+    background-color: #E6E7EA;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* default table style */
+table th {
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: inherit;
+    background-color: #FaFaFa;
+    border: 1px solid #f5f5f5;
+}
+table tr:nth-child(2n) {
+    border-bottom: 1px solid #EDEDED;
+    background: #FFF;
+}
+table tr td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    border-color: #EDEDED;
+}
+table {
+margin-bottom: 20px;
+}
+
+
+/* margins between sections */
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+.margin-top-60 {
+    margin-top: 60px;
+}
+.margin-top-30 {
+    margin-top: 30px;
+}
+.margin-top-15 {
+    margin-top: 15px;
+}
+.margin-top-minus-30 {
+    margin-top: -30px;
+}
+.margin-top-minus-15 {
+    margin-top: -15px;
+}
+
+
+/* interior white background */
+.background-white {
+    background: #fff;
+    padding: 10px;
 }

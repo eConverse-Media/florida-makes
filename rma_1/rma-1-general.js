@@ -56,7 +56,7 @@ function handleEvents() {
 }
 
 function handleLatestNews() {
-    $('.latest-news .HLLandingControl.SearchResults ul li').each(function() {
+    $('.home .latest-news .HLLandingControl.SearchResults .Content ul li').each(function() {
         var self = $(this);
 
         // get image
@@ -81,7 +81,7 @@ function handleQuickLinks() {
 }
 
 function handleWidgets() {
-    $('.HLLandingControl ul li').each(function () {
+    $('.HLLandingControl .Content ul li').each(function () {
         var self = $(this),
             byline = $(self).find('.ByLine'),
             h5 = $(self).find('h5');
@@ -116,19 +116,22 @@ function handleAppending() {
 function handleFeaturedEvent() {
     $('.featured-event .HLEventList ul li').each(function () {
         var self = $(this),
-            description = $(self).find('.timeAgoFormat + p');
+            eventContent = $(self).find('.timeAgoFormat').parent();
 
-        $(description).addClass('event-description');
-       
-        $(self).find('.event-description ~ p').remove();
+        $(eventContent).wrapInner('<div class="event-description" />');
+
+        $(self).find('.event-description > h3').prependTo(eventContent);
+        $(self).find('.event-description > h4').prependTo(eventContent);
+        $(self).find('.event-description > .timeAgoFormat').appendTo(eventContent);
 
         var text = $(self).find('.event-description').text();
+
+        text = $.trim(text);
 
         text = text.substring(0, 150);
 
         $(self).find('.event-description').text(text);
 
-        $(self).find('.event-description').insertBefore($(self).find('.timeAgoFormat'));
     });
 }
 
