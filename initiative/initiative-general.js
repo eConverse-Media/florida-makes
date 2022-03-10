@@ -51,7 +51,7 @@ function handlePrograms() {
 }
 
 function handleLatestNews() {
-    $('.latest-news .HLLandingControl.SearchResults ul li').each(function() {
+    $('.home .latest-news .HLLandingControl.SearchResults ul li').each(function() {
         var self = $(this);
 
         // get image

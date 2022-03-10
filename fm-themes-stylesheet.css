@@ -461,6 +461,218 @@
     text-decoration: underline;
 }
 
+@keyframes imgcontainerloading {
+    0% {
+        background: #242A2D;
+    }
+
+    50% {
+        background: #0B1A1D;
+    }
+
+    100% {
+        background: #242A2D;
+    }
+}
+
+.interior-news .Content ul li .img-container::before {
+    content: '';
+    opacity: 0;
+    transition: .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation-name: imgcontainerloading;
+    animation-duration: 3s;
+}
+
+.interior-news .Content ul li .img-container.loading::before {
+    opacity: 1;
+    transition: .3s;
+}
+
+@media (max-width: 450px) {
+    .interior-news .Content ul li {
+        display: block;
+    }
+
+    .interior-news .Content ul li .text-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/****** upcoming events ******/
+
+
+.upcoming-events .HLLandingControl .Content ul li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f3f5;
+    margin: 0;
+}
+
+.upcoming-events ul li .col-md-2 {
+    width: 80px;
+    margin-right: 20px;
+    float: left;
+}
+
+.upcoming-events ul li .col-md-2 .margin-bottom-mediumm {
+    margin-bottom: 0;
+}
+
+.upcoming-events ul li .col-md-10 {
+    width: calc(100% - 100px);
+    float: left;
+}
+
+.upcoming-events ul li .date-block {
+    width: 80px;
+    height: 80px;
+    background: [SecondaryColor];
+    border-radius: 16px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upcoming-events ul li .date-block .calendar-day {
+    display: none;
+}
+
+.upcoming-events ul li .date-block .calendary-number {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.upcoming-events ul li .date-block .calendar-month {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 0;
+    background: transparent;
+}
+
+.upcoming-events ul li .col-md-10 .col-md-12 {
+    padding-top: 30px !important;
+}
+
+.upcoming-events ul li .col-md-10 h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #8e8e8e;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.upcoming-events ul li .col-md-10 p.break-word {
+    display: none;
+}
+
+.upcoming-events ul li .col-md-10 .timeAgoFormat {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8e8e8e;
+}
+
+.past-events ul li .col-md-10 div[id*="CalendarLocation"] p {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.upcoming-events ul li .col-md-10 .timeAgoFormat::before {
+    color: [SecondaryColor];
+    margin-right: 2px;
+    font-family: FloridaMakes;
+    content: '\f01f';
+}
+@media (max-width: 550px) {
+
+    .upcoming-events ul li .col-md-10 h4 {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .upcoming-events ul li .col-md-10 .col-md-12 {
+        padding-top: 0 !important;
+    }
+}
+
+/************ ACL labels ************/
+
+.HLLandingControl.SearchResults ul li .row.title-row .col-sm-3.col-md-3.pull-right {
+    display: none;
+}
+.HLLandingControl.SearchResults ul li .row.title-row .col-md-9 {
+    width: 100%;
+}
+
+/************ resetting HL blue ************/
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus,
+#MPOuterMost .bootstrap-4 .btn-primary.focus,
+#MPOuterMost .bootstrap-4 .btn-primary:focus,
+#MPOuterMost .bootstrap-4 .btn-primary.hover,
+#MPOuterMost .bootstrap-4 .btn-primary:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 .btn-success.focus,
+#MPOuterMost .bootstrap-4 .btn-success:focus,
+#MPOuterMost .bootstrap-4 .btn-success.hover,
+#MPOuterMost .bootstrap-4 .btn-success:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 .btn-danger.focus,
+#MPOuterMost .bootstrap-4 .btn-danger:focus,
+#MPOuterMost .bootstrap-4 .btn-danger.hover,
+#MPOuterMost .bootstrap-4 .btn-danger:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
+#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
+    background: [PrimaryColor];
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus,
+#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
+#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
+    border-color: [PrimaryColor];
+}
+
+#MPOuterMost .bootstrap-4 .btn-primary,
+#MPOuterMost .bootstrap-4 .btn-success,
+#MPOuterMost .bootstrap-4 .btn-danger {
+    border: none;
+}
+
+#MPOuterMost .bootstrap-4 .btn-contains-title:hover h3,
+#MPOuterMost .bootstrap-4 .btn-contains-title:focus h3,
+#MPOuterMost .bootstrap-4 .btn-inline-link-primary {
+    color: #222;
+}
+
 /*** MCS edits ***/
 
 /* accordions/expandable text */
