@@ -675,7 +675,7 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child {
     float: right;
-    width: calc(100% - 340px);
+    width: calc(100% - 440px);
     margin: 0;
     padding: 0;
 }
@@ -718,12 +718,14 @@ td.ProfilePic > a > img {
 
 /*** logo ***/
 #MPOuterMost.full #Logo {
-    width: 340px;
     padding: 0;
     margin: 0;
 }
 #Logo > .col-md-12 {
     padding: 0;
+}
+#DesktopLogoDiv {
+    max-width: 340px;
 }
 
 /****** login / profile link ******/
@@ -791,6 +793,7 @@ td.ProfilePic > a > img {
     width: 30px;
     height: 26px;
     border: none;
+    padding-left: 2px;
 }
 .search-bar-top button[id*="SearchButton"] .glyphicon-search,
 #searchColumn button[id*="SearchButton"] .glyphicon-search {
@@ -1866,9 +1869,11 @@ td.ProfilePic > a > img {
     #Logo {
         position: relative;
         z-index: 20;
-    }
-    #MPOuterMost.full #Logo {
         width: calc(100% - 45px);
+    }
+    #DesktopLogoDiv,
+    #PhoneLogoDiv {
+        max-width: 300px;
     }
     #MPheader > .row:first-child > .col-md-12 > .pull-right:last-child {
         width: calc(100% - 75px);

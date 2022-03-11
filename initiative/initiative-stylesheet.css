@@ -455,10 +455,32 @@ input:focus {
     border-radius: 4px;
     background-color: [SecondaryColor];
     padding: 8px 15px;
+    position: relative;
 }
 .make-buttons.outline em a {
     background: transparent;
     border-color: #fff;
+}
+.btn::before,
+.make-buttons em a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: -1;
+    transition: .3s;
+}
+.btn:hover::before,
+.btn:focus::before,
+.make-buttons em a:hover::before,
+.make-buttons em a:focus::before {
+    opacity: 0.1;
+    z-index: 0;
+    transition: .3s;
 }
 
 /****** round profile pictures ******/
@@ -494,11 +516,11 @@ td.ProfilePic > a {
     height: 20px;
 }
 .Welcome button.btn-default.btn.imgButton {
-    width: 30px;
-    height: 30px;
-    min-height: 30px;
+    width: 25px;
+    height: 25px;
+    min-height: 25px;
     border: none;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 .text-muted-h2 a[id*="ImageControl_lnkDisplay"] {
     width: 140px;
@@ -540,7 +562,7 @@ td.ProfilePic > a > img {
 /****** backgrounds / homepage components ******/
 
 .bg-grey {
-    padding: 60px 0;
+    padding: 70px 0;
     background: #f8f8f8;
 }
 
@@ -614,7 +636,7 @@ td.ProfilePic > a > img {
 }
 
 #HEADER {
-    padding: 5px calc(50% - 600px) 15px calc(50% - 600px);
+    padding: 15px calc(50% - 600px) 15px calc(50% - 600px);
     border-bottom: 1px solid #F5F5F5;
 }
 
@@ -625,7 +647,7 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child {
     float: right;
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     margin: 0;
     padding: 0;
 }
@@ -666,9 +688,12 @@ td.ProfilePic > a > img {
 
 /*** logo ***/
 #MPOuterMost.full #Logo {
-    width: 300px;
     padding: 0;
     margin: 0;
+}
+#DesktopLogoDiv,
+#PhoneLogoDiv {
+    max-width: 300px;
 }
 #Logo > .col-md-12 {
     padding: 0;
@@ -683,6 +708,16 @@ td.ProfilePic > a > img {
     background: transparent;
     border: none;
     box-shadow: none;
+}
+
+#BtnShowProfile {
+    display: none;
+}
+#Welcome_Content .imgButton {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    margin-top: -3px;
 }
 
 /****** search ******/
@@ -722,12 +757,14 @@ td.ProfilePic > a > img {
 #searchColumn button[id*="SearchButton"] {
     border-radius: 2px;
     background: [SecondaryColor];
+    border: none;
     padding: 0;
     text-align: center;
-    font-size: 14px;
+    font-size: 22px;
     line-height: 26px;
     width: 30px;
     height: 26px;
+    padding-left: 2px;
 }
 .search-bar-top button[id*="SearchButton"] .glyphicon-search,
 #searchColumn button[id*="SearchButton"] .glyphicon-search {
@@ -906,8 +943,10 @@ td.ProfilePic > a > img {
     font-size: 18px;
     line-height: 25px;
 }
+.service-card p:last-of-type {
+    margin-bottom: 25px;
+}
 .service-card a {
-    margin-top: 25px;
     text-decoration: none;
     color: #222;
     font-family: 'Source Sans Pro', sans-serif;
@@ -929,6 +968,9 @@ td.ProfilePic > a > img {
     right: 0;
     top: 5px;
 }
+.our-services .col-md-6:last-child img {
+    width: 100%;
+}
 
 /************ who we are ************/
 
@@ -937,6 +979,9 @@ td.ProfilePic > a > img {
     margin-bottom: 70px;
     display: flex;
     align-items: center;
+}
+.home .who-we-are .HtmlContent > em:last-child {
+    margin-top: 15px;
 }
 
 /************ featured programs ************/
@@ -1120,8 +1165,8 @@ td.ProfilePic > a > img {
     transition: .3s;
     position: relative;
 }
-.home .HLEventList .Content ul li a:hover .title-row .col-md-9,
-.home .HLEventList .Content ul li a:focus .title-row .col-md-9 {
+.home .HLEventList .Content ul li a:hover,
+.home .HLEventList .Content ul li a:focus {
     box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
     transition: .3s;
 }
@@ -1221,10 +1266,9 @@ td.ProfilePic > a > img {
     background-repeat: no-repeat;
 }
 
-.home .latest-news .Content ul li a:hover .text-container,
-.home .latest-news .Content ul li a:focus .text-container {
+.home .latest-news .Content ul li a:hover,
+.home .latest-news .Content ul li a:focus {
     box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
-    transition: .3s;
 }
 
 .home .latest-news .Content ul li .text-container {
@@ -1357,7 +1401,7 @@ td.ProfilePic > a > img {
 .homepage-search .SearchInputs {
     background: #fff;
     border-radius: 4px;
-    padding: 4px;
+    padding: 2px 4px;
 }
 .homepage-search .SearchInputs .form-control {
     color: #686868;
@@ -1372,6 +1416,13 @@ td.ProfilePic > a > img {
 }
 .homepage-search .SearchInputs .form-control::placeholder {
     font-style: normal;
+}
+.homepage-search .SearchInputs button[id*="SearchButton"],
+.homepage-search .SearchInputs button[id*="SearchButton"]:hover,
+.homepage-search .SearchInputs button[id*="SearchButton"]:focus {
+    background: [SecondaryColor];
+    border-color: [SecondaryColor];
+    color: #fff;
 }
 
 /************ footer ************/
@@ -1400,6 +1451,7 @@ td.ProfilePic > a > img {
     font-size: 12px;
 }
 .footer-top-row h2 {
+    font-family: 'Source Sans Pro', sans-serif;
     color: #fff;
     text-transform: none;
     margin-top: 0;
@@ -1407,9 +1459,6 @@ td.ProfilePic > a > img {
     line-height: 20px;
     letter-spacing: 0;
     margin-bottom: 10px;
-}
-.footer-top-row > .col-md-4:last-child {
-    text-align: right;
 }
 .footer-top-row ul {
     list-style-type: none;
@@ -1420,6 +1469,11 @@ td.ProfilePic > a > img {
     color: #fff;
     opacity: 0.8;
     text-decoration: none;
+}
+.footer-top-row p,
+.footer-links ul li,
+.footer-privacy ul li  {
+    margin-bottom: 4px;
 }
 .footer-links ul {
     display: flex;
@@ -1495,6 +1549,26 @@ td.ProfilePic > a > img {
     div[id*="MessagePanel"] .col-md-4 {
         width: 25%;
     }
+    .footer-top-row > .col-md-3:nth-child(3) {
+        width: calc(50% - 145px);
+    }
+    .footer-top-row > .col-md-3:last-child {
+        width: 145px;
+        text-align: right;
+    }
+    .home .who-we-are > .col-md-6:first-child {
+        padding-right: 65px;
+        width: 58%;
+    }
+    .home .who-we-are > .col-md-6:last-child {
+        width: 42%;
+    }
+    .our-services .col-md-6:first-child {
+        padding-right: 80px;
+    }
+    .our-services .col-md-6:last-child {
+        padding: 0 0 20px 0;
+    }
 }
 
 /****** smaller screens ******/
@@ -1535,11 +1609,14 @@ td.ProfilePic > a > img {
         padding-right: 15px;
         background: [PrimaryColor];
     }
-    .footer-top-row > .col-md-4,
-    .footer-top-row > .col-md-4:last-child,
+    .footer-top-row > .col-md-3,
     .footer-attribution,
     .footer-copyright {
         text-align: center;
+    }
+    .footer-logo img {
+        margin-left: auto;
+        margin-right: auto;
     }
     .footer-social ul {
         justify-content: center;
@@ -1664,9 +1741,11 @@ td.ProfilePic > a > img {
     #Logo {
         position: relative;
         z-index: 20;
+        max-width: calc(100% - 45px);
     }
-    #MPOuterMost.full #Logo {
-        width: calc(100% - 45px);
+    #DesktopLogoDiv,
+    #PhoneLogoDiv {
+        max-width: 300px;
     }
     #MPheader > .row:first-child > .col-md-12 > .pull-right:last-child {
         width: calc(100% - 75px);

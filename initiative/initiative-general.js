@@ -41,6 +41,12 @@ function handleServices() {
         $(button).attr('type', 'button');
         $(button).attr('onclick', 'showService(".' + klass + '");');
     });
+
+    // show first service on page load
+    var classList = $('.service-button:first-child').attr('class').split(' '),
+        classText = classList[classList.length - 1];
+
+    showService('.' + classText);
 }
 
 function handlePrograms() {

@@ -487,11 +487,11 @@ td.ProfilePic > a {
     height: 20px;
 }
 .Welcome button.btn-default.btn.imgButton {
-    width: 30px;
-    height: 30px;
-    min-height: 30px;
+    width: 25px;
+    height: 25px;
+    min-height: 25px;
     border: none;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 .text-muted-h2 a[id*="ImageControl_lnkDisplay"] {
     width: 140px;
@@ -625,7 +625,7 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child {
     float: right;
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     margin: 0;
     padding: 0;
 }
@@ -666,12 +666,15 @@ td.ProfilePic > a > img {
 
 /*** logo ***/
 #MPOuterMost.full #Logo {
-    width: 300px;
+    
     padding: 0;
     margin: 0;
 }
 #Logo > .col-md-12 {
     padding: 0;
+}
+#DesktopLogoDiv {
+    max-width: 300px;
 }
 
 /****** login / profile link ******/
@@ -683,6 +686,15 @@ td.ProfilePic > a > img {
     background: transparent;
     border: none;
     box-shadow: none;
+}
+#BtnShowProfile {
+    display: none;
+}
+#Welcome_Content .imgButton {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    margin-top: -3px;
 }
 
 /****** search ******/
@@ -728,6 +740,7 @@ td.ProfilePic > a > img {
     line-height: 26px;
     width: 30px;
     height: 26px;
+    padding-left: 2px;
 }
 .search-bar-top button[id*="SearchButton"] .glyphicon-search,
 #searchColumn button[id*="SearchButton"] .glyphicon-search {
@@ -1069,10 +1082,9 @@ td.ProfilePic > a > img {
     transition: .3s;
     position: relative;
 }
-.home .HLEventList .Content ul li a:hover .title-row .col-md-9,
-.home .HLEventList .Content ul li a:focus .title-row .col-md-9 {
+.home .HLEventList .Content ul li a:hover,
+.home .HLEventList .Content ul li a:focus {
     box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
-    transition: .3s;
 }
 .home .HLEventList .Content ul li .title-row .timeAgoFormat {
     position: absolute;
@@ -1511,6 +1523,7 @@ td.ProfilePic > a > img {
     font-size: 12px;
 }
 .footer-top-row h2 {
+    font-family: 'Source Sans Pro', sans-serif;
     color: #fff;
     text-transform: none;
     margin-top: 0;
@@ -1518,9 +1531,6 @@ td.ProfilePic > a > img {
     line-height: 20px;
     letter-spacing: 0;
     margin-bottom: 10px;
-}
-.footer-top-row > .col-md-4:last-child {
-    text-align: right;
 }
 .footer-top-row ul {
     list-style-type: none;
@@ -1531,6 +1541,12 @@ td.ProfilePic > a > img {
     color: #fff;
     opacity: 0.8;
     text-decoration: none;
+}
+
+.footer-top-row p,
+.footer-links ul li,
+.footer-privacy ul li  {
+    margin-bottom: 4px;
 }
 .footer-links ul {
     display: flex;
@@ -1597,6 +1613,13 @@ td.ProfilePic > a > img {
     div[id*="MessagePanel"] .col-md-4 {
         width: 25%;
     }
+    .footer-top-row > .col-md-3:nth-child(3) {
+        width: calc(50% - 145px);
+    }
+    .footer-top-row > .col-md-3:last-child {
+        width: 145px;
+        text-align: right;
+    }
 }
 
 /****** smaller screens ******/
@@ -1648,11 +1671,15 @@ td.ProfilePic > a > img {
     .tile-grow div[class*="section"] .HtmlContent em {
         margin: 0;
     }
-    .footer-top-row > .col-md-4,
-    .footer-top-row > .col-md-4:last-child,
+    .footer-top-row > .col-md-3,
     .footer-attribution,
     .footer-copyright {
         text-align: center;
+    }
+
+    .footer-logo img {
+        margin-left: auto;
+        margin-right: auto;
     }
     .footer-social ul {
         justify-content: center;
@@ -1764,9 +1791,11 @@ td.ProfilePic > a > img {
     #Logo {
         position: relative;
         z-index: 20;
-    }
-    #MPOuterMost.full #Logo {
         width: calc(100% - 45px);
+    }
+    #DesktopLogoDiv,
+    #PhoneLogoDiv {
+        max-width: 300px;
     }
     #MPheader > .row:first-child > .col-md-12 > .pull-right:last-child {
         width: calc(100% - 75px);
