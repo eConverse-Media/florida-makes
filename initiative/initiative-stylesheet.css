@@ -647,7 +647,7 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child {
     float: right;
-    width: calc(100% - 400px);
+    width: calc(100% - 385px);
     margin: 0;
     padding: 0;
 }
@@ -783,35 +783,6 @@ td.ProfilePic > a > img {
 }
 
 /****** main nav ******/
-
-#MPOuterMost #NAV,
-#MPOuterMost .navbar-default {
-    background-color: transparent;
-    border: none;
-}
-#NAV .navbar-default .navbar-nav>li>a,
-#NAV .navbar-default .navbar-nav>.active>a, 
-#NAV .navbar-default .navbar-nav>.disabled>a {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #222222; 
-    background-color: transparent;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 1.33;
-    padding: 20px;
-}
-#NAV .navbar-default .navbar-nav>li>a:hover, 
-#NAV .navbar-default .navbar-nav>li>a:focus,
-#NAV .navbar-default .navbar-nav>.active>a:hover, 
-#NAV .navbar-default .navbar-nav>.active>a:focus,
-#NAV .navbar-default .navbar-nav>.disabled>a:hover, 
-#NAV .navbar-default .navbar-nav>.disabled>a:focus,
-#NAV .navbar-default .navbar-nav>.open>a, 
-#NAV .navbar-default .navbar-nav>.open>a:hover, 
-#NAV .navbar-default .navbar-nav>.open>a:focus {
-	color: #222222; 
-	background-color: transparent;
-}
 
 /* caret */
 .navbar-default .navbar-nav>.dropdown>a .caret {
@@ -1577,22 +1548,6 @@ td.ProfilePic > a > img {
     }
 }
 
-@media (min-width: 768px) {
-    #NAV .row {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    #NAV .col-md-12,
-    .navbar-collapse {
-        padding: 0;
-    }
-    .navbar-nav {
-        float: none;
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
 @media (min-width: 992px) {
     div[id*="MessagePanel"] .col-md-4 {
         width: 25%;
@@ -1767,9 +1722,6 @@ td.ProfilePic > a > img {
     }
 }
 @media (max-width: 767px) {
-    #HEADER {
-        border-bottom: none;
-    }
     #MPheader > .row:first-child {
         float: none;
         width: 100%;
@@ -1782,18 +1734,10 @@ td.ProfilePic > a > img {
     .search-bar-top {
         display: none;
     }
-    #NAV {
-        margin-top: -65px;
-        z-index: 10;
-    }
     #Logo {
         position: relative;
         z-index: 20;
         max-width: calc(100% - 45px);
-    }
-    #DesktopLogoDiv,
-    #PhoneLogoDiv {
-        max-width: 300px;
     }
     #MPheader > .row:first-child > .col-md-12 > .pull-right:last-child {
         width: calc(100% - 75px);

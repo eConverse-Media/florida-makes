@@ -673,6 +673,172 @@
     color: #222;
 }
 
+/************ main nav ************/
+
+#MPOuterMost #NAV,
+#MPOuterMost .navbar-default {
+    background-color: transparent;
+    border: none;
+}
+#NAV .navbar-default .navbar-nav>li>a,
+#NAV .navbar-default .navbar-nav>.active>a, 
+#NAV .navbar-default .navbar-nav>.disabled>a {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #222222; 
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.33;
+    padding: 20px;
+}
+#NAV .navbar-default .navbar-nav>li>a:hover, 
+#NAV .navbar-default .navbar-nav>li>a:focus,
+#NAV .navbar-default .navbar-nav>.active>a:hover, 
+#NAV .navbar-default .navbar-nav>.active>a:focus,
+#NAV .navbar-default .navbar-nav>.disabled>a:hover, 
+#NAV .navbar-default .navbar-nav>.disabled>a:focus,
+#NAV .navbar-default .navbar-nav>.open>a, 
+#NAV .navbar-default .navbar-nav>.open>a:hover, 
+#NAV .navbar-default .navbar-nav>.open>a:focus {
+	color: #222222; 
+	background-color: transparent;
+}
+
+/* dropdowns */
+#MPOuterMost .navbar-nav>li>.dropdown-menu {
+	background-color: #fff;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05), 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 2px 2px;
+    padding: 0;
+    border-bottom: 2px solid [SecondaryColor];
+}
+#MPOuterMost .navbar-nav .dropdown-menu>li>a {
+    color: #222;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 12px 15px;
+}
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a,
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a:hover,
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a:focus,
+#MPOuterMost .navbar-nav .dropdown-menu>li>a:hover,
+#MPOuterMost .navbar-nav .dropdown-menu>li>a:focus {
+	background: [SecondaryColor];
+	color: #fff;
+}
+
+@media (min-width: 1151px) {
+    #NAV .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #NAV .col-md-12,
+    .navbar-collapse {
+        padding: 0;
+    }
+    .navbar-nav {
+        float: none;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1150px) {
+    #MPOuterMost .navbar-nav>li>.dropdown-menu {
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: none;
+    }
+    #MPOuterMost .navbar-nav>li>.dropdown-menu a {
+        white-space: normal;
+    }
+    .navbar-header {
+        float: none;
+        position: relative;
+    }
+    .navbar-header::before {
+        content: 'Navigation';
+        display: block;
+        text-align: right;
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .navbar-toggle {
+        display: block;
+        margin-right: 0;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-nav {
+        float: none !important;
+        margin: 7.5px 0;
+        max-height: calc(100vh - 125px);
+    }
+    .navbar-nav > li {
+        float: none;
+        max-height: calc(100% - 150vh);
+    }
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
+    .navbar-collapse.in {
+        overflow-y: scroll;
+    }
+    .collapsing {
+        overflow: hidden !important;
+    }
+    .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #HEADER {
+        border-bottom: none;
+    }
+    .navbar-header::before {
+        display: none;
+    }
+    .navbar-toggle {
+        margin-right: 15px;
+    }
+    #NAV {
+        margin-top: -65px;
+    }
+    #DesktopLogoDiv,
+    #PhoneLogoDiv {
+        max-width: 300px;
+    }
+}
+
 /*** MCS edits ***/
 
 /* accordions/expandable text */
