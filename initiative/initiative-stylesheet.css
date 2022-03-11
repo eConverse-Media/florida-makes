@@ -1054,6 +1054,36 @@ td.ProfilePic > a > img {
     background-color: [SecondaryColor];
     transition: .3s;
 }
+.featured-program.assessment > a h3::before {
+    content: '\f024';
+}
+.featured-program.services > a h3::before {
+    content: '\f031';
+}
+.featured-program.technology > a h3::before {
+    content: '\f027';
+}
+.featured-program.cyber > a h3::before {
+    content: '\f029';
+}
+.featured-program.globe > a h3::before {
+    content: '\f02a';
+}
+.featured-program.improvement > a h3::before {
+    content: '\f025';
+}
+.featured-program.network > a h3::before {
+    content: '\f026';
+}
+.featured-program.training > a h3::before {
+    content: '\f028';
+}
+.featured-program.clipboard > a h3::before {
+    content: '\f030';
+}
+.featured-program.flood > a h3::before {
+    content: '\f02b';
+}
 
 /************ widgets ************/
 
