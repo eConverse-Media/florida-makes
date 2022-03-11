@@ -1366,6 +1366,7 @@ td.ProfilePic > a > img {
     font-size: 30px;
     line-height: 1;
     font-weight: 400;
+    content: '\f022';
 }
 .quick-link.file .HtmlContent a::before {
     content: '\f049';
@@ -1384,6 +1385,36 @@ td.ProfilePic > a > img {
 }
 .quick-link.question .HtmlContent a::before {
     content: '\f04e';
+}
+.quick-link.assessment .HtmlContent a::before {
+    content: '\f024';
+}
+.quick-link.services .HtmlContent a::before {
+    content: '\f031';
+}
+.quick-link.technology .HtmlContent a::before {
+    content: '\f027';
+}
+.quick-link.cyber .HtmlContent a::before {
+    content: '\f029';
+}
+.quick-link.globe .HtmlContent a::before {
+    content: '\f02a';
+}
+.quick-link.improvement .HtmlContent a::before {
+    content: '\f025';
+}
+.quick-link.network .HtmlContent a::before {
+    content: '\f026';
+}
+.quick-link.training .HtmlContent a::before {
+    content: '\f028';
+}
+.quick-link.clipboard .HtmlContent a::before {
+    content: '\f030';
+}
+.quick-link.flood .HtmlContent a::before {
+    content: '\f02b';
 }
 .quick-link .HtmlContent a:hover::before,
 .quick-link .HtmlContent a:focus::before {

@@ -935,16 +935,57 @@ td.ProfilePic > a > img {
     margin-bottom: 15px;
     margin-top: 10px;
     font-weight: 400;
+    content: '\f022';
 }
-.top-tile.learn h2::before {
-    content: '\f025';
+.top-tile.assessment h2::before {
+    content: '\f024';
 }
-.top-tile.grow h2::before {
-    content: '\f028';
+.top-tile.services h2::before {
+    content: '\f031';
 }
-.top-tile.connect h2::before {
+.top-tile.technology h2::before {
+    content: '\f027';
+}
+.top-tile.cyber h2::before {
+    content: '\f029';
+}
+.top-tile.globe h2::before {
     content: '\f02a';
 }
+.top-tile.improvement h2::before {
+    content: '\f025';
+}
+.top-tile.network h2::before {
+    content: '\f026';
+}
+.top-tile.training h2::before {
+    content: '\f028';
+}
+.top-tile.clipboard h2::before {
+    content: '\f030';
+}
+.top-tile.flood h2::before {
+    content: '\f02b';
+}
+.top-tile.file h2::before {
+    content: '\f049';
+}
+.top-tile.calendar h2::before {
+    content: '\f04a';
+}
+.top-tile.comments h2::before {
+    content: '\f04b';
+}
+.top-tile.lectern h2::before {
+    content: '\f04c';
+}
+.top-tile.handshake h2::before {
+    content: '\f04d';
+}
+.top-tile.question h2::before {
+    content: '\f04e';
+}
+
 .top-tiles .top-tile h2 {
     margin-top: 0;
     margin-bottom: 2px;

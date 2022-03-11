@@ -1084,6 +1084,24 @@ td.ProfilePic > a > img {
 .featured-program.flood > a h3::before {
     content: '\f02b';
 }
+.featured-program.file > a h3::before {
+    content: '\f049';
+}
+.featured-program.calendar > a h3::before {
+    content: '\f04a';
+}
+.featured-program.comments > a h3::before {
+    content: '\f04b';
+}
+.featured-program.lectern > a h3::before {
+    content: '\f04c';
+}
+.featured-program.handshake > a h3::before {
+    content: '\f04d';
+}
+.featured-program.question > a h3::before {
+    content: '\f04e';
+}
 
 /************ widgets ************/
 
