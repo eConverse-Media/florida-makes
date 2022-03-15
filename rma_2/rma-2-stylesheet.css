@@ -423,37 +423,6 @@ input:focus {
     transition: .3s;
 }
 
-/****** buttons ******/
-
-.make-buttons em {
-    display: inline-block;
-    margin: -5px;
-}
-.make-buttons em a {
-    display: inline-block;
-    margin: 5px;
-}
-.btn,
-.make-buttons em a {
-    font-style: normal;
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid [PrimaryColor];
-    border-radius: 2px;
-    background-color: [PrimaryColor];
-    padding: 10px 15px;
-}
-.make-buttons.outline em a {
-    background: transparent;
-    border-color: #fff;
-}
-
 /****** round profile pictures ******/
 
 .Welcome .imgButton.btn,
@@ -533,7 +502,7 @@ td.ProfilePic > a > img {
 /****** backgrounds / homepage components ******/
 
 .bg-grey {
-    padding: 60px 0;
+    padding: 70px 0;
     background: #f8f8f8;
 }
 
@@ -594,6 +563,9 @@ td.ProfilePic > a > img {
 .margin-top-50 {
     margin-top: 50px;
 }
+.margin-top-70 {
+    margin-top: 70px;
+}
 .margin-bottom-80 {
     margin-bottom: 80px;
 }
@@ -639,29 +611,6 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child > .col-md-12 {
     padding: 0;
-}
-
-/*** top text links ***/
-
-#MPAuxNav ul.level1 li a,
-#Welcome_LoginLink {
-    padding: 0;
-    margin: 0 0 0 15px;
-    text-decoration: none;
-    color: #222;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 13px;
-    line-height: 1.46;
-    font-weight: 400;
-    border: none;
-}
-#Welcome_NotLoggedIn {
-    line-height: 1.46;
-    font-size: 13px;
-}
-#MPheader > .row:first-child > .col-md-12 > .pull-right {
-    font-size: 13px;
-    line-height: 1.46;
 }
 
 /*** logo ***/
@@ -734,6 +683,7 @@ td.ProfilePic > a > img {
 #searchColumn button[id*="SearchButton"] {
     border-radius: 2px;
     background: [PrimaryColor];
+    border-color: [PrimaryColor];
     padding: 0;
     text-align: center;
     font-size: 22px;
@@ -805,7 +755,7 @@ td.ProfilePic > a > img {
     flex-wrap: wrap;
     border-radius: 2px;
     background: rgba(0, 0, 0, 0.1);
-    padding: 10px 5px;
+    padding: 20px 5px;
 }
 .service-button {
     flex-grow: 0;
@@ -828,7 +778,7 @@ td.ProfilePic > a > img {
 .service-button.make-buttons em {
     padding: 0 20px;
 }
-.service-button em a {
+.service-button.make-buttons em a {
     background: transparent;
     font-weight: 600;
     font-size: 15px;
@@ -839,12 +789,22 @@ td.ProfilePic > a > img {
     padding: 15px 15px 15px 0;
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    display: block;
+    opacity: 0.85;
 }
-.service-button:last-child em a,
-.service-button:nth-last-child(2) em a {
+.service-button.make-buttons em a:hover,
+.service-button.make-buttons em a:focus {
+    opacity: 1;
+}
+.service-button.make-buttons:last-child em a,
+.service-button.make-buttons:nth-last-child(2) em a {
     border-bottom: none;
 }
-.service-button em a::after {
+.service-button.make-buttons em a::before {
+    display: none;
+}
+.service-button.make-buttons em a::after {
+    font-weight: 400;
     font-family: FloridaMakes;
     content: '\f021';
     position: absolute;
@@ -986,6 +946,13 @@ td.ProfilePic > a > img {
     padding: 10px 24px;
     color: #333;
     border: 1px solid #f8f8f8;
+}
+.HLLandingControl div[id*="BottomLink"] .col-md-12 a::before {
+    background: #000;
+}
+.HLLandingControl div[id*="BottomLink"] .col-md-12 a:hover::before,
+.HLLandingControl div[id*="BottomLink"] .col-md-12 a:focus::before {
+    opacity: 0.03;
 }
 
 /************ events ************/
@@ -1206,6 +1173,9 @@ td.ProfilePic > a > img {
     border-radius: 2px;
     background: transparent;
 }
+.latest-news .HLLandingControl ul li .content-tags.flex-container .fa-user {
+    display: none;
+}
 
 /*** arrows ***/
 
@@ -1338,6 +1308,7 @@ td.ProfilePic > a > img {
     line-height: 1;
     font-weight: 400;
     content: '\f022';
+    margin-bottom: 8px;
 }
 .quick-link.file .HtmlContent a::before {
     content: '\f049';
@@ -1543,6 +1514,10 @@ td.ProfilePic > a > img {
     color: #fff;
     opacity: 0.8;
     text-decoration: none;
+}
+.footer-top-row a:hover,
+.footer-top-row a:focus {
+    opacity: 1;
 }
 
 .footer-top-row p,

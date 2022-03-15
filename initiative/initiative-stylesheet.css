@@ -430,59 +430,6 @@ input:focus {
     transition: .3s;
 }
 
-/****** buttons ******/
-
-.make-buttons em {
-    display: inline-block;
-    margin: -5px;
-}
-.make-buttons em a {
-    display: inline-block;
-    margin: 5px;
-}
-.btn,
-.make-buttons em a {
-    font-style: normal;
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid [SecondaryColor];
-    border-radius: 4px;
-    background-color: [SecondaryColor];
-    padding: 8px 15px;
-    position: relative;
-}
-.make-buttons.outline em a {
-    background: transparent;
-    border-color: #fff;
-}
-.btn::before,
-.make-buttons em a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    opacity: 0;
-    z-index: -1;
-    transition: .3s;
-}
-.btn:hover::before,
-.btn:focus::before,
-.make-buttons em a:hover::before,
-.make-buttons em a:focus::before {
-    opacity: 0.1;
-    z-index: 0;
-    transition: .3s;
-}
-
 /****** round profile pictures ******/
 
 .Welcome .imgButton.btn,
@@ -661,29 +608,6 @@ td.ProfilePic > a > img {
 }
 #MPheader > .row:first-child > .col-md-12 {
     padding: 0;
-}
-
-/*** top text links ***/
-
-#MPAuxNav ul.level1 li a,
-#Welcome_LoginLink {
-    padding: 0;
-    margin: 0 0 0 15px;
-    text-decoration: none;
-    color: #222;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 13px;
-    line-height: 1.46;
-    font-weight: 400;
-    border: none;
-}
-#Welcome_NotLoggedIn {
-    line-height: 1.46;
-    font-size: 13px;
-}
-#MPheader > .row:first-child > .col-md-12 > .pull-right {
-    font-size: 13px;
-    line-height: 1.46;
 }
 
 /*** logo ***/
