@@ -790,7 +790,7 @@ td.ProfilePic > a > img {
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     display: block;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 .service-button.make-buttons em a:hover,
 .service-button.make-buttons em a:focus {
@@ -806,7 +806,7 @@ td.ProfilePic > a > img {
 .service-button.make-buttons em a::after {
     font-weight: 400;
     font-family: FloridaMakes;
-    content: '\f021';
+    content: '\f057';
     position: absolute;
     right: 0;
     top: 50%;
@@ -839,7 +839,7 @@ td.ProfilePic > a > img {
     flex-shrink: 1;
     flex-basis: 100%;
     background: #F8F8F8;
-    border: 1px solid #f3f3f3;
+    border: 1px solid transparent;
     border-radius: 2px;
     padding: 20px;
     text-decoration: none;
@@ -882,19 +882,33 @@ td.ProfilePic > a > img {
     display: flex;
     flex-direction: column;
 }
+.featured-program > a {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #8e8e8e;
+}
+.featured-program > a:hover,
+.featured-program > a:focus {
+    box-shadow: 0px 6px 14px -6px rgba(65, 65, 65, 0.12), 0px 10px 32px -4px rgba(65, 65, 65, 0.1);
+}
 .featured-program .img-container {
     height: 160px;
     width: 100%;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    border-bottom: 5px solid [SecondaryColor];
 }
 .featured-program .HtmlContent {
     flex-basis: calc(100% - 160px);
     background: #fff;
     padding: 25px 20px;
-    border-top: 5px solid [SecondaryColor];
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
+    border: 1px solid #f3f3f3;
 }
 .featured-program h3 {
     margin-top: 0;
@@ -1397,17 +1411,19 @@ td.ProfilePic > a > img {
 
 /************ sponsors ************/
 
-.sponsors {
-    display: flex;
-    margin: 10px -15px -15px -15px;
+.sponsors.slick-slider.slick-initialized {
+    margin: 10px -15px -32px -15px;
 }
-.sponsor {
+
+.sponsors .slick-track {
+    display: flex;
+}
+.sponsors .sponsor.slick-slide {
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: 25%;
     display: flex;
-    padding: 15px;
-    min-height: 150px;
+    padding: 15px 15px 32px 15px;
+    min-height: 170px;
 }
 .sponsor .HtmlContent,
 .sponsor a {
@@ -1653,7 +1669,6 @@ td.ProfilePic > a > img {
     .home .who-we-are {
         display: block;
     }
-    .sponsors,
     .featured-programs,
     .home .HLEventList .Content ul {
         flex-wrap: wrap;
@@ -1664,7 +1679,6 @@ td.ProfilePic > a > img {
         margin-left: auto;
         margin-right: auto;
     }
-    .sponsor,
     .featured-program {
         flex-basis: 50%;
     }
@@ -1755,7 +1769,6 @@ td.ProfilePic > a > img {
 }
 
 @media (max-width: 650px) {
-    .sponsor,
     .featured-program,
     .card {
         flex-basis: 100%;

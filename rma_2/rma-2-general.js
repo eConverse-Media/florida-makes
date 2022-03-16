@@ -27,6 +27,9 @@ function handleCards() {
 
 function handlePrograms() {
     $('.featured-program').wrapAll('<div class="featured-programs" />');
+    $('.featured-program').each(function () {
+        handleLink(this);
+    });
 }
 
 function handleFlexImages() {
@@ -81,7 +84,29 @@ function handleQuickLinks() {
 }
 
 function handleSponsors() {
-    $('.sponsor').wrapAll('<div class="sponsors" />');
+    $('.sponsor').wrapAll('<div class="sponsors slick-dotted" />');
+    $('.sponsors').slick({
+        dots: false,
+        arrows: false,
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 651,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 }
 
 function handleWidgets() {
@@ -142,10 +167,10 @@ function handleEvents() {
 
 $(function () {
     handleSearch();
+    handleFlexImages();
     handleServices();
     handleCards();
     handlePrograms();
-    handleFlexImages();
     handleLatestNews();
     handleQuickLinks();
     handleSponsors();

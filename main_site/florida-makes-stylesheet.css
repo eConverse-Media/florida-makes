@@ -2284,7 +2284,7 @@ a.list-group-item.active>.badge,
 /************ manufacts and featured program ************/
 
 .manufacts {
-    background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/manufacts-bg.png');
+   /* background: url('https://higherlogicdownload.s3.amazonaws.com/FLORIDAMAKES/3624e370-dd1d-4c97-a4a4-8686194d0923/UploadedImages/Homepage/Background_Images/manufacts-bg.png');*/
     background-size: cover;
     background-position: center;
     mix-blend-mode: multiply;
@@ -3390,7 +3390,11 @@ a.list-group-item.active>.badge,
     color: #fff;
     text-decoration: underline;
 }
-
+.CommunityManagementGear {
+    position: absolute;
+    left: calc(50% - 600px);
+    bottom: 30px;
+}
 
 /****** hero h1 ******/
 
@@ -4327,6 +4331,9 @@ div.filter-button-group .filter-label {
         margin-left: 0;
         margin-right: 0;
     }
+    .CommunityManagementGear {
+        left: 15px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -4764,10 +4771,6 @@ div.filter-button-group .filter-label {
         padding-bottom: 50px;
     }
 
-    .hero-text .HtmlContent {
-        top: 50px;
-    }
-
     .service {
         flex-basis: 100%;
     }
@@ -4831,4 +4834,8 @@ div.filter-button-group .filter-label {
     .dashboard-link {
         flex-basis: 100%;
     }
+}
+
+div[id*="EventNotViewableSection"] {
+    display: none;
 }
