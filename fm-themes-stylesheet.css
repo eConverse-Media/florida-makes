@@ -275,7 +275,6 @@ h2, .h2 {
 .tile h2,
 h4, .h4 {
     font-family: 'Source Sans Pro', sans-serif;
-    color: [SecondaryColor];
     font-weight: 600;
     font-size: 14px;
     line-height: 1.3;
@@ -308,13 +307,11 @@ h3, .h3,
     text-transform: uppercase;
 }
 a {
-    color: [PrimaryColor];
     text-decoration: none;
 }
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: [PrimaryColor];
 }
 
 /****** transitions ******/
@@ -461,21 +458,14 @@ td.ProfilePic > a > img {
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid [PrimaryColor];
+    border: 1px solid;
     border-radius: 2px;
-    background-color: [PrimaryColor];
     padding: 10px 15px;
     position: relative;
 }
 .make-buttons.outline em a {
     background: transparent;
     border-color: #fff;
-}
-.make-buttons.outline em a:hover,
-.make-buttons.outline em a:focus {
-    border-color: #fff;
-    background: #fff;
-    color: [PrimaryColor];
 }
 .btn::before,
 .make-buttons em a::before {
@@ -518,7 +508,6 @@ td.ProfilePic > a > img {
     font-weight: 700;
     font-size: 18px;
     line-height: 26px;
-    background: [PrimaryColor];
     margin: 15px;
     padding: 30px;
     border: none;
@@ -543,7 +532,6 @@ td.ProfilePic > a > img {
 }
 
 .cta-button.make-buttons em a::before {
-    color: [SecondaryColor];
     font-size: 60px;
     line-height: 1;
     margin-bottom: 15px;
@@ -694,7 +682,6 @@ td.ProfilePic > a > img {
 .callout-CTA h6+p::before {
     float: left;
     margin-right: 12px;
-    color: [SecondaryColor];
     font-size: 15px;
     font-family: FloridaMakes;
 }
@@ -714,7 +701,6 @@ td.ProfilePic > a > img {
 /************ testimonials ***********/
 
 .testimonial-wrapper {
-    background: [PrimaryColor];
     background-size: cover;
     background-position: center;
     margin-top: 15px;
@@ -758,8 +744,6 @@ td.ProfilePic > a > img {
 
 .text-block em a {
     margin-top: 45px;
-    background-color: [SecondaryColor];
-    border-color: [SecondaryColor];
 }
 
 .testimonial {
@@ -814,11 +798,6 @@ td.ProfilePic > a > img {
 
 .testimonial-slider .slick-arrow {
     bottom: -50px;
-}
-
-.testimonial-slider .slick-arrow:hover,
-.testimonial-slider .slick-arrow:focus {
-    color: [SecondaryColor];
 }
 
 .testimonial-slider .next-arrow {
@@ -1009,7 +988,6 @@ td.ProfilePic > a > img {
 .upcoming-events ul li .date-block {
     width: 80px;
     height: 80px;
-    background: [SecondaryColor];
     border-radius: 16px 2px;
     display: flex;
     flex-direction: column;
@@ -1076,7 +1054,6 @@ td.ProfilePic > a > img {
 }
 
 .upcoming-events ul li .col-md-10 .timeAgoFormat::before {
-    color: [SecondaryColor];
     margin-right: 2px;
     font-family: FloridaMakes;
     content: '\f01f';
@@ -1104,40 +1081,6 @@ td.ProfilePic > a > img {
 }
 
 /************ resetting HL blue ************/
-
-.pagination>.active>a,
-.pagination>.active>span,
-.pagination>.active>a:hover,
-.pagination>.active>span:hover,
-.pagination>.active>a:focus,
-.pagination>.active>span:focus,
-#MPOuterMost .bootstrap-4 .btn-primary.focus,
-#MPOuterMost .bootstrap-4 .btn-primary:focus,
-#MPOuterMost .bootstrap-4 .btn-primary.hover,
-#MPOuterMost .bootstrap-4 .btn-primary:hover:not(:disabled),
-#MPOuterMost .bootstrap-4 .btn-success.focus,
-#MPOuterMost .bootstrap-4 .btn-success:focus,
-#MPOuterMost .bootstrap-4 .btn-success.hover,
-#MPOuterMost .bootstrap-4 .btn-success:hover:not(:disabled),
-#MPOuterMost .bootstrap-4 .btn-danger.focus,
-#MPOuterMost .bootstrap-4 .btn-danger:focus,
-#MPOuterMost .bootstrap-4 .btn-danger.hover,
-#MPOuterMost .bootstrap-4 .btn-danger:hover:not(:disabled),
-#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
-#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
-    background: [PrimaryColor];
-}
-
-.pagination>.active>a,
-.pagination>.active>span,
-.pagination>.active>a:hover,
-.pagination>.active>span:hover,
-.pagination>.active>a:focus,
-.pagination>.active>span:focus,
-#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
-#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
-    border-color: [PrimaryColor];
-}
 
 #MPOuterMost .bootstrap-4 .btn-primary,
 #MPOuterMost .bootstrap-4 .btn-success,
@@ -1189,7 +1132,7 @@ td.ProfilePic > a > img {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05), 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 0px 0px 2px 2px;
     padding: 0;
-    border-bottom: 2px solid [SecondaryColor];
+    border-bottom: 2px solid;
 }
 #MPOuterMost .navbar-nav .dropdown-menu>li>a {
     color: #222;
@@ -1204,7 +1147,6 @@ td.ProfilePic > a > img {
 #MPOuterMost .navbar-nav .dropdown-menu>.active>a:focus,
 #MPOuterMost .navbar-nav .dropdown-menu>li>a:hover,
 #MPOuterMost .navbar-nav .dropdown-menu>li>a:focus {
-	background: [SecondaryColor];
 	color: #fff;
 }
 

@@ -2,6 +2,94 @@
 
 /************ basics ************/
 
+/****** tenant-wide styling ******/
+
+.cta-button.make-buttons em a::before {
+    color: [SecondaryColor];
+}
+.callout-CTA h6+p::before {
+    color: [SecondaryColor];
+}
+.text-block em a {
+    background-color: [SecondaryColor];
+    border-color: [SecondaryColor];
+}
+.testimonial-slider .slick-arrow:hover,
+.testimonial-slider .slick-arrow:focus {
+    color: [SecondaryColor];
+}
+.upcoming-events ul li .date-block {
+    background: [SecondaryColor];
+}
+.upcoming-events ul li .col-md-10 .timeAgoFormat::before {
+    color: [SecondaryColor];
+}
+#MPOuterMost .navbar-nav>li>.dropdown-menu {
+    border-bottom-color: [SecondaryColor];
+}
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a,
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a:hover,
+#MPOuterMost .navbar-nav .dropdown-menu>.active>a:focus,
+#MPOuterMost .navbar-nav .dropdown-menu>li>a:hover,
+#MPOuterMost .navbar-nav .dropdown-menu>li>a:focus {
+    background: [SecondaryColor];
+}
+a {
+    color: [PrimaryColor];
+}
+a:hover,
+a:focus {
+    color: [PrimaryColor];
+}
+.btn,
+.make-buttons em a {
+    border-color: [SecondaryColor];
+    background-color: [SecondaryColor];
+}
+.make-buttons.outline em a:hover,
+.make-buttons.outline em a:focus {
+    color: [PrimaryColor];
+}
+.cta-button.make-buttons em a {
+    background: [PrimaryColor];
+}
+.testimonial-wrapper {
+    background: [PrimaryColor];
+}
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus,
+#MPOuterMost .bootstrap-4 .btn-primary.focus,
+#MPOuterMost .bootstrap-4 .btn-primary:focus,
+#MPOuterMost .bootstrap-4 .btn-primary.hover,
+#MPOuterMost .bootstrap-4 .btn-primary:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 .btn-success.focus,
+#MPOuterMost .bootstrap-4 .btn-success:focus,
+#MPOuterMost .bootstrap-4 .btn-success.hover,
+#MPOuterMost .bootstrap-4 .btn-success:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 .btn-danger.focus,
+#MPOuterMost .bootstrap-4 .btn-danger:focus,
+#MPOuterMost .bootstrap-4 .btn-danger.hover,
+#MPOuterMost .bootstrap-4 .btn-danger:hover:not(:disabled),
+#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
+#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
+    background: [PrimaryColor];
+}
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus,
+#MPOuterMost .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+*,
+#MPOuterMost .bootstrap-4 .btn-icon-alt-secondary {
+    border-color: [PrimaryColor];
+}
+
 /****** fonts ******/
 
 .small-h2 h2,
