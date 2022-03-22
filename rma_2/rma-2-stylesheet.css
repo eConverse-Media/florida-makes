@@ -357,11 +357,61 @@
     line-height: 1;
     display: block;
 }
+.card.file > a::before {
+    content: '\f049';
+}
+.card.calendar > a::before {
+    content: '\f04a';
+}
+.card.comments > a::before {
+    content: '\f04b';
+}
+.card.lectern > a::before {
+    content: '\f04c';
+}
+.card.handshake > a::before {
+    content: '\f04d';
+}
+.card.question > a::before {
+    content: '\f04e';
+}
+.card.assessment > a::before {
+    content: '\f024';
+}
+.card.services > a::before {
+    content: '\f031';
+}
+.card.technology > a::before {
+    content: '\f027';
+}
+.card.cyber > a::before {
+    content: '\f029';
+}
+.card.globe > a::before {
+    content: '\f02a';
+}
+.card.improvement > a::before {
+    content: '\f025';
+}
+.card.network > a::before {
+    content: '\f026';
+}
+.card.training > a::before {
+    content: '\f028';
+}
+.card.clipboard > a::before {
+    content: '\f030';
+}
+.card.flood > a::before {
+    content: '\f02b';
+}
 .card > a:hover,
 .card > a:focus {
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     box-shadow: 0px 10px 32px -4px rgba(65, 65, 65, 0.1), 0px 6px 14px -6px rgba(65, 65, 65, 0.12);
+    color: #8e8e8e;
+    text-decoration: none;
 }
 .card h3 {
     margin-top: 12px;

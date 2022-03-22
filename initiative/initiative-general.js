@@ -43,14 +43,18 @@ function handleServices() {
     });
 
     // show first service on page load
-    var classList = $('.service-button:first-child').attr('class').split(' '),
-        classText = classList[classList.length - 1];
+    var hasServiceButton = !!($('.service-button:first-child').html());
 
-    showService('.' + classText);
+    if (hasServiceButton) {
+        var classList = $('.service-button:first-child').attr('class').split(' '),
+            classText = classList[classList.length - 1];
+    
+        showService('.' + classText);
+    }
 }
 
 function handlePrograms() {
-    $('.featured-program').wrapAll('<div class="featured-programs" />');
+    $('.home .featured-program').wrapAll('<div class="featured-programs" />');
     $('.featured-program').each(function () {
         handleLink(this);
     });

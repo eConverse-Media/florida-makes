@@ -8,7 +8,7 @@ function handleServices() {
 }
 
 function handleCards() {
-    $('.card').wrapAll('<div class="cards" />');
+    $('.home .card').wrapAll('<div class="cards" />');
     $('.card').each(function () {
         var self = $(this),
             link = $(self).find('a'),
@@ -79,8 +79,10 @@ function handleLatestNews() {
 }
 
 function handleQuickLinks() {
-    $('.quick-link').wrapAll('<div class="quick-links" />');
-    $('.quick-links-title, .quick-links').wrapAll('<div class="tile" />');
+    if (!!($('.quick-links-title').html())) {
+        $('.quick-link').wrapAll('<div class="quick-links" />');
+        $('.quick-links-title, .quick-links').wrapAll('<div class="tile" />');
+    }
 }
 
 function handleSponsors() {
