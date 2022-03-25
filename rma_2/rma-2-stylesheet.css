@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css");
+/* @import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css"); */
 
 /************ basics ************/
 
@@ -51,6 +51,7 @@ a:focus {
 .make-buttons em a {
     border-color: [PrimaryColor];
     background-color: [PrimaryColor];
+    border-radius: 2px;
 }
 .make-buttons.outline em a:hover,
 .make-buttons.outline em a:focus {
@@ -254,7 +255,7 @@ a:focus {
 }
 .search-bar-top,
 #searchColumn {
-    margin-top: 25px;
+    margin-top: 30px;
     border-radius: 2px;
     background: linear-gradient(0deg, rgba(244, 246, 248, 0.3), rgba(244, 246, 248, 0.3));
     border: 1px solid #F5F5F5;
@@ -309,12 +310,12 @@ a:focus {
 
 /* caret */
 .navbar-default .navbar-nav>.dropdown>a .caret {
-    border-bottom-color: [SecondaryColor];
-    border-top-color: [SecondaryColor];
+    border-bottom-color: #8e8e8e;
+    border-top-color: #8e8e8e;
 }
 .navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret {
-    border-top-color: #8e8e8e;
-    border-bottom-color: #8e8e8e;
+    border-top-color: [SecondaryColor];
+    border-bottom-color: [SecondaryColor];
 }
 
 /************ interior page titles ************/
@@ -405,6 +406,7 @@ a:focus {
     font-family: FloridaMakes;
     content: '\f057';
     position: absolute;
+    font-size: 10px;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -789,7 +791,7 @@ a:focus {
 .home .who-we-are .HtmlContent > em:last-child,
 .what-we-do .HtmlContent > em:last-child,
 .featured-news .HtmlContent > em:last-child {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /****** latest news ******/

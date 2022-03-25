@@ -458,14 +458,19 @@ td.ProfilePic > a > img {
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid;
-    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
     padding: 10px 15px;
     position: relative;
 }
 .make-buttons.outline em a {
     background: transparent;
     border-color: #fff;
+}
+.make-buttons.outline em a:hover,
+.make-buttons.outline em a:focus {
+    background: #fff;
 }
 .btn::before,
 .make-buttons em a::before {
@@ -1162,7 +1167,8 @@ td.ProfilePic > a > img {
     .navbar-nav {
         float: none;
         display: flex;
-        justify-content: space-between;
+        margin-left: -20px;
+        margin-right: -20px;
     }
 }
 

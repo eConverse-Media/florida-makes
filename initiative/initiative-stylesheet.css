@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css");
+/* @import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css"); */
 
 /************ basics ************/
 
@@ -304,12 +304,12 @@ a:focus {
 
 /* caret */
 .navbar-default .navbar-nav>.dropdown>a .caret {
-    border-bottom-color: [SecondaryColor];
-    border-top-color: [SecondaryColor];
+    border-bottom-color: #8e8e8e;
+    border-top-color: #8e8e8e;;
 }
 .navbar-default .navbar-nav>.dropdown>a:hover .caret, .navbar-default .navbar-nav>.dropdown>a:focus .caret {
-    border-top-color: #8e8e8e;
-    border-bottom-color: #8e8e8e;
+    border-top-color: [SecondaryColor];
+    border-bottom-color: [SecondaryColor];
 }
 
 /************ interior page headers ***********/
@@ -456,6 +456,10 @@ a:focus {
     position: absolute;
     right: 0;
     top: 5px;
+}
+.our-services .col-md-6:last-child .rounded-img {
+    width: 540px;
+    margin-left: auto;
 }
 .our-services .col-md-6:last-child img {
     width: 100%;
@@ -1081,10 +1085,6 @@ a:focus {
     }
     .home .who-we-are > .col-md-6:first-child {
         padding-right: 65px;
-        width: 58%;
-    }
-    .home .who-we-are > .col-md-6:last-child {
-        width: 42%;
     }
     .our-services .col-md-6:first-child {
         padding-right: 80px;
@@ -1269,11 +1269,24 @@ a:focus {
     .featured-program {
         flex-basis: 100%;
     }
+    .our-services .col-md-6:last-child .rounded-img {
+        display: none;
+    }
+    .our-services .col-md-6:last-child {
+        height: 250px;
+    }
+    .service-card {
+        left: 15px;
+        width: calc(100% - 30px);
+    }
 }
 
 @media (max-width: 550px) {
     .service-button {
         flex-basis: 100%;
+    }
+    .our-services .col-md-6:last-child {
+        height: 325px;
     }
 }
 

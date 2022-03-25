@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css"); 
+/* @import url("https://cdn.jsdelivr.net/gh/eConverse-Media/florida-makes@latest/fm-themes-stylesheet.min.css");  */
 
 /************ basics ************/
 
@@ -491,9 +491,15 @@ h4, .h4 {
     display: block;
     font-weight: 400;
 }
+.what-we-do h2 {
+    margin-top: 10px;
+}
 .what-we-do .HtmlContent {
     width: 415px;
     max-width: 100%;
+}
+.what-we-do p {
+    margin-bottom: 25px;
 }
 
 .service-buttons {
