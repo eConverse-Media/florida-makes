@@ -48,10 +48,13 @@ a:focus {
     color: [PrimaryColor];
 }
 .btn,
+.btn:hover,
+.btn:focus,
 .make-buttons em a {
     border-color: [PrimaryColor];
     background-color: [PrimaryColor];
     border-radius: 2px;
+    color: #fff;
 }
 .make-buttons.outline em a:hover,
 .make-buttons.outline em a:focus {
@@ -288,7 +291,10 @@ a:focus {
     line-height: 26px;
     width: 30px;
     height: 26px;
-    padding-left: 2px;
+}
+.search-bar-top button.btn.btn-default[id*="SearchButton"],
+#searchColumn button.btn.btn-default[id*="SearchButton"] {
+    padding: 0 0 0 2px;
 }
 .search-bar-top button[id*="SearchButton"] .glyphicon-search,
 #searchColumn button[id*="SearchButton"] .glyphicon-search {

@@ -464,6 +464,10 @@ td.ProfilePic > a > img {
     padding: 10px 15px;
     position: relative;
 }
+.btn-sm,
+.form-control + .input-group-btn .btn {
+    padding: 6px 10px;
+}
 .make-buttons.outline em a {
     background: transparent;
     border-color: #fff;
