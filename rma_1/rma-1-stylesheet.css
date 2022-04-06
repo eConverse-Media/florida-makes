@@ -756,6 +756,20 @@ h4, .h4 {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
+.home .latest-news .HLLandingControl .Content ul li a .img-container.no-ajax-image {
+    background-color: [PrimaryColor];
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .latest-news .HLLandingControl .Content ul li a .img-container.no-ajax-image::before {
+    font-size: 100px;
+    line-height: 1;
+    color: #fff;
+    font-family: FloridaMakes;
+    content: '\f058';
+}
 .home .latest-news .HLLandingControl .Content ul li a .text-container {
     flex-basis: calc(100% - 170px);
     background: #fff;
@@ -789,7 +803,7 @@ h4, .h4 {
 .home .latest-news .HLLandingControl ul li .content-tags.flex-container .text-muted {
     display: none;
 }
-.home .latest-news .HLLandingControl ul li .content-tags.flex-container .flex-tag-container a {
+.home .latest-news .HLLandingControl ul li .content-tags.flex-container .flex-tag-container .news-tag {
     font-family: Source Sans Pro;
     font-weight: 600;
     font-size: 12px;

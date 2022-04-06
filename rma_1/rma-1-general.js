@@ -64,6 +64,16 @@ function handleLatestNews() {
 
         // wrap with link
         handleLink(self);
+        
+        // unwrap tags
+
+        $(self).find('a.label-search-tag').each(function () {
+            var link = $(this);
+
+            $(link).wrapInner('<span class="news-tag" />');
+
+            $(link).contents().unwrap();
+        });
 
         // fix byline
         var byline = $(self).find('.ByLine');
