@@ -1133,6 +1133,14 @@ td.ProfilePic > a > img {
 	color: #222222; 
 	background-color: transparent;
 }
+#MPButtonBar .dropdown-menu .dropdown-submenu .active a,
+#NAV #MPButtonBar .dropdown-menu .dropdown-submenu .active a:hover, 
+#NAV #MPButtonBar .dropdown-submenu .dropdown-submenu .active a:hover,
+#MPButtonBar .dropdown-menu .dropdown-submenu li a:hover, #MPButtonBar .dropdown-menu .dropdown-submenu li a:focus {
+    background-color: [SecondaryColor];
+    color: #fff;
+    display: block;
+}
 
 /* dropdowns */
 #MPOuterMost .navbar-nav>li>.dropdown-menu {
