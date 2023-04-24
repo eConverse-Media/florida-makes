@@ -1166,6 +1166,26 @@ td.ProfilePic > a > img {
 #MPOuterMost .navbar-nav .dropdown-menu>li>a:focus {
 	color: #fff;
 }
+/*** NSH 24.04.23 widening nav dropdowns ***/
+
+#NAV .navbar-nav ul.dropdown-submenu > li > a {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 6px 15px;
+    color: #222;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+}
+#NAV .navbar-nav ul.dropdown-submenu > li > a:is(:hover, :focus),
+#NAV .navbar-nav ul.dropdown-submenu > .active > a:is(:hover, :focus) {
+    color: #fff;
+}
+.nav.navbar-nav .dropdown-submenu>ul.dropdown-submenu {
+    margin-left: 0;
+    padding-left: 15px;
+}
 
 @media (min-width: 1151px) {
     #NAV .row {
@@ -1190,7 +1210,8 @@ td.ProfilePic > a > img {
         border-radius: 0;
         border-bottom: none;
     }
-    #MPOuterMost .navbar-nav>li>.dropdown-menu a {
+    #MPOuterMost .navbar-nav>li>.dropdown-menu a,
+    #NAV .navbar-nav ul.dropdown-submenu > li > a {
         white-space: normal;
     }
     .navbar-header {
